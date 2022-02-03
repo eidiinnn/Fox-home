@@ -7,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   padding: 10px;
-  width: 100%;
+  width: max-content;
   height: 100%;
   background: url(${backgroundImageBlur}) no-repeat;
   background-position: center;
