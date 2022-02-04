@@ -83,10 +83,10 @@ export const CentralDivClockAndFavorites = styled.div`
 export const CentralDivClock = styled.div`
   font-family: "josefin";
   font-weight: 700;
-  font-size: 160px;
+  font-size: 170px;
   text-align: center;
   color: white;
-  padding-top: 40px;
+  padding-top: 35px;
 `;
 
 export const CentralDivBookmarkUl = styled.ul`
@@ -98,7 +98,7 @@ export const CentralDivBookmarkUl = styled.ul`
 `;
 
 export const CentralDivBookmarkLi = styled.li`
-  font-size: 55px;
+  font-size: 50px;
   color: white;
   margin: 10px;
 `;
