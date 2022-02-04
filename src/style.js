@@ -16,6 +16,24 @@ body {
   background-attachment: fixed;
 }
 
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
@@ -66,4 +84,16 @@ export const CentralDivClock = styled.div`
   font-weight: 700;
   font-size: 150px;
   color: white;
+`;
+
+export const CentralDivBookmarkUl = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+`;
+
+export const CentralDivBookmarkLi = styled.li`
+  font-size: 55px;
+  color: white;
+  margin: 10px;
 `;
