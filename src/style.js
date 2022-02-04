@@ -16,6 +16,24 @@ body {
   background-attachment: fixed;
 }
 
+a:link {
+  text-decoration: none;
+  color: inherit;
+}
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
@@ -42,8 +60,9 @@ export const CentralDivContainer = styled.div`
   align-self: center;
   display: flex;
   flex-direction: row;
+  justify-content: center;
   border-radius: 40px;
-  height: 400px;
+  height: 360px;
   width: auto;
 `;
 
@@ -54,7 +73,7 @@ export const CentralDivImage = styled.img`
 `;
 
 export const CentralDivClockAndFavorites = styled.div`
-  width: 560px;
+  width: 580px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -64,6 +83,22 @@ export const CentralDivClockAndFavorites = styled.div`
 export const CentralDivClock = styled.div`
   font-family: "josefin";
   font-weight: 700;
-  font-size: 150px;
+  font-size: 170px;
+  text-align: center;
   color: white;
+  padding-top: 35px;
+`;
+
+export const CentralDivBookmarkUl = styled.ul`
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+`;
+
+export const CentralDivBookmarkLi = styled.li`
+  font-size: 50px;
+  color: white;
+  margin: 10px;
 `;
