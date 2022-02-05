@@ -1,3 +1,4 @@
+import { SiNotion } from "react-icons/si";
 import {
   FaDiscord,
   FaGithub,
@@ -12,4 +13,5 @@ export const bookmarkLinks = [
   ["https://www.reddit.com/", FaReddit],
   ["https://www.linkedin.com/", FaLinkedin],
   ["https://web.whatsapp.com/", FaWhatsapp],
+  ["https://www.notion.so/", SiNotion],
 ];
