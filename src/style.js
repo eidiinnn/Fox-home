@@ -65,6 +65,10 @@ export const SearchBarContainer = styled.div`
   display: grid;
   grid-template-columns: 55px 2fr;
   align-content: center;
+
+  &:hover {
+    outline: solid 3px;
+  }
 `;
 
 export const SearchBarGoogleIcon = styled.div`
@@ -73,6 +77,27 @@ export const SearchBarGoogleIcon = styled.div`
   display: flex;
   align-content: center;
   border-right: 4px solid #ffffff;
+`;
+
+export const SearchBarForm = styled.form`
+  width: 100%;
+  display: flex;
+  align-content: center;
+`;
+
+export const SearchBarInput = styled.input`
+  width: 95%;
+  max-height: 100%;
+  padding-left: 10px;
+  background-color: #0c0c0c;
+  border: 0px;
+  font-weight: 400;
+  font-size: 20px;
+  color: white;
+
+  &:focus {
+    outline: none;
+  }
 `;
 
 export const CentralDivContainer = styled.div`
