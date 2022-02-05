@@ -1,7 +1,9 @@
 # Home Page
-A homepage for browsers made in ReactJS
+A homepage for browsers made in ReactJS.
 
 <img src="https://i.imgur.com/MFOwRpW.png" style="max-width: 100%;" >
+
+[Link to see the project on GitHub pages](https://eidiinnn.github.io/home-page/)
 
 ## Commands
 
