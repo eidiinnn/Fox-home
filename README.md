@@ -23,6 +23,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 #### `npm run deploy`
 Publish the homepage on github pages
 
-## How change the bookmark :bookmark:
+## How to change the bookmark :bookmark:
 in `src/bookmarkLinks.js` have an array called `bookmarkLinks`, you only need to put the link of the website and the icons from react-icons.
 You can see the icons from react-icons [here](https://react-icons.github.io/react-icons/icons?name=fa).
