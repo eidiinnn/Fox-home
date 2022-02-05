@@ -1,11 +1,11 @@
-# Home Page
-A homepage for browsers made in ReactJS.
+# :earth_americas: Home Page :house:
+A homepage for browsers made in ReactJS.  :fox_face:
 
 <img src="https://i.imgur.com/MFOwRpW.png" style="max-width: 100%;" >
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/home-page/)
 
-## Commands
+## Commands :computer:
 
 #### `npm start`
 
@@ -23,6 +23,6 @@ It correctly bundles React in production mode and optimizes the build for the be
 #### `npm run deploy`
 Publish the homepage on github pages
 
-## How change the bookmark
+## How change the bookmark :bookmark:
 in `src/bookmarkLinks.js` have an array called `bookmarkLinks`, you only need to put the link of the website and the icons from react-icons.
 You can see the icons from react-icons [here](https://react-icons.github.io/react-icons/icons?name=fa).
