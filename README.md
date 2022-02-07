@@ -3,7 +3,7 @@ A homepage for browsers made in ReactJS.  :fox_face:
 
 <img src="https://i.imgur.com/MFOwRpW.png" style="max-width: 100%;" >
 
-[Link to see the project on GitHub pages](https://eidiinnn.github.io/home-page/)
+[Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
 
 ## Commands :computer:
 
