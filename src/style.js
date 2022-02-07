@@ -11,7 +11,7 @@ body {
   margin: 0;
   padding: 0;
   background : black;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 a:link {
@@ -136,7 +136,7 @@ export const CentralDivContainer = styled.div`
 `;
 
 export const CentralDivImage = styled.img`
-  max-width: 363px;
+  max-width: 340px;
   height: 100%;
   border-radius: 20px 0px 0px 20px;
   object-fit: cover;
