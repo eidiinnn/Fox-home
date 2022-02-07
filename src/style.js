@@ -69,6 +69,10 @@ export const SearchBarContainer = styled.div`
   &:hover {
     outline: solid 3px;
   }
+
+  @media screen and (max-width: 900px) {
+    max-width: 80%;
+  }
 `;
 
 export const SearchBarGoogleIcon = styled.div`
@@ -110,12 +114,26 @@ export const CentralDivContainer = styled.div`
   border-radius: 20px;
   height: 360px;
   width: 820px;
+
+  @media screen and (max-width: 900px) {
+    max-width: 80%;
+    padding-bottom: 25px;
+    flex-direction: column;
+    justify-content: start;
+  }
 `;
 
 export const CentralDivImage = styled.img`
   max-width: 363px;
   height: 100%;
   border-radius: 20px 0px 0px 20px;
+  object-fit: cover;
+
+  @media screen and (max-width: 900px) {
+    max-width: 100%;
+    height: 100px;
+    border-radius: 20px 20px 0px 0px;
+  }
 `;
 
 export const CentralDivClockAndFavorites = styled.div`
@@ -124,15 +142,24 @@ export const CentralDivClockAndFavorites = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const CentralDivClock = styled.div`
   font-family: "josefin";
   font-weight: 700;
-  font-size: 170px;
+  font-size: 10em;
   text-align: center;
   color: white;
   padding-top: 35px;
+
+  @media screen and (max-width: 900px) {
+    font-size: 5.5em;
+  }
 `;
 
 export const CentralDivBookmarkUl = styled.ul`
@@ -141,10 +168,16 @@ export const CentralDivBookmarkUl = styled.ul`
   list-style-type: none;
   padding: 0px;
   margin: 0px;
+  flex-wrap: wrap;
+  justify-content: center;
 `;
 
 export const CentralDivBookmarkLi = styled.li`
   font-size: 50px;
   color: white;
   margin: 10px;
+
+  @media screen and (max-width: 900px) {
+    font-size: 50px;
+  }
 `;
