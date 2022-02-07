@@ -4,11 +4,12 @@ import ReactDOM from "react-dom";
 import CentralDiv from "./components/centralDiv";
 import GoogleSearchBar from "./components/googleSearchBar";
 
-import { GlobalStyle, MainGrind } from "./style";
+import { GlobalStyle, MainGrind, Background } from "./style";
 
 ReactDOM.render(
   <React.StrictMode>
     <GlobalStyle />
+    <Background />
     <MainGrind>
       <GoogleSearchBar />
       <CentralDiv />
