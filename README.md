@@ -1,7 +1,7 @@
-# :earth_americas: Home Page :house:
-A homepage for browsers made in ReactJS.  :fox_face:
+# Home Page :fox_face:
+A homepage for browsers made in ReactJS.  
 
-<img src="https://i.imgur.com/MFOwRpW.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/Flqtnjw.png" style="max-width: 100%;" >
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
 
@@ -23,6 +23,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 #### `npm run deploy`
 Publish the homepage on github pages
 
-## How to change the bookmark :bookmark:
-in `src/bookmarkLinks.js` have an array called `bookmarkLinks`, you only need to put the link of the website and the icons from react-icons.
+## Change the bookmark :bookmark:
+in `src/bookmarkLinks.js` has an array called `bookmarkLinks`, put the link of the website and the icons from react-icons.
 You can see the icons from react-icons [here](https://react-icons.github.io/react-icons/icons?name=fa).
+
+## Change the image 	:city_sunset:
+in `src/images` put the image and name for `image.jpg`.
+
+## Change the background color :purple_circle:
+in `src/style.css` have a const named `backgroundColor`. just change the hex code.
