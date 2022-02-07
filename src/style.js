@@ -6,12 +6,14 @@ import image from "./images/image.jpg";
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
 
+const backgroundColor = "#110c19";
+
 export const GlobalStyle = createGlobalStyle` 
 body {
   margin: 0;
   padding: 0;
   background : black;
-    overflow: hidden;
+  overflow: hidden;
 }
 
 a:link {
@@ -71,7 +73,7 @@ export const SearchBarContainer = styled.div`
   width: 820px;
   height: 55px;
   color: white;
-  background-color: #0c0c0c;
+  background-color: ${backgroundColor};
   margin-bottom: 20px;
   border-radius: 20px;
   display: grid;
@@ -105,7 +107,7 @@ export const SearchBarInput = styled.input`
   width: 95%;
   max-height: 100%;
   padding-left: 10px;
-  background-color: #0c0c0c;
+  background-color: #050e1300;
   border: 0px;
   font-weight: 400;
   font-size: 20px;
@@ -117,7 +119,7 @@ export const SearchBarInput = styled.input`
 `;
 
 export const CentralDivContainer = styled.div`
-  background-color: #0c0c0c;
+  background-color: ${backgroundColor};
   grid-row: 2;
   align-self: center;
   display: flex;
@@ -136,7 +138,7 @@ export const CentralDivContainer = styled.div`
 `;
 
 export const CentralDivImage = styled.img`
-  max-width: 363px;
+  max-width: 340px;
   height: 100%;
   border-radius: 20px 0px 0px 20px;
   object-fit: cover;
