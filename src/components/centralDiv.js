@@ -3,7 +3,7 @@ import { Component } from "react";
 import Clock from "react-live-clock";
 import CreateHtmlBookmarkList from "./tools/createHtmlBookmarkList";
 
-import CentralDivImageBackground from "../images/CentralDivImageBackground.jpg";
+import image from "../images/image.jpg";
 
 import {
   CentralDivContainer,
@@ -16,7 +16,7 @@ export default class CentralDiv extends Component {
   render() {
     return (
       <CentralDivContainer>
-        <CentralDivImage src={CentralDivImageBackground} />
+        <CentralDivImage src={image} />
         <CentralDivClockAndFavorites>
           <CentralDivClock>
             <Clock format={"HH:mm"} ticking={true} />

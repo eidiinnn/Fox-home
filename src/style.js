@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
-import backgroundImageBlur from "./images/backgroundImageBlur.jpg";
+import image from "./images/image.jpg";
 
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
@@ -10,6 +10,8 @@ export const GlobalStyle = createGlobalStyle`
 body {
   margin: 0;
   padding: 0;
+  background : black;
+    overflow: hidden;
 }
 
 a:link {
@@ -42,17 +44,27 @@ a:active {
     font-weight: 700;
 }`;
 
+export const Background = styled.div`
+  width: 100%;
+  height: 100vh;
+  background: url(${image}) no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  z-index: 1;
+  filter: blur(5px) brightness(0.9);
+`;
+
 export const MainGrind = styled.div`
+  position: fixed;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 100vh;
-  background: url(${backgroundImageBlur}) no-repeat;
-  background-position: center;
-  background-size: cover;
-  background-attachment: fixed;
+  z-index: 2;
+  top: 0px;
 `;
 
 export const SearchBarContainer = styled.div`
