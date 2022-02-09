@@ -31,9 +31,12 @@ You can see the icons from react-icons [here](https://react-icons.github.io/reac
 #### Change the image 	:city_sunset:
 In `src/images` put the image and name for `image.jpg`.
 
+#### Change to AM and PM time format :clock130:
+in `src/settings.js` have a const named `AmPmFormat`, change from false to true.
+
 #### Change the background color :purple_circle:
 In `src/settings.js` have a const named `backgroundColor`. just change the hex code.
-#### How to use it in my browser 
+#### How to use it in my browser  	:earth_americas:
 Use the command `npm run build`. this will create a file named `build` in the root. after the complete the build, makes your browser use the index file inside the build folder with a homepage.
 
 If you make a fork, the other option is to run `npm run deploy` and use the GitHub Page URL with the homepage.
