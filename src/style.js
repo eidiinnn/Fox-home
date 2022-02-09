@@ -166,13 +166,13 @@ export const CentralDivClockAndFavorites = styled.div`
 export const CentralDivClock = styled.div`
   font-family: "josefin";
   font-weight: 700;
-  font-size: 10em;
+  font-size: ${(props) => props.fontSize};
   text-align: center;
   color: white;
   padding-top: 35px;
 
   @media screen and (max-width: 900px) {
-    font-size: 5.5em;
+    font-size: ${(props) => props.mediaFontSize};
   }
 `;
 
@@ -190,8 +190,4 @@ export const CentralDivBookmarkLi = styled.li`
   font-size: 50px;
   color: white;
   margin: 10px;
-
-  @media screen and (max-width: 900px) {
-    font-size: 50px;
-  }
 `;

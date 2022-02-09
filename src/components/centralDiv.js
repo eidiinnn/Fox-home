@@ -1,7 +1,7 @@
 import React from "react";
 import { Component } from "react";
-import Clock from "react-live-clock";
 import CreateHtmlBookmarkList from "./tools/createHtmlBookmarkList";
+import ClockComponent from "./tools/clockComponent";
 
 import image from "../images/image.jpg";
 
@@ -9,7 +9,6 @@ import {
   CentralDivContainer,
   CentralDivImage,
   CentralDivClockAndFavorites,
-  CentralDivClock,
 } from "../style";
 
 export default class CentralDiv extends Component {
@@ -18,9 +17,7 @@ export default class CentralDiv extends Component {
       <CentralDivContainer>
         <CentralDivImage src={image} />
         <CentralDivClockAndFavorites>
-          <CentralDivClock>
-            <Clock format={"HH:mm"} ticking={true} />
-          </CentralDivClock>
+          <ClockComponent />
           <CreateHtmlBookmarkList />
         </CentralDivClockAndFavorites>
       </CentralDivContainer>

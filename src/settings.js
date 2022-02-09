@@ -7,7 +7,7 @@ import {
   FaWhatsapp,
 } from "react-icons/fa";
 
-export const AmPmFormat = true;
+export const AmPmFormat = false;
 
 export const bookmarkLinks = [
   ["https://discord.com/channels/@me", FaDiscord],
