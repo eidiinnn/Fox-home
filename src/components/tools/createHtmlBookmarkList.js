@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import { bookmarkLinks } from "../../bookmarkLinks";
+import { bookmarkLinks } from "../../settings.js";
 
 import { CentralDivBookmarkUl, CentralDivBookmarkLi } from "../../style";
 
