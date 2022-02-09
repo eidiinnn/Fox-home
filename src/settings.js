@@ -9,6 +9,8 @@ import {
 
 export const AmPmFormat = false;
 
+export const backgroundColor = "#110c19";
+
 export const bookmarkLinks = [
   ["https://discord.com/channels/@me", FaDiscord],
   ["https://github.com/", FaGithub],
