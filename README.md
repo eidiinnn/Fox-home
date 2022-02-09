@@ -23,12 +23,17 @@ It correctly bundles React in production mode and optimizes the build for the be
 #### `npm run deploy`
 Publish the homepage on github pages
 
-## Change the bookmark :bookmark:
-in `src/bookmarkLinks.js` has an array called `bookmarkLinks`, put the link of the website and the icons from react-icons.
+## How to customize and use
+#### Change the bookmark :bookmark:
+In `src/settings.js` has an array called `bookmarkLinks`, put the link of the website and the icons from react-icons.
 You can see the icons from react-icons [here](https://react-icons.github.io/react-icons/icons?name=fa).
 
-## Change the image 	:city_sunset:
-in `src/images` put the image and name for `image.jpg`.
+#### Change the image 	:city_sunset:
+In `src/images` put the image and name for `image.jpg`.
 
-## Change the background color :purple_circle:
-in `src/style.css` have a const named `backgroundColor`. just change the hex code.
+#### Change the background color :purple_circle:
+In `src/settings.js` have a const named `backgroundColor`. just change the hex code.
+#### How to use it in my browser 
+Use the command `npm run build`. this will create a file named `build` in the root. after the complete the build, makes your browser use the index file inside the build folder with a homepage.
+
+If you make a fork, the other option is to run `npm run deploy` and use the GitHub Page URL with the homepage.
