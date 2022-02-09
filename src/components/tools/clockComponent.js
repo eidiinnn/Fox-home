@@ -17,7 +17,7 @@ export default class ClockComponent extends Component {
     return this.setState({
       format: "HH:mm",
       fontSize: "10em",
-      mediaFontSize: "19vw",
+      mediaFontSize: "15vw",
     });
   };
 
