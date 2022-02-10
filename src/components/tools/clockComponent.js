@@ -1,12 +1,12 @@
 import React from "react";
 import { Component } from "react";
 import Clock from "react-live-clock";
-import { AmPmFormat } from "../../settings";
-
 import { CentralDivClock } from "../../style";
 
 export default class ClockComponent extends Component {
   componentDidMount = () => {
+    const AmPmFormat = JSON.parse(localStorage.getItem("AmPm"));
+
     if (AmPmFormat === true)
       return this.setState({
         format: "hh:mm A",
