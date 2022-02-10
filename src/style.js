@@ -190,3 +190,22 @@ export const CentralDivBookmarkLi = styled.li`
   color: white;
   margin: 10px;
 `;
+
+export const SettingsModal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: #101010b5;
+  display: ${(props) => (props.show ? "flex" : "none")};
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SettingsModalContainer = styled.div`
+  width: 500px;
+  padding: 30px;
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+`;
