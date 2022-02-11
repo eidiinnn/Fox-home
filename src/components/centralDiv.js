@@ -3,13 +3,13 @@ import { Component } from "react";
 import CreateHtmlBookmarkList from "./tools/createHtmlBookmarkList";
 import ClockComponent from "./tools/clockComponent";
 
-import image from "../images/image.jpg";
-
 import {
   CentralDivContainer,
   CentralDivImage,
   CentralDivClockAndFavorites,
 } from "../style";
+
+const image = localStorage.getItem("image");
 
 export default class CentralDiv extends Component {
   render() {
