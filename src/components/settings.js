@@ -2,6 +2,7 @@ import React from "react";
 import { Component } from "react";
 import AmPmFormat from "./tools/ampmformat";
 import ImageUpload from "./tools/imageUpload";
+import BackgroundColor from "./tools/backgroundColor";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 import { SettingsModal, SettingsModalContainer } from "../style";
@@ -25,6 +26,7 @@ export default class Settings extends Component {
           <SettingsModalContainer>
             <AmPmFormat />
             <ImageUpload />
+            <BackgroundColor />
             <button value="Save" onClick={this.buttonSaveAction}>
               Save
             </button>
