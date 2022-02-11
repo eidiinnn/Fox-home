@@ -9,6 +9,7 @@ import {
   SettingsModal,
   SettingsModalContainer,
   SettingsModalItems,
+  SettingsIconContainer,
 } from "../style";
 
 export default class Settings extends Component {
@@ -40,7 +41,9 @@ export default class Settings extends Component {
           </SettingsModalContainer>
         </SettingsModal>
 
-        <FaCog onClick={this.modalOpen} />
+        <SettingsIconContainer>
+          <FaCog onClick={this.modalOpen} />
+        </SettingsIconContainer>
       </>
     );
   }

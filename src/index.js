@@ -12,9 +12,9 @@ ReactDOM.render(
     <GlobalStyle />
     <Background />
     <MainGrind>
+      <Settings />
       <GoogleSearchBar />
       <CentralDiv />
-      <Settings />
     </MainGrind>
   </React.StrictMode>,
   document.getElementById("root")

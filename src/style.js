@@ -195,6 +195,16 @@ export const CentralDivBookmarkLi = styled.li`
   margin: 10px;
 `;
 
+export const SettingsIconContainer = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+`;
+
 export const SettingsModal = styled.div`
   position: absolute;
   width: 100%;
