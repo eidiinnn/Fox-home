@@ -5,7 +5,11 @@ import ImageUpload from "./tools/imageUpload";
 import BackgroundColor from "./tools/backgroundColor";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
-import { SettingsModal, SettingsModalContainer } from "../style";
+import {
+  SettingsModal,
+  SettingsModalContainer,
+  SettingsModalItems,
+} from "../style";
 
 export default class Settings extends Component {
   buttonSaveAction = () => {
@@ -24,13 +28,15 @@ export default class Settings extends Component {
       <>
         <SettingsModal show={this.state.modalOpen}>
           <SettingsModalContainer>
-            <AmPmFormat />
             <ImageUpload />
+            <AmPmFormat />
             <BackgroundColor />
-            <button value="Save" onClick={this.buttonSaveAction}>
-              Save
-            </button>
-            <FaRegTimesCircle onClick={this.modalClose} />
+            <SettingsModalItems vertical>
+              <button value="Save" onClick={this.buttonSaveAction}>
+                Save
+              </button>
+              <FaRegTimesCircle onClick={this.modalClose} />
+            </SettingsModalItems>
           </SettingsModalContainer>
         </SettingsModal>
 

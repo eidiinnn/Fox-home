@@ -207,9 +207,25 @@ export const SettingsModal = styled.div`
 `;
 
 export const SettingsModalContainer = styled.div`
+  font-family: "josefin";
   width: 500px;
-  padding: 30px;
-  background-color: #ffff;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: ${backgroundColor};
+  color: white;
   display: flex;
   flex-direction: column;
+`;
+
+export const SettingsModalItems = styled.div`
+  display: flex;
+  flex-direction: ${(props) => (props.vertical ? "row" : "column")};
+  justify-content: ${(props) => (props.vertical ? "space-between" : "left")};
+  margin-top: 5px;
+  margin-bottom: 10px;
+`;
+
+export const SettingsModalTitles = styled.h1`
+  font-size: 1.1vw;
+  font-weight: 400;
 `;

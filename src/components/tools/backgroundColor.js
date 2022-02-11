@@ -1,6 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import { HexColorPicker, HexColorInput } from "react-colorful";
+import { HexColorPicker } from "react-colorful";
+
+import { SettingsModalItems, SettingsModalTitles } from "../../style";
 
 export default class BackgroundColor extends Component {
   componentDidMount = () => {
@@ -19,10 +21,10 @@ export default class BackgroundColor extends Component {
 
   render() {
     return (
-      <>
+      <SettingsModalItems>
+        <SettingsModalTitles>Background Color</SettingsModalTitles>
         <HexColorPicker color={this.state.color} onChange={this.setColor} />
-        <HexColorInput color={this.state.color} onChange={this.setColor} />
-      </>
+      </SettingsModalItems>
     );
   }
 }
