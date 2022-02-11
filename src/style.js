@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
-
-import { backgroundColor } from "./settings";
+import defaultImage from "./images/image.jpg";
 
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
 
-const image = localStorage.getItem("image");
+const UserBackgroundColor = localStorage.getItem("backgroundColor");
+const userImage = localStorage.getItem("image");
+
+const backgroundColor = UserBackgroundColor ? UserBackgroundColor : "#110c19";
+const image = userImage ? userImage : defaultImage;
 
 export const GlobalStyle = createGlobalStyle` 
 body {
