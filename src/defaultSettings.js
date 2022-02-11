@@ -1,4 +1,4 @@
-import image from "../../images/image.jpg";
+import image from "./images/image.jpg";
 
 export default function defaultSettings() {
   if (!localStorage.getItem("AmPm")) localStorage.setItem("AmPm", false);
