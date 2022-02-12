@@ -10,6 +10,16 @@ import {
 } from "../../../../style";
 
 export default class CreateHtmlBookmarkList extends Component {
+  componentDidMount = () => {
+    const storageBookmark = localStorage.getItem("bookmark");
+    !storageBookmark
+      ? localStorage.setItem(
+          "bookmark",
+          JSON.stringify(this.state.bookmarkLinks)
+        )
+      : this.setState({ bookmarkLinks: JSON.parse(storageBookmark) });
+  };
+
   filterUrl = (url) => extractDomain(url, { tld: true });
 
   getAListedIcon = (url) => {
