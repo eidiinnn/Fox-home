@@ -1,12 +1,18 @@
 import React from "react";
 import { Component } from "react";
-import { bookmarkLinks } from "../../../../settings.js";
+import { iconsList } from "./tools/iconsList.js";
 import extractDomain from "extract-domain";
 
 import { CentralDivBookmarkUl, CentralDivBookmarkLi } from "../../../../style";
 
 export default class CreateHtmlBookmarkList extends Component {
   filterUrl = (url) => extractDomain(url, { tld: true });
+
+  getIconDomain = (url) => {
+    const domain = this.filterUrl(url);
+    const iconsListReturn = iconsList.find((item) => item[0] === domain);
+    return iconsListReturn[1];
+  };
 
   state = {
     bookmarkLinks: [
@@ -22,11 +28,11 @@ export default class CreateHtmlBookmarkList extends Component {
   render() {
     return (
       <CentralDivBookmarkUl>
-        {bookmarkLinks.map((value) => {
-          const Icon = value[1];
+        {this.state.bookmarkLinks.map((value) => {
+          const Icon = this.getIconDomain(value);
           return (
-            <CentralDivBookmarkLi>
-              <a href={value[0]}>
+            <CentralDivBookmarkLi key={value}>
+              <a href={value}>
                 <Icon />
               </a>
             </CentralDivBookmarkLi>
