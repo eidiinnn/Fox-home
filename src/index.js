@@ -1,9 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-import CentralDiv from "./components/centralDiv";
+import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer ";
 import GoogleSearchBar from "./components/googleSearchBar";
-import Settings from "./components/settings";
+import SettingsMenu from "./components/settings/settingsMenu";
 
 import { GlobalStyle, MainGrind, Background } from "./style";
 
@@ -12,9 +12,9 @@ ReactDOM.render(
     <GlobalStyle />
     <Background />
     <MainGrind>
-      <Settings />
+      <SettingsMenu />
       <GoogleSearchBar />
-      <CentralDiv />
+      <ClockBookmarkContainer />
     </MainGrind>
   </React.StrictMode>,
   document.getElementById("root")

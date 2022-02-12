@@ -1,16 +1,16 @@
 import React from "react";
 import { Component } from "react";
-import CreateHtmlBookmarkList from "./tools/createHtmlBookmarkList";
-import ClockComponent from "./tools/clockComponent";
-import defaultImage from "../images/image.jpg";
+import CreateHtmlBookmarkList from "./parts/createHtmlBookmarkList";
+import ClockComponent from "./parts/clockComponent";
+import defaultImage from "../../images/image.jpg";
 
 import {
   CentralDivContainer,
   CentralDivImage,
   CentralDivClockAndFavorites,
-} from "../style";
+} from "../../style";
 
-export default class CentralDiv extends Component {
+export default class ClockBookmarkContainer extends Component {
   componentDidMount = () => {
     const image = localStorage.getItem("image");
     if (image !== null) this.setState({ image: image });

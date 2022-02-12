@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import { HexColorPicker } from "react-colorful";
 
-import { SettingsModalItems, SettingsModalTitles } from "../../style";
+import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
 export default class BackgroundColor extends Component {
   componentDidMount = () => {

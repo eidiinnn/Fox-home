@@ -1,8 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import AmPmFormat from "./tools/ampmformat";
-import ImageUpload from "./tools/imageUpload";
-import BackgroundColor from "./tools/backgroundColor";
+import AmPmFormat from "./options/ampmformat";
+import BackgroundImage from "./options/backgroundImage";
+import BackgroundColor from "./options/backgroundColor";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 import {
@@ -10,9 +10,9 @@ import {
   SettingsModalContainer,
   SettingsModalItems,
   SettingsIconContainer,
-} from "../style";
+} from "../../style";
 
-export default class Settings extends Component {
+export default class SettingsMenu extends Component {
   buttonSaveAction = () => {
     window.location.reload();
   };
@@ -29,7 +29,7 @@ export default class Settings extends Component {
       <>
         <SettingsModal show={this.state.modalOpen}>
           <SettingsModalContainer>
-            <ImageUpload />
+            <BackgroundImage />
             <AmPmFormat />
             <BackgroundColor />
             <SettingsModalItems vertical>

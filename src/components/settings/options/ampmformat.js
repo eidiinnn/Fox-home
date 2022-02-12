@@ -2,7 +2,7 @@ import React from "react";
 import { Component } from "react";
 import Switch from "@mui/material/Switch";
 
-import { SettingsModalItems, SettingsModalTitles } from "../../style";
+import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
 export default class AmPmFormat extends Component {
   componentDidMount = () => {

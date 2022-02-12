@@ -1,8 +1,8 @@
 import React from "react";
 import { Component } from "react";
-import { bookmarkLinks } from "../../settings.js";
+import { bookmarkLinks } from "../../../settings.js";
 
-import { CentralDivBookmarkUl, CentralDivBookmarkLi } from "../../style";
+import { CentralDivBookmarkUl, CentralDivBookmarkLi } from "../../../style";
 
 export default class CreateHtmlBookmarkList extends Component {
   render() {
