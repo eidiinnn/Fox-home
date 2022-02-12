@@ -3,16 +3,26 @@ import { Component } from "react";
 import { iconsList } from "./tools/iconsList.js";
 import extractDomain from "extract-domain";
 
-import { CentralDivBookmarkUl, CentralDivBookmarkLi } from "../../../../style";
+import {
+  CentralDivBookmarkUl,
+  CentralDivBookmarkLi,
+  NotListedIcon,
+} from "../../../../style";
 
 export default class CreateHtmlBookmarkList extends Component {
   filterUrl = (url) => extractDomain(url, { tld: true });
 
-  getIconDomain = (url) => {
+  getAListedIcon = (url) => {
     const domain = this.filterUrl(url);
     const iconsListReturn = iconsList.find((item) => item[0] === domain);
     return !iconsListReturn ? null : iconsListReturn[1];
   };
+
+  getAIcon(url) {
+    const Icon = this.getAListedIcon(url);
+    const FirstLetter = this.filterUrl(url).slice(0, 1).toUpperCase();
+    return !Icon ? <NotListedIcon>{FirstLetter}</NotListedIcon> : <Icon />;
+  }
 
   state = {
     bookmarkLinks: [
@@ -28,13 +38,10 @@ export default class CreateHtmlBookmarkList extends Component {
   render() {
     return (
       <CentralDivBookmarkUl>
-        {this.state.bookmarkLinks.map((value) => {
-          const Icon = this.getIconDomain(value);
+        {this.state.bookmarkLinks.map((url) => {
           return (
-            <CentralDivBookmarkLi key={value}>
-              <a href={value}>
-                <Icon />
-              </a>
+            <CentralDivBookmarkLi key={url}>
+              <a href={url}>{this.getAIcon(url)}</a>
             </CentralDivBookmarkLi>
           );
         })}

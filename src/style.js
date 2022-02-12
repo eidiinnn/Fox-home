@@ -195,6 +195,22 @@ export const CentralDivBookmarkLi = styled.li`
   margin: 10px;
 `;
 
+export const NotListedIcon = styled.div`
+  width: 38px;
+  height: 38px;
+  color: white;
+  font-size: "josefin";
+  font-weight: 700;
+  font-size: 40px;
+  padding: 2px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-width: 4px;
+`;
+
 export const SettingsIconContainer = styled.div`
   position: absolute;
   top: 0px;
