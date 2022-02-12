@@ -1,6 +1,6 @@
 import React from "react";
 import { Component } from "react";
-import CreateHtmlBookmarkList from "./parts/createHtmlBookmarkList";
+import CreateHtmlBookmarkList from "./parts/bookmark/createHtmlBookmarkList";
 import ClockComponent from "./parts/clockComponent";
 import defaultImage from "../../images/image.jpg";
 
