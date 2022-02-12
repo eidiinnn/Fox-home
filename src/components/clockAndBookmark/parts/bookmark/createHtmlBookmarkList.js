@@ -11,7 +11,7 @@ export default class CreateHtmlBookmarkList extends Component {
   getIconDomain = (url) => {
     const domain = this.filterUrl(url);
     const iconsListReturn = iconsList.find((item) => item[0] === domain);
-    return iconsListReturn[1];
+    return !iconsListReturn ? null : iconsListReturn[1];
   };
 
   state = {
