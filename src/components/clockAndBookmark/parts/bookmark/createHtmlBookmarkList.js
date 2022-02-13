@@ -49,6 +49,7 @@ export default class CreateHtmlBookmarkList extends Component {
     return (
       <CentralDivBookmarkUl>
         {this.state.bookmarkLinks.map((url) => {
+          if (!this.filterUrl(url)) return null;
           return (
             <CentralDivBookmarkLi key={url}>
               <a href={url}>{this.getAIcon(url)}</a>
