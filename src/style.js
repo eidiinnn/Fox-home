@@ -36,7 +36,6 @@ a:active {
   color: inherit;
 }
 
-
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
@@ -275,4 +274,11 @@ export const ReloadButtonMessage = styled.p`
   font-weight: 400;
   margin: 0px;
   margin-left: 10px;
+`;
+
+export const BookmarkInputs = styled.input`
+  height: 20px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 `;

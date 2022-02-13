@@ -1,7 +1,11 @@
 import React from "react";
 import { Component } from "react";
 
-import { SettingsModalItems, SettingsModalTitles } from "../../../style";
+import {
+  SettingsModalItems,
+  SettingsModalTitles,
+  BookmarkInputs,
+} from "../../../style";
 
 export default class Bookmark extends Component {
   componentDidMount = () => {
@@ -38,7 +42,7 @@ export default class Bookmark extends Component {
         <SettingsModalTitles>Bookmark</SettingsModalTitles>
         {bookmark.map((url, index) => {
           return (
-            <input
+            <BookmarkInputs
               type="url"
               value={url}
               onChange={(event) => this.inputOnChange(event, index)}
