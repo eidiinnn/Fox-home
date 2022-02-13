@@ -3,7 +3,7 @@ import { Component } from "react";
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/backgroundImage";
 import BackgroundColor from "./options/backgroundColor";
-import  Bookmark from "./options/bookmark"
+import Bookmark from "./options/bookmark";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 import {
@@ -11,6 +11,8 @@ import {
   SettingsModalContainer,
   SettingsModalItems,
   SettingsIconContainer,
+  ReloadButton,
+  ReloadButtonMessage,
 } from "../../style";
 
 export default class SettingsMenu extends Component {
@@ -34,10 +36,15 @@ export default class SettingsMenu extends Component {
             <AmPmFormat />
             <BackgroundColor />
             <Bookmark />
-            <SettingsModalItems vertical>
-              <button value="Save" onClick={this.buttonSaveAction}>
-                Save
-              </button>
+            <SettingsModalItems vertical noBottomMargin>
+              <SettingsModalItems vertical>
+                <ReloadButton value="Save" onClick={this.buttonSaveAction}>
+                  Reload
+                </ReloadButton>
+                <ReloadButtonMessage>
+                  You need to reload to see the change.
+                </ReloadButtonMessage>
+              </SettingsModalItems>
               <FaRegTimesCircle onClick={this.modalClose} />
             </SettingsModalItems>
           </SettingsModalContainer>

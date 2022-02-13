@@ -247,11 +247,32 @@ export const SettingsModalItems = styled.div`
   display: flex;
   flex-direction: ${(props) => (props.vertical ? "row" : "column")};
   justify-content: ${(props) => (props.vertical ? "space-between" : "left")};
+  align-items: ${(props) => (props.vertical ? "center" : "left")};
   margin-top: 5px;
-  margin-bottom: 10px;
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0px" : "10px")};
 `;
 
 export const SettingsModalTitles = styled.h1`
-  font-size: 1.1vw;
+  font-size: 15px;
   font-weight: 400;
+`;
+
+export const ReloadButton = styled.button`
+  font-family: "josefin";
+  font-weight: 700;
+  padding: 5px 10px 5px 10px;
+  margin: 0px !important;
+  border-radius: 10px;
+  border: 0px;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+`;
+
+export const ReloadButtonMessage = styled.p`
+  font-size: 13px;
+  font-weight: 400;
+  margin: 0px;
+  margin-left: 10px;
 `;
