@@ -3,6 +3,7 @@ import { Component } from "react";
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/backgroundImage";
 import BackgroundColor from "./options/backgroundColor";
+import  Bookmark from "./options/bookmark"
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 import {
@@ -32,6 +33,7 @@ export default class SettingsMenu extends Component {
             <BackgroundImage />
             <AmPmFormat />
             <BackgroundColor />
+            <Bookmark />
             <SettingsModalItems vertical>
               <button value="Save" onClick={this.buttonSaveAction}>
                 Save
