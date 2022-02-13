@@ -5,9 +5,12 @@ import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
 export default class Bookmark extends Component {
   componentDidMount = () => {
-    const data = JSON.parse(localStorage.getItem("bookmark"));
-    if (!data) return;
-    this.setState({ bookmark: data });
+    const interval = setInterval(() => {
+      const data = JSON.parse(localStorage.getItem("bookmark"));
+      if (!data) return;
+      this.setState({ bookmark: data });
+      clearInterval(interval);
+    }, 2000);
   };
 
   inputOnChange = (event, index) => {
