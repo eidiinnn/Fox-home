@@ -5,29 +5,37 @@ import Clock from "react-live-clock";
 import { CentralDivClock } from "../../../style";
 
 export default function ClockComponent() {
-  const formatSetting = useSelector((state) => state.AmPmFormat);
+  const formatSetting = useSelector((state) => state.AmPmTimerFormat);
 
-  function setting() {
-    if (formatSetting === true)
+  function getSetting(isPM) {
+    if (isPM === true) {
       return {
         format: "hh:mm A",
         fontSize: "6em",
         mediaFontSize: "10.9vw",
       };
-
-    return {
-      format: "HH:mm",
-      fontSize: "10em",
-      mediaFontSize: "15vw",
-    };
+    } else {
+      return {
+        format: "HH:mm",
+        fontSize: "10em",
+        mediaFontSize: "15vw",
+      };
+    }
   }
+
+  const settings = getSetting(formatSetting);
 
   return (
     <CentralDivClock
-      fontSize={setting.fontSize}
-      mediaFontSize={setting.mediaFontSize}
+      fontSize={settings.fontSize}
+      mediaFontSize={settings.mediaFontSize}
     >
-      <Clock format={setting.format} ticking={true} />
+      <Clock
+        key={formatSetting}
+        format={settings.format}
+        ticking={true}
+        onChange
+      />
     </CentralDivClock>
   );
 }
