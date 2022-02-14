@@ -6,10 +6,8 @@ import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
 
 const UserBackgroundColor = localStorage.getItem("backgroundColor");
-const userImage = localStorage.getItem("image");
 
 const backgroundColor = UserBackgroundColor ? UserBackgroundColor : "#110c19";
-const image = userImage ? userImage : defaultImage;
 
 export const GlobalStyle = createGlobalStyle` 
 body {
