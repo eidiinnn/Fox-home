@@ -18,6 +18,11 @@ const settingReducer = (state = initialState(), action) => {
       newState.backgroundColor = action.color;
       return newState;
     }
+    case "BOOKMARK_CHANGE": {
+      const newState = { ...state };
+      newState.bookmarkLinks = action.bookmarkLinks;
+      return newState;
+    }
     case "SAVE_SETTINGS": {
       localStorage.setItem("settings", JSON.stringify(state));
       return state;

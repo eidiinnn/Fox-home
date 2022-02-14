@@ -1,5 +1,5 @@
 import React from "react";
-import { Component } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import {
   SettingsModalItems,
@@ -7,49 +7,29 @@ import {
   BookmarkInputs,
 } from "../../../style";
 
-export default class Bookmark extends Component {
-  componentDidMount = () => {
-    const interval = setInterval(() => {
-      const data = JSON.parse(localStorage.getItem("bookmark"));
-      if (!data) return;
-      this.setState({ bookmark: data });
-      clearInterval(interval);
-    }, 2000);
-  };
+export default function Bookmark() {
+  const dispatch = useDispatch();
+  const bookmark = useSelector((state) => state.bookmarkLinks);
 
-  inputOnChange = (event, index) => {
-    const { bookmark } = this.state;
-    bookmark[index] = event.target.value;
-    this.setState({ bookmark: bookmark });
-    this.sendToLocalStorage(bookmark[index]);
-  };
+  function inputOnChange(event, index) {
+    const change = [...bookmark];
+    change[index] = event.target.value;
 
-  sendToLocalStorage = (bookmarkItem) => {
-    const regexp =
-      /^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/;
-    if (regexp.test(bookmarkItem) === true || bookmarkItem === "")
-      localStorage.setItem("bookmark", JSON.stringify(this.state.bookmark));
-  };
-
-  state = {
-    bookmark: [],
-  };
-
-  render() {
-    const { bookmark } = this.state;
-    return (
-      <SettingsModalItems>
-        <SettingsModalTitles>Bookmark</SettingsModalTitles>
-        {bookmark.map((url, index) => {
-          return (
-            <BookmarkInputs
-              type="url"
-              value={url}
-              onChange={(event) => this.inputOnChange(event, index)}
-            />
-          );
-        })}
-      </SettingsModalItems>
-    );
+    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
   }
+
+  return (
+    <SettingsModalItems>
+      <SettingsModalTitles>Bookmark</SettingsModalTitles>
+      {bookmark.map((url, index) => {
+        return (
+          <BookmarkInputs
+            type="url"
+            value={url}
+            onChange={(event) => inputOnChange(event, index)}
+          />
+        );
+      })}
+    </SettingsModalItems>
+  );
 }
