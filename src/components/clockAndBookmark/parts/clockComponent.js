@@ -1,39 +1,33 @@
 import React from "react";
-import { Component } from "react";
+import { useSelector } from "react-redux";
+
 import Clock from "react-live-clock";
 import { CentralDivClock } from "../../../style";
 
-export default class ClockComponent extends Component {
-  componentDidMount = () => {
-    const AmPmFormat = JSON.parse(localStorage.getItem("AmPm"));
+export default function ClockComponent() {
+  const formatSetting = useSelector((state) => state.AmPmFormat);
 
-    if (AmPmFormat === true)
-      return this.setState({
+  function setting() {
+    if (formatSetting === true)
+      return {
         format: "hh:mm A",
         fontSize: "6em",
         mediaFontSize: "10.9vw",
-      });
+      };
 
-    return this.setState({
+    return {
       format: "HH:mm",
       fontSize: "10em",
       mediaFontSize: "15vw",
-    });
-  };
-
-  state = {
-    format: null,
-    fontSize: null,
-    mediaFontSize: null,
-  };
-
-  render() {
-    const { format, fontSize, mediaFontSize } = this.state;
-    if (!format) return null;
-    return (
-      <CentralDivClock fontSize={fontSize} mediaFontSize={mediaFontSize}>
-        <Clock format={format} ticking={true} />
-      </CentralDivClock>
-    );
+    };
   }
+
+  return (
+    <CentralDivClock
+      fontSize={setting.fontSize}
+      mediaFontSize={setting.mediaFontSize}
+    >
+      <Clock format={setting.format} ticking={true} />
+    </CentralDivClock>
+  );
 }
