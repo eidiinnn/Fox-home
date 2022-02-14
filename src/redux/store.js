@@ -8,6 +8,11 @@ const settingReducer = (state = initialState(), action) => {
       newState.image = action.image;
       return newState;
     }
+    case "AM_PM_FORMAT_CHANGE": {
+      const newState = { ...state };
+      newState.AmPmTimerFormat = action.timeFormat;
+      return newState;
+    }
     case "BACKGROUND_COLOR_CHANGE": {
       const newState = { ...state };
       newState.backgroundColor = action.color;
