@@ -1,8 +1,7 @@
 import React from "react";
-import { Component } from "react";
 import CreateHtmlBookmarkList from "./parts/bookmark/createHtmlBookmarkList";
 import ClockComponent from "./parts/clockComponent";
-import defaultImage from "../../images/image.jpg";
+import { useSelector } from "react-redux";
 
 import {
   CentralDivContainer,
@@ -10,25 +9,16 @@ import {
   CentralDivClockAndFavorites,
 } from "../../style";
 
-export default class ClockBookmarkContainer extends Component {
-  componentDidMount = () => {
-    const image = localStorage.getItem("image");
-    if (image !== null) this.setState({ image: image });
-  };
+export default function ClockBookmarkContainer() {
+  const image = useSelector((state) => state.image);
 
-  state = {
-    image: defaultImage,
-  };
-
-  render() {
-    return (
-      <CentralDivContainer>
-        <CentralDivImage src={this.state.image} />
-        <CentralDivClockAndFavorites>
-          <ClockComponent />
-          <CreateHtmlBookmarkList />
-        </CentralDivClockAndFavorites>
-      </CentralDivContainer>
-    );
-  }
+  return (
+    <CentralDivContainer>
+      <CentralDivImage src={image} />
+      <CentralDivClockAndFavorites>
+        <ClockComponent />
+        <CreateHtmlBookmarkList />
+      </CentralDivClockAndFavorites>
+    </CentralDivContainer>
+  );
 }

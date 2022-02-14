@@ -48,10 +48,10 @@ a:active {
     font-weight: 700;
 }`;
 
-export const Background = styled.div`
+export const BackgroundDiv = styled.div`
   width: 100%;
   height: 100vh;
-  background: url(${image}) no-repeat;
+  background: url(${(props) => props.image}) no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
