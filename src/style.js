@@ -253,7 +253,7 @@ export const SettingsModalTitles = styled.h1`
   font-weight: 400;
 `;
 
-export const ReloadButton = styled.button`
+export const SaveButton = styled.button`
   font-family: "josefin";
   font-weight: 700;
   padding: 5px 10px 5px 10px;
@@ -264,13 +264,6 @@ export const ReloadButton = styled.button`
   &:hover {
     filter: brightness(0.8);
   }
-`;
-
-export const ReloadButtonMessage = styled.p`
-  font-size: 13px;
-  font-weight: 400;
-  margin: 0px;
-  margin-left: 10px;
 `;
 
 export const BookmarkInputs = styled.input`

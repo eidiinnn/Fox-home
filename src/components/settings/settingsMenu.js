@@ -1,59 +1,61 @@
 import React from "react";
-import { Component } from "react";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
+
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/backgroundImage";
 import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
+
 import {
   SettingsModal,
   SettingsModalContainer,
   SettingsModalItems,
   SettingsIconContainer,
-  ReloadButton,
-  ReloadButtonMessage,
+  SaveButton,
 } from "../../style";
 
-export default class SettingsMenu extends Component {
-  buttonSaveAction = () => {
-    window.location.reload();
-  };
+export default function SettingsMenu() {
+  const dispatch = useDispatch();
 
-  modalOpen = () => this.setState({ modalOpen: true });
-  modalClose = () => this.setState({ modalOpen: false });
-
-  state = {
-    modalOpen: false,
-  };
-
-  render() {
-    return (
-      <>
-        <SettingsModal show={this.state.modalOpen}>
-          <SettingsModalContainer>
-            <BackgroundImage />
-            <AmPmFormat />
-            <BackgroundColor />
-            <Bookmark />
-            <SettingsModalItems vertical noBottomMargin>
-              <SettingsModalItems vertical>
-                <ReloadButton value="Save" onClick={this.buttonSaveAction}>
-                  Reload
-                </ReloadButton>
-                <ReloadButtonMessage>
-                  You need to reload to see the change.
-                </ReloadButtonMessage>
-              </SettingsModalItems>
-              <FaRegTimesCircle onClick={this.modalClose} />
-            </SettingsModalItems>
-          </SettingsModalContainer>
-        </SettingsModal>
-
-        <SettingsIconContainer>
-          <FaCog onClick={this.modalOpen} />
-        </SettingsIconContainer>
-      </>
-    );
+  function buttonSave() {
+    dispatch({ type: "SAVE_SETTINGS" });
+    modalAction();
   }
+  function buttonNotSave() {
+    dispatch({ type: "DISCARD_SETTINGS" });
+    modalAction();
+  }
+
+  const [modalShow, setModalShow] = useState(false);
+  function modalAction() {
+    setModalShow(!modalShow);
+  }
+
+  return (
+    <>
+      <SettingsModal show={modalShow}>
+        <SettingsModalContainer>
+          <BackgroundImage />
+          <AmPmFormat />
+          <BackgroundColor />
+          <Bookmark />
+          <SettingsModalItems vertical noBottomMargin>
+            <SettingsModalItems vertical>
+              <SaveButton value="Save" onClick={buttonSave}>
+                Save
+              </SaveButton>
+            </SettingsModalItems>
+            <FaRegTimesCircle onClick={buttonNotSave} />
+          </SettingsModalItems>
+        </SettingsModalContainer>
+      </SettingsModal>
+
+      <SettingsIconContainer>
+        <FaCog onClick={modalAction} />
+      </SettingsIconContainer>
+    </>
+  );
 }
