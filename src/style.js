@@ -4,10 +4,6 @@ import { createGlobalStyle } from "styled-components";
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
 
-const UserBackgroundColor = localStorage.getItem("backgroundColor");
-
-const backgroundColor = UserBackgroundColor ? UserBackgroundColor : "#110c19";
-
 export const GlobalStyle = createGlobalStyle` 
 body {
   margin: 0;
@@ -72,7 +68,7 @@ export const SearchBarContainer = styled.div`
   width: 820px;
   height: 55px;
   color: white;
-  background-color: ${backgroundColor};
+  background-color: ${(props) => props.backgroundColor};
   margin-bottom: 20px;
   border-radius: 20px;
   display: grid;
@@ -118,7 +114,7 @@ export const SearchBarInput = styled.input`
 `;
 
 export const CentralDivContainer = styled.div`
-  background-color: ${backgroundColor};
+  background-color: ${(props) => props.backgroundColor};
   grid-row: 2;
   align-self: center;
   display: flex;
@@ -233,7 +229,7 @@ export const SettingsModalContainer = styled.div`
   width: 500px;
   padding: 20px;
   border-radius: 20px;
-  background-color: ${backgroundColor};
+  background-color: ${(props) => props.backgroundColor};
   color: white;
   display: flex;
   flex-direction: column;

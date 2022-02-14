@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/backgroundImage";
@@ -19,6 +19,7 @@ import {
 
 export default function SettingsMenu() {
   const dispatch = useDispatch();
+  const backgroundColor = useSelector((state) => state.backgroundColor);
 
   function buttonSave() {
     dispatch({ type: "SAVE_SETTINGS" });
@@ -37,7 +38,7 @@ export default function SettingsMenu() {
   return (
     <>
       <SettingsModal show={modalShow}>
-        <SettingsModalContainer>
+        <SettingsModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
           <AmPmFormat />
           <BackgroundColor />

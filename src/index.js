@@ -3,7 +3,7 @@ import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer ";
+import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer";
 import GoogleSearchBar from "./components/googleSearchBar";
 import SettingsMenu from "./components/settings/settingsMenu";
 import Background from "./components/background";

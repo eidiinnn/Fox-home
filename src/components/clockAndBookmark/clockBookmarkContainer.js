@@ -11,9 +11,10 @@ import {
 
 export default function ClockBookmarkContainer() {
   const image = useSelector((state) => state.image);
+  const backgroundColor = useSelector((state) => state.backgroundColor);
 
   return (
-    <CentralDivContainer>
+    <CentralDivContainer backgroundColor={backgroundColor}>
       <CentralDivImage src={image} />
       <CentralDivClockAndFavorites>
         <ClockComponent />
