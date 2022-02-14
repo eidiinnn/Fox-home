@@ -1,30 +1,21 @@
 import React from "react";
-import { Component } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { HexColorPicker } from "react-colorful";
 
 import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
-export default class BackgroundColor extends Component {
-  componentDidMount = () => {
-    const color = localStorage.getItem("backgroundColor");
-    if (color !== null) this.setState({ color: color });
-  };
+export default function BackgroundColor() {
+  const dispatch = useDispatch();
+  const color = useSelector((state) => state.backgroundColor);
 
-  setColor = (colorChoice) => {
-    this.setState({ color: colorChoice });
-    localStorage.setItem("backgroundColor", colorChoice);
-  };
-
-  state = {
-    color: "#110c19",
-  };
-
-  render() {
-    return (
-      <SettingsModalItems>
-        <SettingsModalTitles>Background Color</SettingsModalTitles>
-        <HexColorPicker color={this.state.color} onChange={this.setColor} />
-      </SettingsModalItems>
-    );
+  function setColor(colorChoice) {
+    dispatch({ type: "BACKGROUND_COLOR_CHANGE", color: colorChoice });
   }
+
+  return (
+    <SettingsModalItems>
+      <SettingsModalTitles>Background Color</SettingsModalTitles>
+      <HexColorPicker color={color} onChange={setColor} />
+    </SettingsModalItems>
+  );
 }
