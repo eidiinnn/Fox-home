@@ -1,9 +1,6 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
-import image from "./images/image.jpg";
-import { backgroundColor } from "./settings";
-
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
 
@@ -32,7 +29,6 @@ a:active {
   color: inherit;
 }
 
-
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
@@ -45,10 +41,10 @@ a:active {
     font-weight: 700;
 }`;
 
-export const Background = styled.div`
+export const BackgroundDiv = styled.div`
   width: 100%;
   height: 100vh;
-  background: url(${image}) no-repeat;
+  background: url(${(props) => props.image}) no-repeat;
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
@@ -72,7 +68,7 @@ export const SearchBarContainer = styled.div`
   width: 820px;
   height: 55px;
   color: white;
-  background-color: ${backgroundColor};
+  background-color: ${(props) => props.backgroundColor};
   margin-bottom: 20px;
   border-radius: 20px;
   display: grid;
@@ -118,7 +114,7 @@ export const SearchBarInput = styled.input`
 `;
 
 export const CentralDivContainer = styled.div`
-  background-color: ${backgroundColor};
+  background-color: ${(props) => props.backgroundColor};
   grid-row: 2;
   align-self: center;
   display: flex;
@@ -189,4 +185,86 @@ export const CentralDivBookmarkLi = styled.li`
   font-size: 50px;
   color: white;
   margin: 10px;
+`;
+
+export const NotListedIcon = styled.div`
+  width: 38px;
+  height: 38px;
+  color: white;
+  font-size: "josefin";
+  font-weight: 700;
+  font-size: 40px;
+  padding: 2px;
+  border-radius: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: solid;
+  border-width: 4px;
+`;
+
+export const SettingsIconContainer = styled.div`
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  margin-left: 20px;
+  margin-top: 20px;
+  color: white;
+  font-size: 20px;
+`;
+
+export const SettingsModal = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  background-color: #101010b5;
+  display: ${(props) => (props.show ? "flex" : "none")};
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SettingsModalContainer = styled.div`
+  font-family: "josefin";
+  width: 500px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: ${(props) => props.backgroundColor};
+  color: white;
+  display: flex;
+  flex-direction: column;
+`;
+
+export const SettingsModalItems = styled.div`
+  display: flex;
+  flex-direction: ${(props) => (props.vertical ? "row" : "column")};
+  justify-content: ${(props) => (props.vertical ? "space-between" : "left")};
+  align-items: ${(props) => (props.vertical ? "center" : "left")};
+  margin-top: 5px;
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0px" : "10px")};
+`;
+
+export const SettingsModalTitles = styled.h1`
+  font-size: 15px;
+  font-weight: 400;
+`;
+
+export const SaveButton = styled.button`
+  font-family: "josefin";
+  font-weight: 700;
+  padding: 5px 10px 5px 10px;
+  margin: 0px !important;
+  border-radius: 10px;
+  border: 0px;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
+`;
+
+export const BookmarkInputs = styled.input`
+  height: 20px;
+  border: 0px;
+  border-radius: 5px;
+  margin-bottom: 5px;
 `;
