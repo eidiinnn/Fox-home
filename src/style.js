@@ -1,6 +1,5 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
-import defaultImage from "./images/image.jpg";
 
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
