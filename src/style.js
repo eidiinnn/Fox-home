@@ -33,6 +33,12 @@ a:active {
   background-color: #ffffff !important;
 }
 
+input[type="file"]:button{
+  font-family: "josefin";
+  border-radius: 5px;
+  border: none;
+}
+
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
@@ -259,7 +265,7 @@ export const SaveButton = styled.button`
   font-weight: 700;
   padding: 5px 10px 5px 10px;
   margin: 0px !important;
-  border-radius: 10px;
+  border-radius: 5px;
   border: 0px;
 
   &:hover {
