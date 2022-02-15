@@ -5,6 +5,14 @@ import {
   FaLinkedin,
   FaReddit,
   FaWhatsapp,
+  FaFacebook,
+  FaTwitter,
+  FaSpotify,
+  FaInstagram,
+  FaYoutube,
+  FaGamepad,
+  FaTwitch,
+  FaStackOverflow,
 } from "react-icons/fa";
 
 export const iconsList = [
@@ -14,4 +22,12 @@ export const iconsList = [
   ["linkedin.com", FaLinkedin],
   ["whatsapp.com", FaWhatsapp],
   ["notion.so", SiNotion],
+  ["facebook.com", FaFacebook],
+  ["twitter.com", FaTwitter],
+  ["spotify.com", FaSpotify],
+  ["instagram.com", FaInstagram],
+  ["youtube.com", FaYoutube],
+  ["trueachievements.com", FaGamepad],
+  ["twitch.tv", FaTwitch],
+  ["stackoverflow.com", FaStackOverflow],
 ];
