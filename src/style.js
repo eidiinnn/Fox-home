@@ -120,7 +120,7 @@ export const CentralDivContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 20px;
+  border-radius: 40px 20px 20px 40px;
   height: 360px;
   width: 820px;
 
