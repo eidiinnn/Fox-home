@@ -127,6 +127,7 @@ export const CentralDivContainer = styled.div`
   @media screen and (max-width: 900px) {
     max-width: 80%;
     padding-bottom: 25px;
+    border-radius: 40px 50px 25px 25px;
     flex-direction: column;
     justify-content: start;
   }
