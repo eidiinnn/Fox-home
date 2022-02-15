@@ -224,6 +224,10 @@ export const SettingsIconContainer = styled.div`
   font-size: 20px;
 `;
 
+export const NotSaveIconContainer = styled.div`
+  font-size: 23px;
+`;
+
 export const SettingsModal = styled.div`
   position: absolute;
   width: 100%;

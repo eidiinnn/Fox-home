@@ -15,6 +15,7 @@ import {
   SettingsModalItems,
   SettingsIconContainer,
   SaveButton,
+  NotSaveIconContainer,
 } from "../../style";
 
 export default function SettingsMenu() {
@@ -49,7 +50,9 @@ export default function SettingsMenu() {
                 Save
               </SaveButton>
             </SettingsModalItems>
-            <FaRegTimesCircle onClick={buttonNotSave} />
+            <NotSaveIconContainer>
+              <FaRegTimesCircle onClick={buttonNotSave} />
+            </NotSaveIconContainer>
           </SettingsModalItems>
         </SettingsModalContainer>
       </SettingsModal>
