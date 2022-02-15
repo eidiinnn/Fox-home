@@ -29,6 +29,10 @@ a:active {
   color: inherit;
 }
 
+.MuiSwitch-track{
+  background-color: #ffffff !important;
+}
+
 @font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
