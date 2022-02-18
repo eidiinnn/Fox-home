@@ -47,4 +47,9 @@ export async function setOldImageToDefault() {
   if (!setDefault) return null;
 
   db.item.put({ image: "default", value: setDefault.value });
+  removeOldTable();
+}
+
+export async function removeOldTable() {
+  db.item.delete("old");
 }
