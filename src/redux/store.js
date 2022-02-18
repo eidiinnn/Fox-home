@@ -1,11 +1,16 @@
 import { createStore } from "redux";
 import initialState from "./initialState";
+import { uploadImage, setOldImageToDefault } from "../components/Image";
 
 const settingReducer = (state = initialState(), action) => {
   switch (action.type) {
     case "IMAGE_CHANGE": {
+      uploadImage(action.image);
+      return state;
+    }
+    case "CUSTOM_IMAGE_CHANGE": {
       const newState = { ...state };
-      newState.image = action.image;
+      newState.customImage = true;
       return newState;
     }
     case "AM_PM_FORMAT_CHANGE": {
@@ -29,6 +34,7 @@ const settingReducer = (state = initialState(), action) => {
     }
     case "DISCARD_SETTINGS": {
       const newState = JSON.parse(localStorage.getItem("settings"));
+      setOldImageToDefault();
       return newState;
     }
     default:

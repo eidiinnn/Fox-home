@@ -6,7 +6,8 @@ import store from "./redux/store";
 import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer";
 import GoogleSearchBar from "./components/googleSearchBar";
 import SettingsMenu from "./components/settings/settingsMenu";
-import Background from "./components/background";
+
+import Image from "./components/Image";
 
 import { GlobalStyle, MainGrind } from "./style";
 
@@ -14,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <Background />
+      <Image type="background" />
       <MainGrind>
         <SettingsMenu />
         <GoogleSearchBar />
