@@ -1,5 +1,4 @@
 import React from "react";
-import FileBase64 from "react-file-base64";
 import { useDispatch } from "react-redux";
 
 import { SettingsModalItems, SettingsModalTitles } from "../../../style";
@@ -8,13 +7,21 @@ export default function BackgroundImage() {
   const dispatch = useDispatch();
 
   function imageUploadOnDone(event) {
-    dispatch({ type: "IMAGE_CHANGE", image: event.base64 });
+    const blobImage = new Blob(event.target.files, { type: "image/png" });
+    dispatch({
+      type: "IMAGE_CHANGE",
+      image: blobImage,
+    });
   }
 
   return (
     <SettingsModalItems>
       <SettingsModalTitles>Background Image</SettingsModalTitles>
-      <FileBase64 type="file" multiple={false} onDone={imageUploadOnDone} />
+      <input
+        type="file"
+        accept="image/png, image/jpeg"
+        onChange={imageUploadOnDone}
+      />
     </SettingsModalItems>
   );
 }

@@ -1,5 +1,3 @@
-import image from "../images/image.jpg";
-
 export default function initialState() {
   const defaultObject = {
     bookmarkLinks: [
@@ -12,7 +10,7 @@ export default function initialState() {
     ],
     AmPmTimerFormat: false,
     backgroundColor: "#110c19",
-    image: image,
+    customImage: false,
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 
