@@ -17,7 +17,7 @@ export default function ClockComponent() {
     } else {
       return {
         format: "HH:mm",
-        fontSize: "10em",
+        fontSize: "8em",
         mediaFontSize: "15vw",
       };
     }
