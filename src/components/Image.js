@@ -26,10 +26,11 @@ export default function Image(props) {
     : indexedDBImage[0].value;
 
   function showImage(type) {
-    if (type === "image")
-      return <CentralDivImage src={URL.createObjectURL(imageToBeUsed)} />;
-    if (type === "background")
-      return <BackgroundDiv image={URL.createObjectURL(imageToBeUsed)} />;
+    const image = !willUseTheIndexedImage
+      ? imageToBeUsed
+      : URL.createObjectURL(imageToBeUsed);
+    if (type === "image") return <CentralDivImage src={image} />;
+    if (type === "background") return <BackgroundDiv image={image} />;
     return null;
   }
 
