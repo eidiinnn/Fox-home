@@ -59,7 +59,7 @@ export const BackgroundDiv = styled.div`
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
-  filter: blur(5px) brightness(0.9);
+  filter: blur(3px) brightness(0.9);
 `;
 
 export const MainGrind = styled.div`
@@ -75,8 +75,8 @@ export const MainGrind = styled.div`
 `;
 
 export const SearchBarContainer = styled.div`
-  width: 820px;
-  height: 55px;
+  width: 800px;
+  height: 53px;
   color: white;
   background-color: ${(props) => props.backgroundColor};
   margin-bottom: 20px;
@@ -84,6 +84,7 @@ export const SearchBarContainer = styled.div`
   display: grid;
   grid-template-columns: 55px 2fr;
   align-content: center;
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.19);
 
   &:hover {
     outline: solid 3px;
@@ -131,8 +132,9 @@ export const CentralDivContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   border-radius: 40px 20px 20px 40px;
-  height: 360px;
-  width: 820px;
+  height: 350px;
+  width: 800px;
+  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.19);
 
   @media screen and (max-width: 900px) {
     max-width: 80%;
@@ -144,7 +146,7 @@ export const CentralDivContainer = styled.div`
 `;
 
 export const CentralDivImage = styled.img`
-  max-width: 340px;
+  max-width: 300px;
   height: 100%;
   border-radius: 20px 0px 0px 20px;
   object-fit: cover;
