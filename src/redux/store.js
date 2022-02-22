@@ -4,7 +4,7 @@ import {
   uploadImage,
   setOldImageToDefault,
   removeOldTable,
-} from "../components/Image";
+} from "../image/dbFunctions";
 
 const settingReducer = (state = initialState(), action) => {
   switch (action.type) {
