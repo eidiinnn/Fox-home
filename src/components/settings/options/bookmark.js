@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
+import extractDomain from "extract-domain";
 
 import {
   SettingsModalItems,
@@ -16,6 +17,15 @@ export default function Bookmark() {
     change[index] = event.target.value;
 
     dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+
+    !extractDomain(event.target.value, { tld: true })
+      ? (event.target.style.backgroundColor = "#e01f5d")
+      : (event.target.style.backgroundColor = "#1FE0A2");
+
+    if (event.target.value === "") {
+      event.target.placeholder = "empty";
+      event.target.style.backgroundColor = "white";
+    }
   }
 
   return (
