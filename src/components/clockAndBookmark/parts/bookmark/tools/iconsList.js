@@ -13,6 +13,11 @@ import {
   FaGamepad,
   FaTwitch,
   FaStackOverflow,
+  FaAmazon,
+  FaArtstation,
+  FaBehance,
+  FaEvernote,
+  FaFigma,
 } from "react-icons/fa";
 
 export const iconsList = [
@@ -30,4 +35,10 @@ export const iconsList = [
   ["trueachievements.com", FaGamepad],
   ["twitch.tv", FaTwitch],
   ["stackoverflow.com", FaStackOverflow],
+  ["amazon.com", FaAmazon],
+  ["artstation.com", FaArtstation],
+  ["behance.net", FaBehance],
+  ["evernote.com", FaEvernote],
+  ["figma.com", FaFigma],
+  ["medium.com", FaMedium],
 ];
