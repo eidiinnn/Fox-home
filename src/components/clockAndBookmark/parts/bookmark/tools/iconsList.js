@@ -18,6 +18,7 @@ import {
   FaBehance,
   FaEvernote,
   FaFigma,
+  FaMedium,
 } from "react-icons/fa";
 
 export const iconsList = [
