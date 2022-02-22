@@ -6,6 +6,7 @@ import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/backgroundImage";
 import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
+import SupportMe from "./options/supportMe";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
@@ -49,6 +50,7 @@ export default function SettingsMenu() {
               <SaveButton value="Save" onClick={buttonSave}>
                 Save
               </SaveButton>
+              <SupportMe />
             </SettingsModalItems>
             <NotSaveIconContainer>
               <FaRegTimesCircle onClick={buttonNotSave} />
