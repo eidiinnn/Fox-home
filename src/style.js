@@ -59,7 +59,7 @@ export const BackgroundDiv = styled.div`
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
-  filter: blur(3px) brightness(0.9);
+  filter: blur(5px) brightness(0.8);
 `;
 
 export const MainGrind = styled.div`
