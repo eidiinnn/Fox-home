@@ -266,6 +266,23 @@ export const SettingsModalTitles = styled.h1`
   font-weight: 400;
 `;
 
+export const SupportMeLink = styled.a`
+  font-size: 14px;
+  text-align: center;
+  font-weight: 700;
+  margin: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+
+export const SupportMeIcon = styled.div`
+  font-size: 16px;
+  margin-left: 3px;
+  display: flex;
+  align-items: center;
+`;
+
 export const SaveButton = styled.button`
   font-family: "josefin";
   font-weight: 700;
