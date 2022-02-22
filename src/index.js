@@ -7,7 +7,7 @@ import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkC
 import GoogleSearchBar from "./components/googleSearchBar";
 import SettingsMenu from "./components/settings/settingsMenu";
 
-import Image from "./components/Image";
+import ImageDiv from "./image/getDivImage";
 
 import { GlobalStyle, MainGrind } from "./style";
 
@@ -15,7 +15,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <Image type="background" />
+      <ImageDiv type="background" />
       <MainGrind>
         <SettingsMenu />
         <GoogleSearchBar />

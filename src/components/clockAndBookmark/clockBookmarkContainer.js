@@ -1,7 +1,7 @@
 import React from "react";
 import CreateHtmlBookmarkList from "./parts/bookmark/createHtmlBookmarkList";
 import ClockComponent from "./parts/clockComponent";
-import Image from "../Image";
+import ImageDiv from "../../image/getDivImage";
 import { useSelector } from "react-redux";
 
 import { CentralDivContainer, CentralDivClockAndFavorites } from "../../style";
@@ -11,7 +11,7 @@ export default function ClockBookmarkContainer() {
 
   return (
     <CentralDivContainer backgroundColor={backgroundColor}>
-      <Image type="image" />
+      <ImageDiv type="image" />
       <CentralDivClockAndFavorites>
         <ClockComponent />
         <CreateHtmlBookmarkList />
