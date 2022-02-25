@@ -324,4 +324,8 @@ export const BookmarkAddInput = styled.button`
   margin: 0px !important;
   border-radius: 5px;
   border: 0px;
+
+  &:hover {
+    filter: brightness(0.8);
+  }
 `;
