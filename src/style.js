@@ -296,9 +296,32 @@ export const SaveButton = styled.button`
   }
 `;
 
+export const BookmarkInputsContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+`;
+export const BookmarkInputsCloseIcon = styled.div`
+  font-size: 17px;
+  margin-left: 4px;
+`;
+
 export const BookmarkInputs = styled.input`
+  width: 300px;
   height: 20px;
   border: 0px;
   border-radius: 5px;
   margin-bottom: 5px;
+`;
+
+export const BookmarkAddInput = styled.button`
+  width: 110px;
+  height: 20px;
+  font-family: "josefin";
+  font-weight: 700;
+  padding: 5px 10px 5px 10px;
+  margin: 0px !important;
+  border-radius: 5px;
+  border: 0px;
 `;
