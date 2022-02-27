@@ -3,6 +3,7 @@ import { createGlobalStyle } from "styled-components";
 
 import josefinRegular from "./fonts/JosefinSans-Regular.ttf";
 import josefinBold from "./fonts/JosefinSans-Bold.ttf";
+import robotoCondensed from "./fonts/RobotoCondensed-Bold.ttf";
 
 export const GlobalStyle = createGlobalStyle` 
 body {
@@ -40,6 +41,12 @@ input[type="file"]:button{
 }
 
 @font-face {
+  font-family: "robotoCondensed";
+  src: url(${robotoCondensed});
+  font-weight: 700;
+}
+
+@font-face {
     font-family: "josefin";
     src: url(${josefinRegular});
     font-weight: 400;
@@ -49,7 +56,8 @@ input[type="file"]:button{
     font-family: "josefin";
     src: url(${josefinBold});
     font-weight: 700;
-}`;
+}
+`;
 
 export const BackgroundDiv = styled.div`
   width: 100%;
@@ -118,7 +126,7 @@ export const CentralDivClockAndFavorites = styled.div`
 `;
 
 export const CentralDivClock = styled.div`
-  font-family: "josefin";
+  font-family: "robotoCondensed";
   font-weight: 700;
   font-size: ${(props) => props.fontSize};
   text-align: center;
