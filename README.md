@@ -3,9 +3,13 @@ A homepage for browsers made in ReactJS.
 
 <img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
 
-[Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
+## Links
+
+[Download the compiled files](https://github.com/eidiinnn/Home-page/releases/tag/build-version)
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
+
+[Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
 
 ## Commands :computer:
 
