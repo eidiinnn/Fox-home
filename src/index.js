@@ -4,7 +4,6 @@ import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
 import store from "./redux/store";
 import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer";
-import GoogleSearchBar from "./components/googleSearchBar";
 import SettingsMenu from "./components/settings/settingsMenu";
 
 import ImageDiv from "./image/getDivImage";
@@ -18,7 +17,6 @@ ReactDOM.render(
       <ImageDiv type="background" />
       <MainGrind>
         <SettingsMenu />
-        <GoogleSearchBar />
         <ClockBookmarkContainer />
       </MainGrind>
     </Provider>
