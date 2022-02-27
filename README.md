@@ -1,7 +1,7 @@
 # Home Page :fox_face:
 A homepage for browsers made in ReactJS.  
 
-<img src="https://i.imgur.com/tCKrkWm.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
 
 [Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
 
