@@ -55,11 +55,11 @@ export const BackgroundDiv = styled.div`
   width: 100%;
   height: 100vh;
   background: url(${(props) => props.image}) no-repeat;
+  filter: blur(5px) brightness(0.8);
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
   z-index: 1;
-  filter: blur(5px) brightness(0.8);
 `;
 
 export const MainGrind = styled.div`
@@ -74,56 +74,6 @@ export const MainGrind = styled.div`
   top: 0px;
 `;
 
-export const SearchBarContainer = styled.div`
-  width: 800px;
-  height: 53px;
-  color: white;
-  background-color: ${(props) => props.backgroundColor};
-  margin-bottom: 20px;
-  border-radius: 20px;
-  display: grid;
-  grid-template-columns: 55px 2fr;
-  align-content: center;
-  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.19);
-
-  &:hover {
-    outline: solid 3px;
-  }
-
-  @media screen and (max-width: 900px) {
-    max-width: 80%;
-  }
-`;
-
-export const SearchBarGoogleIcon = styled.div`
-  margin-left: 10px;
-  font-size: 30px;
-  display: flex;
-  align-content: center;
-  border-right: 4px solid #ffffff;
-`;
-
-export const SearchBarForm = styled.form`
-  width: 100%;
-  display: flex;
-  align-content: center;
-`;
-
-export const SearchBarInput = styled.input`
-  width: 95%;
-  max-height: 100%;
-  padding-left: 10px;
-  background-color: #050e1300;
-  border: 0px;
-  font-weight: 400;
-  font-size: 20px;
-  color: white;
-
-  &:focus {
-    outline: none;
-  }
-`;
-
 export const CentralDivContainer = styled.div`
   background-color: ${(props) => props.backgroundColor};
   grid-row: 2;
@@ -131,15 +81,13 @@ export const CentralDivContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: center;
-  border-radius: 40px 20px 20px 40px;
   height: 350px;
   width: 800px;
-  box-shadow: 5px 5px 14px 4px rgba(0, 0, 0, 0.19);
+  backdrop-filter: blur(10px);
 
   @media screen and (max-width: 900px) {
     max-width: 80%;
     padding-bottom: 25px;
-    border-radius: 40px 40px 20px 20px;
     flex-direction: column;
     justify-content: start;
   }
@@ -148,13 +96,11 @@ export const CentralDivContainer = styled.div`
 export const CentralDivImage = styled.img`
   max-width: 300px;
   height: 100%;
-  border-radius: 20px 0px 0px 20px;
   object-fit: cover;
 
   @media screen and (max-width: 900px) {
     max-width: 100%;
     height: 100px;
-    border-radius: 20px 20px 0px 0px;
   }
 `;
 
@@ -245,11 +191,11 @@ export const SettingsModalContainer = styled.div`
   font-family: "josefin";
   width: 500px;
   padding: 20px;
-  border-radius: 20px;
   background-color: ${(props) => props.backgroundColor};
   color: white;
   display: flex;
   flex-direction: column;
+  backdrop-filter: blur(10px);
 `;
 
 export const SettingsModalItems = styled.div`

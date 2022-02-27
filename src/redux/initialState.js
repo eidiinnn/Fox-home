@@ -9,7 +9,7 @@ export default function initialState() {
       "https://www.notion.so/",
     ],
     AmPmTimerFormat: false,
-    backgroundColor: "#110c19",
+    backgroundColor: "rgb(0 3 14 / 11%)",
     customImage: false,
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
