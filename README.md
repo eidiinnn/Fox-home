@@ -1,7 +1,9 @@
 # Home Page :fox_face:
 A homepage for browsers made in ReactJS.  
 
-<img src="https://i.imgur.com/Flqtnjw.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/tCKrkWm.png" style="max-width: 100%;" >
+
+[Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
 
@@ -25,3 +27,4 @@ Publish the homepage on github pages
 
 ## How to customize
 Click on the :gear: to see the settings options.
+
