@@ -16,7 +16,7 @@ A start page for browsers with some costume options. Will be a Chrome extension 
 ## How to customize 	:paintbrush:
 Click on the :gear: to see the settings options.
 
-# Screenshot :camera:
+## Screenshot :camera:
 
 <img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
 
