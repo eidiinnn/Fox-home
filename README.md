@@ -1,9 +1,11 @@
-# Home Page :fox_face:
-A homepage for browsers made in ReactJS.  
+<p align="center">
+<img src="https://i.imgur.com/hhr7HOq.png" style="width: 500px">
+</p>
+  
+# Fox Home :fox_face:
+A start page for browsers with some costume options. Will be a Chrome extension come soon!
 
-<img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
-
-## Links
+## Links :link:
 
 [Download the compiled files](https://github.com/eidiinnn/Home-page/releases/tag/build-version)
 
@@ -11,7 +13,15 @@ A homepage for browsers made in ReactJS.
 
 [Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
 
-## Commands :computer:
+## How to customize 	:paintbrush:
+Click on the :gear: to see the settings options.
+
+# Screenshot :camera:
+
+<img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
+
+
+## React Commands :computer:
 
 #### `npm start`
 
@@ -28,7 +38,3 @@ It correctly bundles React in production mode and optimizes the build for the be
 
 #### `npm run deploy`
 Publish the homepage on github pages
-
-## How to customize
-Click on the :gear: to see the settings options.
-
