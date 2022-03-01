@@ -19,6 +19,12 @@ import {
   FaEvernote,
   FaFigma,
   FaMedium,
+  FaNpm,
+  FaSnapchatGhost,
+  FaFlickr,
+  FaFlipboard,
+  FaSteam,
+  FaTumblr,
 } from "react-icons/fa";
 
 export const iconsList = [
@@ -42,4 +48,10 @@ export const iconsList = [
   ["evernote.com", FaEvernote],
   ["figma.com", FaFigma],
   ["medium.com", FaMedium],
+  ["npmjs.com", FaNpm],
+  ["snapchat.com", FaSnapchatGhost],
+  ["flickr.com", FaFlickr],
+  ["flipboard.com", FaFlipboard],
+  ["steampowered.com", FaSteam],
+  ["tumblr.com", FaTumblr],
 ];
