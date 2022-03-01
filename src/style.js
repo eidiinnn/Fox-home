@@ -91,7 +91,7 @@ export const CentralDivContainer = styled.div`
   justify-content: center;
   height: 350px;
   width: 800px;
-  backdrop-filter: blur(10px);
+  //backdrop-filter: blur(10px);
 
   @media screen and (max-width: 900px) {
     max-width: 80%;
