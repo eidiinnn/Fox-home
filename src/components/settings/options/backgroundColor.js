@@ -3,15 +3,14 @@ import { useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { RgbaColorPicker } from "react-colorful";
-
 import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
 export default function BackgroundColor() {
   const dispatch = useDispatch();
-  const color = useSelector((state) => state.backgroundColor);
+  const savedColor = useSelector((state) => state.backgroundColor);
 
   function convertColorToObject() {
-    const colorArray = color.replace(/[^\d,.%]/g, "").split(",");
+    const colorArray = savedColor.replace(/[^\d,.%]/g, "").split(",");
     return {
       r: colorArray[0],
       g: colorArray[1],
@@ -19,15 +18,14 @@ export default function BackgroundColor() {
       a: colorArray[3],
     };
   }
-  const [colorObject, setColorObject] = useState(convertColorToObject());
 
   function setColor(colorChoice) {
-    dispatch({
-      type: "BACKGROUND_COLOR_CHANGE",
-      color: `rgb(${colorChoice.r}, ${colorChoice.g}, ${colorChoice.b}, ${colorChoice.a})`,
-    });
+    const colorString = `rgb(${colorChoice.r}, ${colorChoice.g}, ${colorChoice.b}, ${colorChoice.a})`;
+    dispatch({ type: "BACKGROUND_COLOR_CHANGE", color: colorString });
     setColorObject(colorChoice);
   }
+
+  const [colorObject, setColorObject] = useState(convertColorToObject());
 
   return (
     <SettingsModalItems>
