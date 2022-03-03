@@ -1,7 +1,6 @@
 import React from "react";
-import { useSelector, useDispatch } from "react-redux";
-
 import Switch from "@mui/material/Switch";
+import { useSelector, useDispatch } from "react-redux";
 import { SettingsModalItems, SettingsModalTitles } from "../../../style";
 
 export default function AmPmFormat() {
