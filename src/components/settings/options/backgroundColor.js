@@ -11,7 +11,7 @@ export default function BackgroundColor() {
   const color = useSelector((state) => state.backgroundColor);
 
   function convertColorToObject() {
-    const colorArray = color.match(/\d+/g);
+    const colorArray = color.replace(/[^\d,.%]/g, "").split(",");
     return {
       r: colorArray[0],
       g: colorArray[1],
