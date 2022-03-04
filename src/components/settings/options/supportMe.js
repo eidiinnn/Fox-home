@@ -4,7 +4,7 @@ import { FaSmile } from "react-icons/fa";
 
 export default function SupportMe() {
   return (
-    <SupportMeLink href="https://www.paypal.com/donate/?token=7HJDx-g42m657AI__X56Y9Os0ClKmpQ45C18l09h1rLNgjUCDWzMWcsrgswVJqAshDaNbsaiLEjO08To&locale.x=en_BR">
+    <SupportMeLink href="https://www.paypal.com/donate/?business=TBTX6CF5LDFEJ&no_recurring=1&currency_code=USD">
       Support me
       <SupportMeIcon>
         <FaSmile />
