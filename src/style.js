@@ -270,11 +270,11 @@ export const BookmarkInputs = styled.input`
 `;
 
 export const BookmarkAddInput = styled.button`
-  width: 110px;
+  width: min-content;
   height: 20px;
   font-family: "josefin";
   font-weight: 700;
-  padding: 5px 10px 5px 10px;
+  padding: 5px 15px 5px 15px;
   margin: 0px !important;
   border-radius: 5px;
   border: 0px;

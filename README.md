@@ -7,7 +7,7 @@ A start page for browsers with some costume options. Will be a Chrome extension 
 
 ## Links :link:
 
-[Download the compiled files](https://github.com/eidiinnn/Home-page/releases/tag/build-version)
+[Download the compiled files](https://github.com/eidiinnn/Home-page/releases)
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
 

@@ -19,9 +19,11 @@ export default function Bookmark() {
   function inputOnChange(event, index) {
     const change = [...bookmark];
     change[index] = event.target.value;
-
     dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    correctUrlIndicator(event);
+  }
 
+  function correctUrlIndicator(event) {
     !extractDomain(event.target.value, { tld: true })
       ? (event.target.style.backgroundColor = "#e01f5d")
       : (event.target.style.backgroundColor = "#1FE0A2");
@@ -33,18 +35,13 @@ export default function Bookmark() {
     dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
   }
 
-  function addButton() {
+  function addNewInput() {
     if (bookmark.length >= 6) return null;
-    return (
-      <BookmarkAddInput onClick={addButtonOnChange}>
-        Add new link
-      </BookmarkAddInput>
-    );
+    return <BookmarkAddInput onClick={addNewInputAction}>Add</BookmarkAddInput>;
   }
 
-  function addButtonOnChange() {
-    const change = [...bookmark];
-    change.push("");
+  function addNewInputAction() {
+    const change = [...bookmark, ""];
     dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
   }
 
@@ -65,7 +62,7 @@ export default function Bookmark() {
           </BookmarkInputsContainer>
         );
       })}
-      {addButton()}
+      {addNewInput()}
     </SettingsModalItems>
   );
 }
