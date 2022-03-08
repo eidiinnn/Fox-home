@@ -8,17 +8,17 @@ import SettingsMenu from "./components/settings/settingsMenu";
 
 import GetImage from "./image/getImage";
 
-import { GlobalStyle, MainGrind } from "./style";
+import { GlobalStyle, MainContainer } from "./style/global";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
       <GetImage type="background" />
-      <MainGrind>
+      <MainContainer>
         <SettingsMenu />
         <CentralContainer />
-      </MainGrind>
+      </MainContainer>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
