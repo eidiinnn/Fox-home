@@ -1,6 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { iconsList } from "./tools/iconsList.js";
+import { iconsList } from "./iconsList.js";
 import extractDomain from "extract-domain";
 
 import {
@@ -9,7 +9,7 @@ import {
   IconCreated,
 } from "../../../../style/centralContainer";
 
-export default function CreateHtmlBookmarkList() {
+export default function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
 
   function filterUrl(url) {

@@ -1,5 +1,5 @@
 import React from "react";
-import CreateHtmlBookmarkList from "./parts/bookmark/createHtmlBookmarkList";
+import BookmarkList from "./parts/bookmark/BookmarkList";
 import ClockComponent from "./parts/clockComponent";
 import ImageDiv from "../../image/getDivImage";
 import { useSelector } from "react-redux";
@@ -17,7 +17,7 @@ export default function CentralContainer() {
       <ImageDiv type="image" />
       <ClockAndBookmarkContainer>
         <ClockComponent />
-        <CreateHtmlBookmarkList />
+        <BookmarkList />
       </ClockAndBookmarkContainer>
     </MainContainer>
   );
