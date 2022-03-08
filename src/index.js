@@ -6,7 +6,7 @@ import store from "./redux/store";
 import CentralContainer from "./components/centralContainer";
 import SettingsMenu from "./components/settings/settingsMenu";
 
-import ImageDiv from "./image/getDivImage";
+import GetImage from "./image/getImage";
 
 import { GlobalStyle, MainGrind } from "./style";
 
@@ -14,7 +14,7 @@ ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <ImageDiv type="background" />
+      <GetImage type="background" />
       <MainGrind>
         <SettingsMenu />
         <CentralContainer />

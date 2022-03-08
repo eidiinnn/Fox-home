@@ -1,7 +1,7 @@
 import React from "react";
 import BookmarkList from "./parts/bookmark/BookmarkList";
 import ClockComponent from "./parts/clockComponent";
-import ImageDiv from "../../image/getDivImage";
+import GetImage from "../../image/getImage";
 import { useSelector } from "react-redux";
 
 import {
@@ -14,7 +14,7 @@ export default function CentralContainer() {
 
   return (
     <MainContainer backgroundColor={backgroundColor}>
-      <ImageDiv type="image" />
+      <GetImage type="image" />
       <ClockAndBookmarkContainer>
         <ClockComponent />
         <BookmarkList />
