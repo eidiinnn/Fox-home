@@ -1,5 +1,5 @@
 import React from "react";
-import { SupportMeLink, SupportMeIcon } from "../../../style";
+import { SupportMeLink, SupportMeIcon } from "../../../style/settings";
 import { FaSmile } from "react-icons/fa";
 
 export default function SupportMe() {

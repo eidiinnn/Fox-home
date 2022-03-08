@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
 import { RgbaColorPicker } from "react-colorful";
-import { SettingsModalItems, SettingsModalTitles } from "../../../style";
+import { ModalItem, ModalTitles } from "../../../style/settings";
 
 export default function BackgroundColor() {
   const dispatch = useDispatch();
@@ -28,9 +28,9 @@ export default function BackgroundColor() {
   const [colorObject, setColorObject] = useState(convertColorToObject());
 
   return (
-    <SettingsModalItems>
-      <SettingsModalTitles>Background Color</SettingsModalTitles>
+    <ModalItem>
+      <ModalTitles>Background Color</ModalTitles>
       <RgbaColorPicker color={colorObject} onChange={setColor} />
-    </SettingsModalItems>
+    </ModalItem>
   );
 }
