@@ -59,7 +59,7 @@ input[type="file"]:button{
 }
 `;
 
-export const MainContainer = styled.div`
+export const FullWideContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
