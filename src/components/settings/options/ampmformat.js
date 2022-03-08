@@ -1,7 +1,7 @@
 import React from "react";
 import Switch from "@mui/material/Switch";
 import { useSelector, useDispatch } from "react-redux";
-import { SettingsModalItems, SettingsModalTitles } from "../../../style";
+import { ModalItem, ModalTitles } from "../../../style/settings";
 
 export default function AmPmFormat() {
   const dispatch = useDispatch();
@@ -13,13 +13,13 @@ export default function AmPmFormat() {
   }
 
   return (
-    <SettingsModalItems vertical>
-      <SettingsModalTitles>Use AM PM time format</SettingsModalTitles>
+    <ModalItem row>
+      <ModalTitles>Use AM PM time format</ModalTitles>
       <Switch
         id="AmPmSwitch"
         checked={formatSetting}
         onChange={AmPmSwitchOnChange}
       />
-    </SettingsModalItems>
+    </ModalItem>
   );
 }

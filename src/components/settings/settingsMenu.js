@@ -11,13 +11,13 @@ import SupportMe from "./options/supportMe";
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
 import {
-  SettingsModal,
-  SettingsModalContainer,
-  SettingsModalItems,
-  SettingsIconContainer,
+  ModalDisplay,
+  ModalContainer,
+  ModalItem,
+  OpenSettingsModalIcon,
   SaveButton,
-  NotSaveIconContainer,
-} from "../../style";
+  CloseIcon,
+} from "../../style/settings";
 
 export default function SettingsMenu() {
   const dispatch = useDispatch();
@@ -39,29 +39,30 @@ export default function SettingsMenu() {
 
   return (
     <>
-      <SettingsModal show={modalShow}>
-        <SettingsModalContainer backgroundColor={backgroundColor}>
+      <ModalDisplay show={modalShow}>
+        <ModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
           <AmPmFormat />
           <BackgroundColor />
           <Bookmark />
-          <SettingsModalItems vertical noBottomMargin>
-            <SettingsModalItems vertical>
+
+          <ModalItem row noBottomMargin>
+            <ModalItem row>
               <SaveButton value="Save" onClick={buttonSave}>
                 Save
               </SaveButton>
               <SupportMe />
-            </SettingsModalItems>
-            <NotSaveIconContainer>
+            </ModalItem>
+            <CloseIcon>
               <FaRegTimesCircle onClick={buttonNotSave} />
-            </NotSaveIconContainer>
-          </SettingsModalItems>
-        </SettingsModalContainer>
-      </SettingsModal>
+            </CloseIcon>
+          </ModalItem>
+        </ModalContainer>
+      </ModalDisplay>
 
-      <SettingsIconContainer>
+      <OpenSettingsModalIcon>
         <FaCog onClick={modalAction} />
-      </SettingsIconContainer>
+      </OpenSettingsModalIcon>
     </>
   );
 }

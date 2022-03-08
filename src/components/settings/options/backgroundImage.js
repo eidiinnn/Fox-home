@@ -1,7 +1,7 @@
 import React from "react";
 import Resizer from "react-image-file-resizer";
 import { useDispatch } from "react-redux";
-import { SettingsModalItems, SettingsModalTitles } from "../../../style";
+import { ModalItem, ModalTitles } from "../../../style/settings";
 
 function resizeFile(file) {
   return new Promise((resolve) => {
@@ -30,13 +30,13 @@ export default function BackgroundImage() {
   }
 
   return (
-    <SettingsModalItems>
-      <SettingsModalTitles>Background Image</SettingsModalTitles>
+    <ModalItem>
+      <ModalTitles>Background Image</ModalTitles>
       <input
         type="file"
         accept="image/png, image/jpeg"
         onChange={imageUploadOnDone}
       />
-    </SettingsModalItems>
+    </ModalItem>
   );
 }
