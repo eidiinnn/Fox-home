@@ -4,18 +4,21 @@ import ClockComponent from "./parts/clockComponent";
 import ImageDiv from "../../image/getDivImage";
 import { useSelector } from "react-redux";
 
-import { CentralDivContainer, CentralDivClockAndFavorites } from "../../style";
+import {
+  MainContainer,
+  ClockAndBookmarkContainer,
+} from "../../style/centralContainer.js";
 
-export default function ClockBookmarkContainer() {
+export default function CentralContainer() {
   const backgroundColor = useSelector((state) => state.backgroundColor);
 
   return (
-    <CentralDivContainer backgroundColor={backgroundColor}>
+    <MainContainer backgroundColor={backgroundColor}>
       <ImageDiv type="image" />
-      <CentralDivClockAndFavorites>
+      <ClockAndBookmarkContainer>
         <ClockComponent />
         <CreateHtmlBookmarkList />
-      </CentralDivClockAndFavorites>
-    </CentralDivContainer>
+      </ClockAndBookmarkContainer>
+    </MainContainer>
   );
 }
