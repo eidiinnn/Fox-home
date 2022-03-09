@@ -1,15 +1,15 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { iconsList } from "./tools/iconsList.js";
+import { iconsList } from "./iconsList.js";
 import extractDomain from "extract-domain";
 
 import {
-  CentralDivBookmarkUl,
-  CentralDivBookmarkLi,
-  NotListedIcon,
-} from "../../../../style";
+  BookmarkUl,
+  BookmarkLi,
+  IconCreated,
+} from "../../../../style/centralContainer";
 
-export default function CreateHtmlBookmarkList() {
+export default function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
 
   function filterUrl(url) {
@@ -25,19 +25,19 @@ export default function CreateHtmlBookmarkList() {
   function getAIcon(url) {
     const Icon = getAListedIcon(url);
     const firstLetter = filterUrl(url).slice(0, 1).toUpperCase();
-    return !Icon ? <NotListedIcon>{firstLetter}</NotListedIcon> : <Icon />;
+    return !Icon ? <IconCreated>{firstLetter}</IconCreated> : <Icon />;
   }
 
   return (
-    <CentralDivBookmarkUl>
+    <BookmarkUl>
       {bookmarkLinks.map((url) => {
         if (!filterUrl(url)) return null;
         return (
-          <CentralDivBookmarkLi key={url}>
+          <BookmarkLi key={url}>
             <a href={url}>{getAIcon(url)}</a>
-          </CentralDivBookmarkLi>
+          </BookmarkLi>
         );
       })}
-    </CentralDivBookmarkUl>
+    </BookmarkUl>
   );
 }

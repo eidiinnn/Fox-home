@@ -2,7 +2,7 @@ import React from "react";
 import Dexie from "dexie";
 import { useLiveQuery } from "dexie-react-hooks";
 import { useSelector } from "react-redux";
-import { CentralDivImage, BackgroundDiv } from "../style";
+import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
 
 const db = new Dexie("imageDB");
@@ -10,7 +10,7 @@ db.version(1).stores({
   item: "image, value",
 });
 
-export default function ImageDiv(props) {
+export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);
   const indexedDBImage = useLiveQuery(async () => {
     const dbArray = await db.item.where({ image: "default" }).toArray();
@@ -26,8 +26,8 @@ export default function ImageDiv(props) {
 
   function showImage(type) {
     const image = selectImage();
-    if (type === "image") return <CentralDivImage src={image} />;
-    if (type === "background") return <BackgroundDiv image={image} />;
+    if (type === "image") return <CentralContainerImage src={image} />;
+    if (type === "background") return <BackgroundImage image={image} />;
   }
 
   return <>{showImage(props.type)}</>;

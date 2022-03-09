@@ -4,13 +4,13 @@ import extractDomain from "extract-domain";
 
 import { FaRegTimesCircle } from "react-icons/fa";
 import {
-  SettingsModalItems,
-  SettingsModalTitles,
+  ModalItem,
+  ModalTitles,
   BookmarkInputs,
   BookmarkInputsContainer,
-  BookmarkInputsCloseIcon,
+  BookmarkInputRemove,
   BookmarkAddInput,
-} from "../../../style";
+} from "../../../style/settings";
 
 export default function Bookmark() {
   const dispatch = useDispatch();
@@ -46,8 +46,8 @@ export default function Bookmark() {
   }
 
   return (
-    <SettingsModalItems>
-      <SettingsModalTitles>Bookmark</SettingsModalTitles>
+    <ModalItem>
+      <ModalTitles>Bookmark</ModalTitles>
       {bookmark.map((url, index) => {
         return (
           <BookmarkInputsContainer>
@@ -56,13 +56,13 @@ export default function Bookmark() {
               value={url}
               onChange={(event) => inputOnChange(event, index)}
             />
-            <BookmarkInputsCloseIcon onClick={() => inputRemove(index)}>
+            <BookmarkInputRemove onClick={() => inputRemove(index)}>
               <FaRegTimesCircle />
-            </BookmarkInputsCloseIcon>
+            </BookmarkInputRemove>
           </BookmarkInputsContainer>
         );
       })}
       {addNewInput()}
-    </SettingsModalItems>
+    </ModalItem>
   );
 }

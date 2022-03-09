@@ -3,22 +3,22 @@ import ReactDOM from "react-dom";
 
 import { Provider } from "react-redux";
 import store from "./redux/store";
-import ClockBookmarkContainer from "./components/clockAndBookmark/clockBookmarkContainer";
+import CentralContainer from "./components/centralContainer";
 import SettingsMenu from "./components/settings/settingsMenu";
 
-import ImageDiv from "./image/getDivImage";
+import GetImage from "./image/getImage";
 
-import { GlobalStyle, MainGrind } from "./style";
+import { GlobalStyle, FullWideContainer } from "./style/global";
 
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
       <GlobalStyle />
-      <ImageDiv type="background" />
-      <MainGrind>
+      <GetImage type="background" />
+      <FullWideContainer>
         <SettingsMenu />
-        <ClockBookmarkContainer />
-      </MainGrind>
+        <CentralContainer />
+      </FullWideContainer>
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")
