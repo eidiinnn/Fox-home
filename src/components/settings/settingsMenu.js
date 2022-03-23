@@ -47,7 +47,7 @@ export default function SettingsMenu() {
           <Bookmark />
 
           <ModalItem row noBottomMargin>
-            <ModalItem row>
+            <ModalItem row noBottomMargin noTopMargin>
               <SaveButton value="Save" onClick={buttonSave}>
                 Save
               </SaveButton>

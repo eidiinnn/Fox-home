@@ -26,19 +26,23 @@ export const ModalDisplay = styled.div`
 export const ModalContainer = styled.div`
   display: flex;
   flex-direction: column;
+  overflow: scroll;
+  overflow-x: hidden;
+  overflow-y: auto;
 
   font-family: "josefin";
   background-color: ${(props) => props.backgroundColor};
   color: white;
 
   width: 500px;
+  max-height: 80%;
   padding: 1.25rem;
   backdrop-filter: blur(10px);
 `;
 
 export const ModalTitles = styled.h1`
   font-size: 0.93rem;
-  font-weight: 400;
+  font-weight: 700;
 `;
 
 export const ModalItem = styled.div`
@@ -46,12 +50,14 @@ export const ModalItem = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.row ? "space-between" : "left")};
   align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0px" : "10px")};
-  margin-top: 0.313rem;
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "10px")};
+  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.8rem")};
 `;
 
 export const CloseIcon = styled.div`
-  font-size: 1.43rem;
+  font-size: 1.23rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const SupportMeLink = styled.a`
@@ -73,12 +79,11 @@ export const SupportMeIcon = styled.div`
 `;
 
 export const SaveButton = styled.button`
-  font-family: "josefin";
   font-weight: 700;
 
-  padding: 0.31rem 0.62rem 0.31rem 0.62rem;
+  padding: 0.21rem 0.8rem 0.31rem 0.8rem;
   margin: 0 !important;
-  border-radius: 0.31rem;
+  border-radius: 3px;
   border: 0;
 
   &:hover {
@@ -97,25 +102,26 @@ export const BookmarkInputs = styled.input`
   width: 300px;
   height: 20px;
   border: 0;
-  border-radius: 5px;
+  border-radius: 3px;
   margin-bottom: 0.31rem;
+  font-family: "roboto";
+  font-weight: 400;
 `;
 
 export const BookmarkInputRemove = styled.div`
-  font-size: 1rem;
-  margin-left: 0.25rem;
+  font-size: 1.1rem;
+  margin-left: 0.35rem;
 `;
 
 export const BookmarkAddInput = styled.button`
   width: min-content;
-  height: 20px;
-  padding: 0.31rem 0.93rem 0.31rem 0.93rem;
+  padding: 0.21rem 1.4rem 0.21rem 1.4rem;
   margin: 0 !important;
-  border-radius: 5px;
+  border-radius: 3px;
   border: 0;
 
-  font-family: "josefin";
   font-weight: 700;
+  font-size: 0.8rem;
 
   &:hover {
     filter: brightness(0.8);
