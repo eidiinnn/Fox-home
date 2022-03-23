@@ -104,8 +104,8 @@ export const BookmarkInputs = styled.input`
   border: 0;
   border-radius: 3px;
   margin-bottom: 0.31rem;
-  font-family: "josefin";
-  font-weight: 00;
+  font-family: "roboto";
+  font-weight: 400;
 `;
 
 export const BookmarkInputRemove = styled.div`
