@@ -50,12 +50,14 @@ export const ModalItem = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.row ? "space-between" : "left")};
   align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0px" : "10px")};
-  margin-top: 0.313rem;
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "10px")};
+  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.8rem")};
 `;
 
 export const CloseIcon = styled.div`
   font-size: 1.23rem;
+  display: flex;
+  align-items: center;
 `;
 
 export const SupportMeLink = styled.a`
@@ -102,7 +104,8 @@ export const BookmarkInputs = styled.input`
   border: 0;
   border-radius: 3px;
   margin-bottom: 0.31rem;
-  font-weight: 400;
+  font-family: "josefin";
+  font-weight: 00;
 `;
 
 export const BookmarkInputRemove = styled.div`
