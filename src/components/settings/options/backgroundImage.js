@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import CropImage from "./cropImage";
 import Resizer from "react-image-file-resizer";
 import { useDispatch } from "react-redux";
 import { ModalItem, ModalTitles } from "../../../style/settings";
@@ -22,11 +23,13 @@ function resizeFile(file) {
 
 export default function BackgroundImage() {
   const dispatch = useDispatch();
+  const [image, setImage] = useState(null);
 
   async function imageUploadOnDone(event) {
     const blobImage = new Blob(event.target.files, { type: "image/png" });
     const resizedImage = await resizeFile(blobImage);
     dispatch({ type: "IMAGE_CHANGE", image: resizedImage });
+    setImage(resizedImage);
   }
 
   return (
@@ -37,6 +40,8 @@ export default function BackgroundImage() {
         accept="image/png, image/jpeg"
         onChange={imageUploadOnDone}
       />
+
+      <CropImage imageToCrop={image} />
     </ModalItem>
   );
 }
