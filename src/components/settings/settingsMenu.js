@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import AmPmFormat from "./options/ampmformat";
-import BackgroundImage from "./options/backgroundImage";
+import BackgroundImage from "./options/image/imageUpload";
 import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";

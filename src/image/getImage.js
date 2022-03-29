@@ -6,28 +6,42 @@ import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
 
 const db = new Dexie("imageDB");
-db.version(1).stores({
-  item: "image, value",
+db.version(2).stores({
+  itens: "primaryKey, image, cropImage",
 });
 
 export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);
   const indexedDBImage = useLiveQuery(async () => {
-    const dbArray = await db.item.where({ image: "default" }).toArray();
+    const dbArray = await db.itens.where({ primaryKey: "using" }).toArray();
     return dbArray.length === 0 ? null : dbArray[0];
   });
 
   if (!indexedDBImage && useCustomImage === true) return null;
 
   function selectImage() {
-    const imageToBeUsed = !useCustomImage ? defaultImage : indexedDBImage.value;
-    return !useCustomImage ? imageToBeUsed : URL.createObjectURL(imageToBeUsed);
+    return !useCustomImage
+      ? {
+          background: defaultImage,
+          CentralContainerImage: defaultImage,
+        }
+      : {
+          background: URL.createObjectURL(indexedDBImage.image),
+          CentralContainerImage: indexedDBImage.cropImage,
+        };
   }
 
   function showImage(type) {
     const image = selectImage();
-    if (type === "image") return <CentralContainerImage src={image} />;
-    if (type === "background") return <BackgroundImage image={image} />;
+
+    switch (type) {
+      case "image":
+        return <CentralContainerImage src={image.CentralContainerImage} />;
+      case "background":
+        return <BackgroundImage image={image.background} />;
+      default:
+        return null;
+    }
   }
 
   return <>{showImage(props.type)}</>;

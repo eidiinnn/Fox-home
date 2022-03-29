@@ -2,14 +2,14 @@ import { createStore } from "redux";
 import initialState from "./initialState";
 import {
   uploadImage,
-  setOldImageToDefault,
-  removeOldTable,
+  setUsedImageToUsing,
+  removeUsedImage,
 } from "../image/dbFunctions";
 
 const settingReducer = (state = initialState(), action) => {
   switch (action.type) {
     case "IMAGE_CHANGE": {
-      uploadImage(action.image);
+      uploadImage(action.image, action.cropImage);
       return state;
     }
     case "CUSTOM_IMAGE_CHANGE": {
@@ -34,12 +34,12 @@ const settingReducer = (state = initialState(), action) => {
     }
     case "SAVE_SETTINGS": {
       localStorage.setItem("settings", JSON.stringify(state));
-      removeOldTable();
+      removeUsedImage();
       return state;
     }
     case "DISCARD_SETTINGS": {
       const newState = JSON.parse(localStorage.getItem("settings"));
-      setOldImageToDefault();
+      setUsedImageToUsing();
       return newState;
     }
     default:
