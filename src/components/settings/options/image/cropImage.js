@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 import AvatarEditor from "react-avatar-editor";
+import { useDispatch } from "react-redux";
 
 export default function CropImage(props) {
   const image = props.imageToCrop;
   const [imageEvent, setImageEvent] = useState(null);
-  const [imageCrop, setImageCrop] = useState(null);
+  const dispatch = useDispatch();
 
   if (!image) return null;
 
   function onClickButton() {
-    setImageCrop(imageEvent.getImageScaledToCanvas().toDataURL());
+    dispatch({
+      type: "IMAGE_CHANGE",
+      image: image,
+      cropImage: imageEvent.getImageScaledToCanvas().toDataURL(),
+    });
   }
 
   return (
@@ -26,8 +31,6 @@ export default function CropImage(props) {
       />
 
       <button onClick={onClickButton}>Save</button>
-
-      <img src={imageCrop} alt="cropped" />
     </>
   );
 }

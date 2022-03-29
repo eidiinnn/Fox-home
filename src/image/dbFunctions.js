@@ -2,27 +2,42 @@ import Dexie from "dexie";
 import store from "../redux/store";
 
 const db = new Dexie("imageDB");
-db.version(1).stores({
-  item: "image, value",
+db.version(2).stores({
+  itens: "primaryKey, image, cropImage",
 });
 
-export async function uploadImage(value) {
-  const getDefaultImage = await db.item.get("default");
-  if (getDefaultImage !== undefined)
-    db.item.put({ image: "old", value: getDefaultImage.value });
+export async function uploadImage(image, cropImage) {
+  const getDefaultImage = await db.itens.get("using");
+  if (getDefaultImage !== undefined) {
+    db.itens.put({
+      primaryKey: "used",
+      image: getDefaultImage.image,
+      cropImage: getDefaultImage.cropImage,
+    });
+  }
 
-  await db.item.put({ image: "default", value: value });
+  await db.itens.put({
+    primaryKey: "using",
+    image: image,
+    cropImage: cropImage,
+  });
+
   store.dispatch({ type: "CUSTOM_IMAGE_CHANGE" });
 }
 
-export async function setOldImageToDefault() {
-  const getOldImage = await db.item.get("old");
+export async function setUsedImageToUsing() {
+  const getOldImage = await db.itens.get("used");
   if (!getOldImage) return null;
 
-  db.item.put({ image: "default", value: getOldImage.value });
-  removeOldTable();
+  db.itens.put({
+    primaryKey: "using",
+    image: getOldImage.image,
+    cropImage: getOldImage.cropImage,
+  });
+
+  removeUsedImage();
 }
 
-export async function removeOldTable() {
-  db.item.delete("old");
+export async function removeUsedImage() {
+  db.itens.delete("used");
 }
