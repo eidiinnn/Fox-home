@@ -41,12 +41,14 @@ export default function BackgroundImage() {
       image: image,
       cropImage: cropImage,
     });
+
     setImage(null);
+    document.getElementById("uploadInput").value = null;
   }
 
   return (
     <ModalItem>
-      <ModalTitles>Background Image</ModalTitles>
+      <ModalTitles>Image</ModalTitles>
       <input
         id="uploadInput"
         type="file"

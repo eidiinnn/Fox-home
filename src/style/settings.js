@@ -134,14 +134,25 @@ export const CropImageContainer = styled.div`
   margin-top: 1rem;
 `;
 
-export const CropImageRage = styled.input`
+export const CropImageRangeContainer = styled.div`
   width: 400px;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.3rem;
+  color: white;
+  margin-top: 0.4rem;
+
+  align-items: center;
+`;
+
+export const CropImageRage = styled.input`
+  width: 100%;
 `;
 
 export const CropImageButton = styled.button`
   width: min-content;
   padding: 0.21rem 1.4rem 0.21rem 1.4rem;
-  margin-top: 0.5rem;
+  margin-top: 0.2rem;
   border-radius: 3px;
   border: 0;
 
