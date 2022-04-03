@@ -1,36 +1,54 @@
 import React, { useState } from "react";
 import AvatarEditor from "react-avatar-editor";
-import { useDispatch } from "react-redux";
+
+import { FaRegImage } from "react-icons/fa";
+import {
+  CropImageContainer,
+  CropImageButton,
+  CropImageRangeContainer,
+  CropImageRage,
+} from "../../../../style/settings";
 
 export default function CropImage(props) {
   const image = props.imageToCrop;
   const [imageEvent, setImageEvent] = useState(null);
-  const dispatch = useDispatch();
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [scale, setScale] = useState(1);
 
   if (!image) return null;
 
   function onClickButton() {
-    dispatch({
-      type: "IMAGE_CHANGE",
-      image: image,
-      cropImage: imageEvent.getImageScaledToCanvas().toDataURL(),
-    });
+    props.onSave(imageEvent.getImageScaledToCanvas().toDataURL());
   }
 
   return (
-    <>
+    <CropImageContainer>
       <AvatarEditor
-        image={URL.createObjectURL(image)}
+        image={image}
         width={300}
         height={350}
         border={50}
-        color={[255, 255, 255, 0.6]}
-        scale={1.2}
+        position={position}
+        onPositionChange={setPosition}
+        color={[0, 0, 0, 0.65]}
+        scale={scale}
         rotate={0}
         ref={setImageEvent}
       />
 
-      <button onClick={onClickButton}>Save</button>
-    </>
+      <CropImageRangeContainer>
+        <FaRegImage />
+        <CropImageRage
+          type="range"
+          min="1"
+          max="3"
+          step="0.01"
+          value={scale}
+          onChange={(e) => setScale(e.target.value)}
+        />
+        <FaRegImage style={{ fontSize: "2rem" }} />
+      </CropImageRangeContainer>
+      <CropImageButton onClick={onClickButton}>Crop</CropImageButton>
+    </CropImageContainer>
   );
 }
