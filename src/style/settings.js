@@ -134,6 +134,10 @@ export const CropImageContainer = styled.div`
   margin-top: 1rem;
 `;
 
+export const CropImageRage = styled.input`
+  width: 400px;
+`;
+
 export const CropImageButton = styled.button`
   width: min-content;
   padding: 0.21rem 1.4rem 0.21rem 1.4rem;
