@@ -41,3 +41,5 @@ export async function setUsedImageToUsing() {
 export async function removeUsedImage() {
   db.itens.delete("used");
 }
+
+export async function getImageFromDb() {}

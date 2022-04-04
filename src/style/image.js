@@ -9,7 +9,7 @@ export const BackgroundImage = styled.div`
   background-position: center;
   background-size: cover;
   background-attachment: fixed;
-  filter: blur(5px) brightness(0.8);
+  filter: blur(${(props) => props.blurLevel + "px"}) brightness(0.8);
 `;
 
 export const CentralContainerImage = styled.img`

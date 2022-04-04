@@ -27,6 +27,11 @@ const settingReducer = (state = initialState(), action) => {
       newState.backgroundColor = action.color;
       return newState;
     }
+    case "BLUR_LEVEL_CHANGE": {
+      const newState = { ...state };
+      newState.blurLevel = action.blurLevel;
+      return newState;
+    }
     case "BOOKMARK_CHANGE": {
       const newState = { ...state };
       newState.bookmarkLinks = action.bookmarkLinks;
