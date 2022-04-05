@@ -12,8 +12,6 @@ export async function uploadImage(image, cropImage) {
     image: image,
     cropImage: cropImage,
   });
-
-  store.dispatch({ type: "CUSTOM_IMAGE_CHANGE" });
 }
 
 export async function getImageFromDB() {
