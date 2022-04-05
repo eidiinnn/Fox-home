@@ -1,25 +1,14 @@
-import React, { useState } from "react";
-import Dexie from "dexie";
-import { useLiveQuery } from "dexie-react-hooks";
+import React from "react";
 import { useSelector } from "react-redux";
 import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
-import { getImageTest } from "./dbFunctions";
-
-const db = new Dexie("imageDB");
-db.version(2).stores({
-  itens: "primaryKey, image, cropImage",
-});
 
 export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);
+  const imageFromDB = useSelector((state) => state.imagesFromDB);
   const blurLevel = useSelector((state) => state.blurLevel);
-  const indexedDBImage = useLiveQuery(async () => {
-    const dbArray = await db.itens.where({ primaryKey: "using" }).toArray();
-    return dbArray.length === 0 ? null : dbArray[0];
-  });
 
-  if (!indexedDBImage && useCustomImage === true) return null;
+  if (!imageFromDB && useCustomImage === true) return null;
 
   function selectImage() {
     return !useCustomImage
@@ -28,8 +17,8 @@ export default function GetImage(props) {
           CentralContainerImage: defaultImage,
         }
       : {
-          background: URL.createObjectURL(indexedDBImage.image),
-          CentralContainerImage: indexedDBImage.cropImage,
+          background: imageFromDB.image,
+          CentralContainerImage: imageFromDB.cropImage,
         };
   }
 
@@ -37,7 +26,7 @@ export default function GetImage(props) {
     const image = selectImage();
 
     switch (type) {
-      case "image":
+      case "centralDivImage":
         return <CentralContainerImage src={image.CentralContainerImage} />;
       case "background":
         return (

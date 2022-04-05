@@ -14,7 +14,7 @@ export default function CentralContainer() {
 
   return (
     <MainContainer backgroundColor={backgroundColor}>
-      <GetImage type="image" />
+      <GetImage type="centralDivImage" />
       <ClockAndBookmarkContainer>
         <ClockComponent />
         <BookmarkList />

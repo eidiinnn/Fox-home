@@ -1,3 +1,5 @@
+import { getImageFromDB } from "../image/dbFunctions";
+
 export default function initialState() {
   const defaultObject = {
     bookmarkLinks: [
@@ -10,7 +12,9 @@ export default function initialState() {
     ],
     AmPmTimerFormat: false,
     backgroundColor: "rgb(0, 3, 14, .1)",
+    blurLevel: 5,
     customImage: false,
+    images: null,
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 
@@ -18,6 +22,7 @@ export default function initialState() {
     localStorage.setItem("settings", JSON.stringify(defaultObject));
     return defaultObject;
   } else {
+    getImageFromDB();
     return localStorageObject;
   }
 }

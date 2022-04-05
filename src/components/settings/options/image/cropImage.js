@@ -18,7 +18,10 @@ export default function CropImage(props) {
   if (!image) return null;
 
   function onClickButton() {
-    props.onSave(imageEvent.getImageScaledToCanvas().toDataURL());
+    const canvas = imageEvent.getImage().toDataURL();
+    fetch(canvas)
+      .then((res) => res.blob())
+      .then((blob) => props.onSave(blob));
   }
 
   return (

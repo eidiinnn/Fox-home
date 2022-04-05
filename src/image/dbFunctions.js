@@ -7,15 +7,6 @@ db.version(2).stores({
 });
 
 export async function uploadImage(image, cropImage) {
-  const getDefaultImage = await db.itens.get("using");
-  if (getDefaultImage !== undefined) {
-    db.itens.put({
-      primaryKey: "used",
-      image: getDefaultImage.image,
-      cropImage: getDefaultImage.cropImage,
-    });
-  }
-
   await db.itens.put({
     primaryKey: "using",
     image: image,
@@ -25,21 +16,17 @@ export async function uploadImage(image, cropImage) {
   store.dispatch({ type: "CUSTOM_IMAGE_CHANGE" });
 }
 
-export async function setUsedImageToUsing() {
-  const getOldImage = await db.itens.get("used");
-  if (!getOldImage) return null;
+export async function getImageFromDB() {
+  const dbArray = await db.itens.where({ primaryKey: "using" }).toArray();
+  if (dbArray.length === 0 || !dbArray[0].image || !dbArray[0].cropImage)
+    return null;
 
-  db.itens.put({
-    primaryKey: "using",
-    image: getOldImage.image,
-    cropImage: getOldImage.cropImage,
+  store.dispatch({
+    type: "IMAGE_GET",
+    imagesFromDB: {
+      image: URL.createObjectURL(dbArray[0].image),
+      cropImage: URL.createObjectURL(dbArray[0].cropImage),
+      blobImage: { image: dbArray[0].image, cropImage: dbArray[0].cropImage },
+    },
   });
-
-  removeUsedImage();
 }
-
-export async function removeUsedImage() {
-  db.itens.delete("used");
-}
-
-export async function getImageFromDb() {}
