@@ -43,9 +43,9 @@ export default function SettingsMenu() {
       <ModalDisplay show={modalShow}>
         <ModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
-          <AmPmFormat />
-          <BackgroundColor />
           <Blur />
+          <BackgroundColor />
+          <AmPmFormat />
           <Bookmark />
 
           <ModalItem row noBottomMargin>
