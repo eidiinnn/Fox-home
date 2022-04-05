@@ -7,6 +7,7 @@ import BackgroundImage from "./options/image/imageUpload";
 import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
+import Blur from "./options/blur";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
@@ -44,6 +45,7 @@ export default function SettingsMenu() {
           <BackgroundImage />
           <AmPmFormat />
           <BackgroundColor />
+          <Blur />
           <Bookmark />
 
           <ModalItem row noBottomMargin>
