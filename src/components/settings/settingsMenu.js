@@ -3,10 +3,11 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
 import AmPmFormat from "./options/ampmformat";
-import BackgroundImage from "./options/backgroundImage";
+import BackgroundImage from "./options/image/imageUpload";
 import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
+import Blur from "./options/blur";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
@@ -42,12 +43,13 @@ export default function SettingsMenu() {
       <ModalDisplay show={modalShow}>
         <ModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
-          <AmPmFormat />
+          <Blur />
           <BackgroundColor />
+          <AmPmFormat />
           <Bookmark />
 
           <ModalItem row noBottomMargin>
-            <ModalItem row>
+            <ModalItem row noBottomMargin noTopMargin>
               <SaveButton value="Save" onClick={buttonSave}>
                 Save
               </SaveButton>

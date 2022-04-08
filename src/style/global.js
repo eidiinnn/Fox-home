@@ -4,6 +4,7 @@ import { createGlobalStyle } from "styled-components";
 import josefinRegular from "../fonts/JosefinSans-Regular.ttf";
 import josefinBold from "../fonts/JosefinSans-Bold.ttf";
 import robotoCondensed from "../fonts/RobotoCondensed-Bold.ttf";
+import robotoRegular from "../fonts/Roboto-Regular.ttf";
 
 export const GlobalStyle = createGlobalStyle` 
 body {
@@ -44,6 +45,12 @@ input[type="file"]:button{
   font-family: "robotoCondensed";
   src: url(${robotoCondensed});
   font-weight: 700;
+}
+
+@font-face {
+  font-family: "roboto";
+  src: url(${robotoRegular});
+  font-weight: 400;
 }
 
 @font-face {
