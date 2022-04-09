@@ -14,7 +14,7 @@ export default function AmPmFormat() {
 
   return (
     <ModalItem row>
-      <ModalTitles>Use AM PM time format</ModalTitles>
+      <ModalTitles>12-hour clock</ModalTitles>
       <Switch
         id="AmPmSwitch"
         checked={formatSetting}
