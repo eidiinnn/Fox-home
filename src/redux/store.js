@@ -50,10 +50,11 @@ const settingReducer = (state = initialState(), action) => {
       stateToLocalStorage.imagesFromDB = null;
       localStorage.setItem("settings", JSON.stringify(stateToLocalStorage));
 
-      uploadImage(
-        state.imagesFromDB.blobImage.image,
-        state.imagesFromDB.blobImage.cropImage
-      );
+      if (state.imagesFromDB !== null)
+        uploadImage(
+          state.imagesFromDB.blobImage.image,
+          state.imagesFromDB.blobImage.cropImage
+        );
 
       return state;
     }

@@ -14,7 +14,7 @@ export default function initialState() {
     backgroundColor: "rgb(0, 3, 14, .1)",
     blurLevel: 5,
     customImage: false,
-    images: null,
+    imagesFromDB: null,
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 
