@@ -11,9 +11,9 @@ export default function initialState() {
       "https://www.notion.so/",
     ],
     AmPmTimerFormat: false,
-    backgroundColor: "rgb(0, 3, 14, .1)",
-    blurLevel: 5,
-    borderRadius: 0,
+    backgroundColor: "rgb(0, 3, 14, .2)",
+    blurLevel: 2,
+    borderRadius: 30,
     customImage: false,
     imagesFromDB: null,
   };
