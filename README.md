@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://i.imgur.com/hhr7HOq.png" style="width: 500px">
+<img src="https://i.imgur.com/Bo4R9Kc.png" style="width: 400px">
 </p>
   
 # Fox Home :fox_face:
