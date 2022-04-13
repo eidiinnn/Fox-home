@@ -3,8 +3,8 @@
   "name": "Fox homepage",
   "description": "A start page for browsers with some costume options.",
   "author": "Eduardo da Silva",
-  "manifest_version": 2,
-  "version": "0.1.0",
+  "manifest_version": 3,
+  "version": "0.1.10",
   "icons": {
     "16": "icons/fox-16x16.png",
     "48": "icons/fox-48x48.png",
