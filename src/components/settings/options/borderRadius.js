@@ -17,7 +17,7 @@ export default function BorderRadius() {
         type="range"
         step="0.2"
         min="0"
-        max="20"
+        max="50"
         value={borderRadius}
         onChange={(e) => setBorderRadius(e.target.value)}
       />
