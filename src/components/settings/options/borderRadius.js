@@ -12,7 +12,7 @@ export default function BorderRadius() {
 
   return (
     <ModalItem>
-      <ModalTitles>Border Radius</ModalTitles>
+      <ModalTitles>Round Corners</ModalTitles>
       <input
         type="range"
         step="0.2"
