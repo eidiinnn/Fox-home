@@ -1,6 +1,6 @@
 {
   "short_name": "FoxHome",
-  "name": "Fox homepage",
+  "name": "Fox home",
   "description": "A start page for browsers with some costume options.",
   "author": "Eduardo da Silva",
   "manifest_version": 3,
