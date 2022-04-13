@@ -10,6 +10,7 @@ export const MainContainer = styled.div`
 
   background-color: ${(props) => props.backgroundColor};
   backdrop-filter: blur(10px);
+border-radius: ${(props) => props.borderRadius + "px"}};
 
   @media screen and (max-width: 900px) {
     flex-direction: column;

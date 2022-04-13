@@ -55,7 +55,7 @@ export const ModalItem = styled.div`
 `;
 
 export const CloseIcon = styled.div`
-  font-size: 1.23rem;
+  font-size: 1.43rem;
   display: flex;
   align-items: center;
 `;

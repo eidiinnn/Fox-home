@@ -13,8 +13,9 @@ export default function initialState() {
     AmPmTimerFormat: false,
     backgroundColor: "rgb(0, 3, 14, .1)",
     blurLevel: 5,
+    borderRadius: 0,
     customImage: false,
-    images: null,
+    imagesFromDB: null,
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 

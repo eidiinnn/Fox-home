@@ -33,6 +33,12 @@ const settingReducer = (state = initialState(), action) => {
       return newState;
     }
 
+    case "BORDER_RADIUS_CHANGE": {
+      const newState = { ...state };
+      newState.borderRadius = action.borderRadius;
+      return newState;
+    }
+
     case "BLUR_LEVEL_CHANGE": {
       const newState = { ...state };
       newState.blurLevel = action.blurLevel;
@@ -50,10 +56,11 @@ const settingReducer = (state = initialState(), action) => {
       stateToLocalStorage.imagesFromDB = null;
       localStorage.setItem("settings", JSON.stringify(stateToLocalStorage));
 
-      uploadImage(
-        state.imagesFromDB.blobImage.image,
-        state.imagesFromDB.blobImage.cropImage
-      );
+      if (state.imagesFromDB !== null)
+        uploadImage(
+          state.imagesFromDB.blobImage.image,
+          state.imagesFromDB.blobImage.cropImage
+        );
 
       return state;
     }

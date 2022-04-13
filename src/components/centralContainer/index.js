@@ -11,9 +11,13 @@ import {
 
 export default function CentralContainer() {
   const backgroundColor = useSelector((state) => state.backgroundColor);
+  const borderRadius = useSelector((state) => state.borderRadius);
 
   return (
-    <MainContainer backgroundColor={backgroundColor}>
+    <MainContainer
+      backgroundColor={backgroundColor}
+      borderRadius={borderRadius}
+    >
       <GetImage type="centralDivImage" />
       <ClockAndBookmarkContainer>
         <ClockComponent />
