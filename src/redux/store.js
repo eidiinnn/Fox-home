@@ -33,6 +33,12 @@ const settingReducer = (state = initialState(), action) => {
       return newState;
     }
 
+    case "BORDER_RADIUS_CHANGE": {
+      const newState = { ...state };
+      newState.borderRadius = action.borderRadius;
+      return newState;
+    }
+
     case "BLUR_LEVEL_CHANGE": {
       const newState = { ...state };
       newState.blurLevel = action.blurLevel;
