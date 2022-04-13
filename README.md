@@ -11,14 +11,12 @@ A start page for browsers with some costume options. Will be a Chrome extension 
 
 [Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
 
-[Art by Guweiz](https://mobile.twitter.com/ttguweiz?lang=en) 
-
 ## How to customize 	:paintbrush:
 Click on the :gear: to see the settings options.
 
 ## Screenshot :camera:
 
-<img src="https://i.imgur.com/u7d5b0I.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/GycmP1I.png" style="max-width: 100%;" >
 
 
 ## React Commands :computer:
