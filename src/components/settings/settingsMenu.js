@@ -8,6 +8,7 @@ import BackgroundColor from "./options/backgroundColor";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
 import Blur from "./options/blur";
+import BorderRadius from "./options/borderRadius";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
@@ -43,6 +44,7 @@ export default function SettingsMenu() {
       <ModalDisplay show={modalShow}>
         <ModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
+          <BorderRadius />
           <Blur />
           <BackgroundColor />
           <AmPmFormat />

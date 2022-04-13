@@ -7,6 +7,7 @@ export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);
   const imageFromDB = useSelector((state) => state.imagesFromDB);
   const blurLevel = useSelector((state) => state.blurLevel);
+  const borderRadius = useSelector((state) => state.borderRadius);
 
   if (!imageFromDB && useCustomImage === true) return null;
 
@@ -27,7 +28,12 @@ export default function GetImage(props) {
 
     switch (type) {
       case "centralDivImage":
-        return <CentralContainerImage src={image.CentralContainerImage} />;
+        return (
+          <CentralContainerImage
+            src={image.CentralContainerImage}
+            borderRadius={borderRadius}
+          />
+        );
       case "background":
         return (
           <BackgroundImage blurLevel={blurLevel} image={image.background} />

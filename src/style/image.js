@@ -16,6 +16,8 @@ export const CentralContainerImage = styled.img`
   max-width: 300px;
   height: 100%;
   object-fit: cover;
+  border-radius: ${(props) =>
+    `${props.borderRadius}px 0px 0px ${props.borderRadius}px`};
 
   @media screen and (max-width: 900px) {
     max-width: 100%;
