@@ -51,6 +51,12 @@ const settingReducer = (state = initialState(), action) => {
       return newState;
     }
 
+    case "TIMEZONE_CHANGE": {
+      const newState = {...state};
+      newState.timezone = action.timezone;
+      return newState;
+    }
+
     case "SAVE_SETTINGS": {
       const stateToLocalStorage = { ...state };
       stateToLocalStorage.imagesFromDB = null;
