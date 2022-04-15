@@ -9,6 +9,7 @@ import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
 import Blur from "./options/blur";
 import BorderRadius from "./options/borderRadius";
+import Timezone from "./options/timezone";
 
 import { FaCog, FaRegTimesCircle } from "react-icons/fa";
 
@@ -44,6 +45,7 @@ export default function SettingsMenu() {
       <ModalDisplay show={modalShow}>
         <ModalContainer backgroundColor={backgroundColor}>
           <BackgroundImage />
+          <Timezone />
           <BorderRadius />
           <Blur />
           <BackgroundColor />
