@@ -3,7 +3,7 @@
 </p>
   
 # Fox Home :fox_face:
-A start page for browsers with some costume options. Will be a Chrome extension come soon!
+A start page for browsers with some costume options.
 
 ## Links :link:
 [Download on Chrome or Brave](https://chrome.google.com/webstore/detail/fox-home/kbalcggddakepkjgcpijccappaeppfmh?hl=en-GB&authuser=0)
