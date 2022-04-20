@@ -1,4 +1,4 @@
-import { SiNotion } from "react-icons/si";
+import { SiNotion, SiGmail } from "react-icons/si";
 import {
   FaDiscord,
   FaGithub,
@@ -25,6 +25,14 @@ import {
   FaFlipboard,
   FaSteam,
   FaTumblr,
+  FaGoogleDrive,
+  FaGoogle,
+  FaXbox,
+  FaYarn,
+  FaCodepen,
+  FaPaypal,
+  FaDocker,
+  FaDribbble,
 } from "react-icons/fa";
 
 export const iconsList = [
@@ -32,7 +40,7 @@ export const iconsList = [
   ["github.com", FaGithub],
   ["reddit.com", FaReddit],
   ["linkedin.com", FaLinkedin],
-  ["whatsapp.com", FaWhatsapp],
+  ["web.whatsapp.com", FaWhatsapp],
   ["notion.so", SiNotion],
   ["facebook.com", FaFacebook],
   ["twitter.com", FaTwitter],
@@ -54,4 +62,15 @@ export const iconsList = [
   ["flipboard.com", FaFlipboard],
   ["steampowered.com", FaSteam],
   ["tumblr.com", FaTumblr],
+  ["drive.google.com", FaGoogleDrive],
+  ["google.com", FaGoogle],
+  ["mail.google.com", SiGmail],
+  ["gmail.com", SiGmail],
+  ["xbox.com", FaXbox],
+  ["yarnpkg.com", FaYarn],
+  ["codepen.io", FaCodepen],
+  ["paypal.com", FaPaypal],
+  ["docker.com", FaDocker],
+  ["hub.docker.com", FaDocker],
+  ["dribbble.com", FaDribbble],
 ];

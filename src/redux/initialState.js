@@ -16,6 +16,7 @@ export default function initialState() {
     borderRadius: 30,
     customImage: false,
     imagesFromDB: null,
+    timezone: "",
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 
