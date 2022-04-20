@@ -22,5 +22,7 @@ export const CentralContainerImage = styled.img`
   @media screen and (max-width: 900px) {
     max-width: 100%;
     height: 100px;
+    border-radius: ${(props) =>
+      `${props.borderRadius}px ${props.borderRadius}px 0px 0px`};
   }
 `;
