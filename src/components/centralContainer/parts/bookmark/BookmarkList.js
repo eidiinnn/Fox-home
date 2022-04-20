@@ -1,8 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
 import { iconsList } from "./iconsList.js";
-import extractDomain from "extract-domain";
-
 import {
   BookmarkUl,
   BookmarkLi,
@@ -13,7 +11,10 @@ export default function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
 
   function filterUrl(url) {
-    return extractDomain(url, { tld: true });
+    if (url === "") return null;
+    return url.match(
+      /^(?:https?:\/\/)?(?:[^@\\/\n]+@)?(?:www\.)?([^:\\/\n]+)/im
+    )[1];
   }
 
   function getAListedIcon(url) {
