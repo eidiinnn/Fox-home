@@ -65,6 +65,7 @@ export const iconsList = [
   ["drive.google.com", FaGoogleDrive],
   ["google.com", FaGoogle],
   ["mail.google.com", SiGmail],
+  ["gmail.com", SiGmail],
   ["xbox.com", FaXbox],
   ["yarnpkg.com", FaYarn],
   ["codepen.io", FaCodepen],
