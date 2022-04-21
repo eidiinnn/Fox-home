@@ -10,7 +10,7 @@ export const MainContainer = styled.div`
 
   background-color: ${(props) => props.backgroundColor};
   backdrop-filter: blur(10px);
-border-radius: ${(props) => props.borderRadius + "px"}};
+  border-radius: ${(props) => props.borderRadius + "px"};
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
@@ -63,6 +63,11 @@ export const BookmarkLi = styled.li`
   font-size: 3.2rem;
   color: white;
   margin: 0.6rem;
+  transition: 500ms;
+
+  &:hover {
+    transform: scale(1.3);
+  }
 `;
 
 export const IconCreated = styled.div`
