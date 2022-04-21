@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
 const primaryColor = "#464649";
-const secondaryColor = "#6E3E8A";
+const secondaryColor = "#a87062";
 const normalTextColor = "#bcbcbd";
 const whiteColor = "#ffffff";
+const DarkerColor = "#0c0c10";
 const backgroundColor = "#151519";
 
 export const OpenSettingsModalIcon = styled.div`
@@ -56,7 +57,7 @@ export const ModalContainer = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    background: ${primaryColor};
+    background: ${DarkerColor};
   }
 
   &::-webkit-scrollbar-thumb {
@@ -155,7 +156,7 @@ export const DefaultSwitchSpan = styled.span`
   right: 0;
   bottom: 0;
   border-radius: 2px;
-  background-color: ${primaryColor};
+  background-color: ${DarkerColor};
   -webkit-transition: 0.4s;
   transition: 0.4s;
 
@@ -167,7 +168,7 @@ export const DefaultSwitchSpan = styled.span`
     left: 4px;
     bottom: 4px;
     border-radius: 2px;
-    background-color: ${backgroundColor};
+    background-color: ${primaryColor};
     -webkit-transition: 0.4s;
     transition: 0.4s;
   }
@@ -209,7 +210,7 @@ export const TimezoneSelect = styled.select`
   transition: 500ms;
 
   &:hover {
-    background-color: ${backgroundColor};
+    background-color: ${DarkerColor};
   }
 
   &::-webkit-scrollbar {
@@ -294,6 +295,7 @@ export const CropImageContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: 1rem;
+  margin-bottom: 2rem;
 `;
 
 export const CropImageRangeContainer = styled.div`
