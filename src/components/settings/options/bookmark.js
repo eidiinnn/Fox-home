@@ -2,14 +2,14 @@ import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import extractDomain from "extract-domain";
 
-import { FaRegTimesCircle } from "react-icons/fa";
+import { IoIosCloseCircle } from "react-icons/io";
 import {
   ModalItem,
   ModalTitles,
   BookmarkInputs,
   BookmarkInputsContainer,
   BookmarkInputRemove,
-  BookmarkAddInput,
+  DefaultButton,
 } from "../../../style/settings";
 
 export default function Bookmark() {
@@ -25,8 +25,8 @@ export default function Bookmark() {
 
   function correctUrlIndicator(event) {
     !extractDomain(event.target.value, { tld: true })
-      ? (event.target.style.backgroundColor = "#e01f5d")
-      : (event.target.style.backgroundColor = "#1FE0A2");
+      ? (event.target.style.outline = "2px solid #e01f5d")
+      : (event.target.style.outline = "2px solid #1FE0A2");
   }
 
   function inputRemove(index) {
@@ -37,7 +37,7 @@ export default function Bookmark() {
 
   function addNewInput() {
     if (bookmark.length >= 6) return null;
-    return <BookmarkAddInput onClick={addNewInputAction}>Add</BookmarkAddInput>;
+    return <DefaultButton onClick={addNewInputAction}>Add</DefaultButton>;
   }
 
   function addNewInputAction() {
@@ -57,7 +57,7 @@ export default function Bookmark() {
               onChange={(event) => inputOnChange(event, index)}
             />
             <BookmarkInputRemove onClick={() => inputRemove(index)}>
-              <FaRegTimesCircle />
+              <IoIosCloseCircle />
             </BookmarkInputRemove>
           </BookmarkInputsContainer>
         );

@@ -11,20 +11,21 @@ import Blur from "./options/blur";
 import BorderRadius from "./options/borderRadius";
 import Timezone from "./options/timezone";
 
-import { FaCog, FaRegTimesCircle } from "react-icons/fa";
+import { IoIosCloseCircle, IoMdCog } from "react-icons/io";
 
 import {
   ModalDisplay,
   ModalContainer,
   ModalItem,
   OpenSettingsModalIcon,
-  SaveButton,
   CloseIcon,
+  DefaultButton,
 } from "../../style/settings";
 
 export default function SettingsMenu() {
   const dispatch = useDispatch();
   const backgroundColor = useSelector((state) => state.backgroundColor);
+  const borderRadius = useSelector((state) => state.borderRadius);
 
   function buttonSave() {
     dispatch({ type: "SAVE_SETTINGS" });
@@ -43,7 +44,10 @@ export default function SettingsMenu() {
   return (
     <>
       <ModalDisplay show={modalShow}>
-        <ModalContainer backgroundColor={backgroundColor}>
+        <ModalContainer
+          backgroundColor={backgroundColor}
+          borderRadius={borderRadius}
+        >
           <BackgroundImage />
           <Timezone />
           <BorderRadius />
@@ -54,20 +58,20 @@ export default function SettingsMenu() {
 
           <ModalItem row noBottomMargin>
             <ModalItem row noBottomMargin noTopMargin>
-              <SaveButton value="Save" onClick={buttonSave}>
+              <DefaultButton value="Save" onClick={buttonSave}>
                 Save
-              </SaveButton>
+              </DefaultButton>
               <SupportMe />
             </ModalItem>
             <CloseIcon>
-              <FaRegTimesCircle onClick={buttonNotSave} />
+              <IoIosCloseCircle onClick={buttonNotSave} />
             </CloseIcon>
           </ModalItem>
         </ModalContainer>
       </ModalDisplay>
 
       <OpenSettingsModalIcon>
-        <FaCog onClick={modalAction} />
+        <IoMdCog onClick={modalAction} />
       </OpenSettingsModalIcon>
     </>
   );
