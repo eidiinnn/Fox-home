@@ -50,6 +50,19 @@ export const ModalContainer = styled.div`
   max-height: 90%;
   padding: 1.25rem;
   border-radius: 2px;
+
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${primaryColor};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${secondaryColor};
+    border-radius: 10px;
+  }
 `;
 
 export const ModalTitles = styled.h1`
@@ -197,6 +210,19 @@ export const TimezoneSelect = styled.select`
 
   &:hover {
     background-color: ${backgroundColor};
+  }
+
+  &::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: ${primaryColor};
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: ${secondaryColor};
+    border-radius: 10px;
   }
 `;
 
