@@ -45,6 +45,7 @@ export const iconsList = [
   ["facebook.com", FaFacebook],
   ["twitter.com", FaTwitter],
   ["spotify.com", FaSpotify],
+  ["open.spotify.com", FaSpotify],
   ["instagram.com", FaInstagram],
   ["youtube.com", FaYoutube],
   ["trueachievements.com", FaGamepad],

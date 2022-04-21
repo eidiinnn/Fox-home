@@ -5,6 +5,9 @@ import josefinRegular from "../fonts/JosefinSans-Regular.ttf";
 import josefinBold from "../fonts/JosefinSans-Bold.ttf";
 import robotoCondensed from "../fonts/RobotoCondensed-Bold.ttf";
 import robotoRegular from "../fonts/Roboto-Regular.ttf";
+import soraRegular from "../fonts/Sora-Regular.ttf";
+import soraMedium from "../fonts/Sora-Medium.ttf";
+import soraBold from "../fonts/Sora-Bold.ttf";
 
 export const GlobalStyle = createGlobalStyle` 
 body {
@@ -31,16 +34,6 @@ a:active {
   color: inherit;
 }
 
-.MuiSwitch-track{
-  background-color: #ffffff !important;
-}
-
-input[type="file"]:button{
-  font-family: "josefin";
-  border-radius: 5px;
-  border: none;
-}
-
 @font-face {
   font-family: "robotoCondensed";
   src: url(${robotoCondensed});
@@ -64,6 +57,26 @@ input[type="file"]:button{
     src: url(${josefinBold});
     font-weight: 700;
 }
+
+@font-face {
+    font-family: "sora";
+    src: url(${soraRegular});
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "sora";
+    src: url(${soraMedium});
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "sora";
+    src: url(${soraBold});
+    font-weight: 700;
+}
+
+
 `;
 
 export const FullWideContainer = styled.div`
