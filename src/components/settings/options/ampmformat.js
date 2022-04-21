@@ -1,7 +1,13 @@
 import React from "react";
 import Switch from "@mui/material/Switch";
 import { useSelector, useDispatch } from "react-redux";
-import { ModalItem, ModalTitles } from "../../../style/settings";
+import {
+  ModalItem,
+  ModalTitles,
+  DefaultSwitchLabel,
+  DefaultSwitchInput,
+  DefaultSwitchSpan,
+} from "../../../style/settings";
 
 export default function AmPmFormat() {
   const dispatch = useDispatch();
@@ -15,11 +21,15 @@ export default function AmPmFormat() {
   return (
     <ModalItem row>
       <ModalTitles>12-hour clock</ModalTitles>
-      <Switch
-        id="AmPmSwitch"
-        checked={formatSetting}
-        onChange={AmPmSwitchOnChange}
-      />
+
+      <DefaultSwitchLabel>
+        <DefaultSwitchInput
+          type="checkbox"
+          checked={formatSetting}
+          onChange={AmPmSwitchOnChange}
+        ></DefaultSwitchInput>
+        <DefaultSwitchSpan></DefaultSwitchSpan>
+      </DefaultSwitchLabel>
     </ModalItem>
   );
 }
