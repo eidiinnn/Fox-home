@@ -25,8 +25,8 @@ export default function Bookmark() {
 
   function correctUrlIndicator(event) {
     !extractDomain(event.target.value, { tld: true })
-      ? (event.target.style.backgroundColor = "#e01f5d")
-      : (event.target.style.backgroundColor = "#1FE0A2");
+      ? (event.target.style.outline = "2px solid #e01f5d")
+      : (event.target.style.outline = "2px solid #1FE0A2");
   }
 
   function inputRemove(index) {
