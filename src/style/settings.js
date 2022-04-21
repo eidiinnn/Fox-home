@@ -1,5 +1,11 @@
 import styled from "styled-components";
 
+const primaryColor = "#464649";
+const secondaryColor = "#6E3E8A";
+const normalTextColor = "#bcbcbd";
+const whiteColor = "#ffffff";
+const backgroundColor = "#151519";
+
 export const OpenSettingsModalIcon = styled.div`
   position: absolute;
   top: 0px;
@@ -8,14 +14,20 @@ export const OpenSettingsModalIcon = styled.div`
   margin-left: 1.25rem;
 
   color: white;
-  font-size: 1.25rem;
+  font-size: 1.35rem;
+
+  transition: 500ms;
+
+  &:hover {
+    color: ${secondaryColor};
+  }
 `;
 
 export const ModalDisplay = styled.div`
   display: ${(props) => (props.show ? "flex" : "none")};
   justify-content: center;
   align-items: center;
-  background-color: #101010b5;
+  background-color: #1010106b;
 
   position: absolute;
   width: 100%;
@@ -30,19 +42,20 @@ export const ModalContainer = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
 
-  font-family: "josefin";
-  background-color: ${(props) => props.backgroundColor};
+  font-family: "sora";
+  background-color: ${backgroundColor};
   color: white;
 
   width: 500px;
-  max-height: 80%;
+  max-height: 90%;
   padding: 1.25rem;
-  backdrop-filter: blur(10px);
+  border-radius: 2px;
 `;
 
 export const ModalTitles = styled.h1`
-  font-size: 0.93rem;
+  font-size: 0.83rem;
   font-weight: 700;
+  color: ${whiteColor};
 `;
 
 export const ModalItem = styled.div`
@@ -50,14 +63,108 @@ export const ModalItem = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.row ? "space-between" : "left")};
   align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "10px")};
-  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.8rem")};
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.4rem")};
+  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.5rem")};
+`;
+
+export const DefaultButton = styled.button`
+  font-family: "sora";
+  font-weight: 700;
+  font-size: 0.75rem;
+  background-color: ${primaryColor};
+  color: ${normalTextColor};
+
+  padding: 0.21rem 1rem 0.21rem 1rem;
+  margin: 0 !important;
+  border-radius: 2px;
+  border: 0;
+
+  width: 80px;
+  transition: 500ms;
+
+  &:hover {
+    background-color: ${secondaryColor};
+  }
+`;
+
+export const DefaultRage = styled.input`
+  width: 100%;
+  appearance: none;
+
+  &::-webkit-slider-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: ${secondaryColor};
+    -webkit-appearance: none;
+    margin-top: -0.4rem;
+  }
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    background: ${primaryColor};
+    border-radius: 2px;
+    -webkit-appearance: none;
+  }
+
+  &::-moz-range-progress {
+    background: ${primaryColor};
+    -webkit-appearance: none;
+  }
+`;
+
+export const Upload = styled.input`
+  &::-webkit-file-upload-button {
+    font-family: "sora";
+    font-weight: 700;
+    font-size: 0.75rem;
+    background-color: ${primaryColor};
+    color: ${normalTextColor};
+
+    padding: 0.21rem 1rem 0.21rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    border: 0;
+
+    transition: 500ms;
+
+    &:hover {
+      background-color: ${secondaryColor};
+    }
+  }
+`;
+
+export const TimezoneSelect = styled.select`
+  font-family: "sora";
+  font-weight: 700;
+  font-size: 0.75rem;
+  background-color: ${primaryColor};
+  color: ${normalTextColor};
+
+  padding: 0.21rem 0.5rem 0.21rem 0.5rem;
+  margin-right: 0.5rem;
+  border-radius: 2px;
+  border: 0;
+
+  transition: 500ms;
+
+  &:hover {
+    background-color: ${backgroundColor};
+  }
 `;
 
 export const CloseIcon = styled.div`
-  font-size: 1.43rem;
+  font-size: 1.5rem;
+  color: ${primaryColor};
   display: flex;
   align-items: center;
+
+  transition: 500ms;
+
+  &:hover {
+    color: ${secondaryColor};
+  }
 `;
 
 export const SupportMeLink = styled.a`
@@ -66,7 +173,8 @@ export const SupportMeLink = styled.a`
   align-items: center;
   margin: 0.62rem;
 
-  font-size: 0.87rem;
+  font-size: 0.77rem;
+  color: ${secondaryColor} !important;
   text-align: center;
   font-weight: 700;
 `;
@@ -76,19 +184,6 @@ export const SupportMeIcon = styled.div`
   align-items: center;
   margin-left: 0.18rem;
   font-size: 1rem;
-`;
-
-export const SaveButton = styled.button`
-  font-weight: 700;
-
-  padding: 0.21rem 0.8rem 0.31rem 0.8rem;
-  margin: 0 !important;
-  border-radius: 3px;
-  border: 0;
-
-  &:hover {
-    filter: brightness(0.8);
-  }
 `;
 
 export const BookmarkInputsContainer = styled.div`
@@ -102,29 +197,24 @@ export const BookmarkInputs = styled.input`
   width: 300px;
   height: 20px;
   border: 0;
-  border-radius: 3px;
+  border-radius: 2px;
   margin-bottom: 0.31rem;
   font-family: "roboto";
   font-weight: 400;
+
+  background-color: ${primaryColor};
+  color: ${normalTextColor};
 `;
 
 export const BookmarkInputRemove = styled.div`
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   margin-left: 0.35rem;
-`;
+  color: ${primaryColor};
 
-export const BookmarkAddInput = styled.button`
-  width: min-content;
-  padding: 0.21rem 1.4rem 0.21rem 1.4rem;
-  margin: 0 !important;
-  border-radius: 3px;
-  border: 0;
-
-  font-weight: 700;
-  font-size: 0.8rem;
+  transition: 500ms;
 
   &:hover {
-    filter: brightness(0.8);
+    color: ${secondaryColor};
   }
 `;
 
@@ -138,28 +228,11 @@ export const CropImageRangeContainer = styled.div`
   width: 400px;
   display: flex;
   flex-direction: row;
-  font-size: 1.3rem;
-  color: white;
+  font-size: 1.7rem;
+  color: ${whiteColor};
   margin-top: 0.4rem;
+  margin-bottom: 0.25rem;
 
+  justify-content: right;
   align-items: center;
-`;
-
-export const CropImageRage = styled.input`
-  width: 100%;
-`;
-
-export const CropImageButton = styled.button`
-  width: min-content;
-  padding: 0.21rem 1.4rem 0.21rem 1.4rem;
-  margin-top: 0.2rem;
-  border-radius: 3px;
-  border: 0;
-
-  font-weight: 700;
-  font-size: 0.8rem;
-
-  &:hover {
-    filter: brightness(0.8);
-  }
 `;

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CropImage from "./cropImage";
 import Resizer from "react-image-file-resizer";
 import { useDispatch } from "react-redux";
-import { ModalItem, ModalTitles } from "../../../../style/settings";
+import { ModalItem, ModalTitles, Upload } from "../../../../style/settings";
 
 function resizeFile(file) {
   return new Promise((resolve) => {
@@ -49,7 +49,7 @@ export default function BackgroundImage() {
   return (
     <ModalItem>
       <ModalTitles>Image</ModalTitles>
-      <input
+      <Upload
         id="uploadInput"
         type="file"
         accept="image/png, image/jpeg"

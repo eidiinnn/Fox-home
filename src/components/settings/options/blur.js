@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import { ModalItem, ModalTitles } from "../../../style/settings";
+import { ModalItem, ModalTitles, DefaultRage } from "../../../style/settings";
 
 export default function Blur() {
   const blur = useSelector((state) => state.blurLevel);
@@ -14,7 +14,7 @@ export default function Blur() {
   return (
     <ModalItem>
       <ModalTitles>Background Blur</ModalTitles>
-      <input
+      <DefaultRage
         type="range"
         min="0"
         max="10"

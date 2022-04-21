@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import AvatarEditor from "react-avatar-editor";
 
-import { FaRegImage } from "react-icons/fa";
+import { IoMdAdd, IoMdRemove } from "react-icons/io";
 import {
   CropImageContainer,
-  CropImageButton,
+  DefaultButton,
   CropImageRangeContainer,
-  CropImageRage,
+  DefaultRage,
 } from "../../../../style/settings";
 
 export default function CropImage(props) {
@@ -40,8 +40,8 @@ export default function CropImage(props) {
       />
 
       <CropImageRangeContainer>
-        <FaRegImage />
-        <CropImageRage
+        <IoMdRemove />
+        <DefaultRage
           type="range"
           min="1"
           max="3"
@@ -49,9 +49,9 @@ export default function CropImage(props) {
           value={scale}
           onChange={(e) => setScale(e.target.value)}
         />
-        <FaRegImage style={{ fontSize: "2rem" }} />
+        <IoMdAdd />
       </CropImageRangeContainer>
-      <CropImageButton onClick={onClickButton}>Crop</CropImageButton>
+      <DefaultButton onClick={onClickButton}>Crop</DefaultButton>
     </CropImageContainer>
   );
 }
