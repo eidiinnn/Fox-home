@@ -175,6 +175,10 @@ export const DefaultSwitchSpan = styled.span`
 `;
 
 export const Upload = styled.input`
+  font-family: "sora";
+  font-size: 0.7rem;
+  font-weight: 500;
+
   &::-webkit-file-upload-button {
     font-family: "sora";
     font-weight: 700;

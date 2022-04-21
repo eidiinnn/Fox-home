@@ -34,16 +34,6 @@ a:active {
   color: inherit;
 }
 
-.MuiSwitch-track{
-  background-color: #ffffff !important;
-}
-
-input[type="file"]:button{
-  font-family: "josefin";
-  border-radius: 5px;
-  border: none;
-}
-
 @font-face {
   font-family: "robotoCondensed";
   src: url(${robotoCondensed});
