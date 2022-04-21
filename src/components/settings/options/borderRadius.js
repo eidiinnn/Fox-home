@@ -1,6 +1,6 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { ModalItem, ModalTitles } from "../../../style/settings";
+import { ModalItem, ModalTitles, DefaultRage } from "../../../style/settings";
 
 export default function BorderRadius() {
   const borderRadius = useSelector((state) => state.borderRadius);
@@ -13,7 +13,7 @@ export default function BorderRadius() {
   return (
     <ModalItem>
       <ModalTitles>Round Corners</ModalTitles>
-      <input
+      <DefaultRage
         type="range"
         step="0.2"
         min="0"
