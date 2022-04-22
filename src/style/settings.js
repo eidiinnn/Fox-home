@@ -104,6 +104,11 @@ export const DefaultButton = styled.button`
 export const DefaultRage = styled.input`
   width: 100%;
   appearance: none;
+  background-color: transparent;
+
+  &:focus {
+    outline: none;
+  }
 
   &::-webkit-slider-thumb {
     height: 18px;
@@ -111,7 +116,9 @@ export const DefaultRage = styled.input`
     border-radius: 50%;
     background: ${secondaryColor};
     -webkit-appearance: none;
+    -moz-appearance: none;
     margin-top: -0.4rem;
+    cursor: pointer;
   }
 
   &::-webkit-slider-runnable-track {
@@ -122,9 +129,27 @@ export const DefaultRage = styled.input`
     -webkit-appearance: none;
   }
 
-  &::-moz-range-progress {
+  &::-moz-range-thumb {
+    height: 18px;
+    width: 18px;
+    border-radius: 50%;
+    background: ${secondaryColor};
+    margin-top: -0.4rem;
+    border: none;
+    cursor: pointer;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 5px;
     background: ${primaryColor};
-    -webkit-appearance: none;
+    border-radius: 2px;
+    border: none;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+    visibility: hidden;
   }
 `;
 
@@ -180,6 +205,25 @@ export const Upload = styled.input`
   font-weight: 500;
 
   &::-webkit-file-upload-button {
+    font-family: "sora";
+    font-weight: 700;
+    font-size: 0.75rem;
+    background-color: ${primaryColor};
+    color: ${normalTextColor};
+
+    padding: 0.21rem 1rem 0.21rem 1rem;
+    margin-right: 0.5rem;
+    border-radius: 2px;
+    border: 0;
+
+    transition: 500ms;
+
+    &:hover {
+      background-color: ${secondaryColor};
+    }
+  }
+
+  &::file-selector-button {
     font-family: "sora";
     font-weight: 700;
     font-size: 0.75rem;
