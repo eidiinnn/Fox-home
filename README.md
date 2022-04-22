@@ -15,9 +15,10 @@ A start page for browsers with some costume options.
 ## How to customize 	:paintbrush:
 Click on the :gear: to see the settings options.
 
-## Screenshot :camera:
+## Screenshots :camera:
 
 <img src="https://i.imgur.com/GycmP1I.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/grmJrlh.png" style="max-width: 100%;" >
 
 
 ## React Commands :computer:
