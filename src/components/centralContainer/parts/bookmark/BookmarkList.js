@@ -35,7 +35,7 @@ export default function BookmarkList() {
         if (!filterUrl(url)) return null;
         return (
           <BookmarkLi key={url}>
-            <a href={url}>{getAIcon(url)}</a>
+            <a href={url} style={{display: "flex"}}>{getAIcon(url)}</a>
           </BookmarkLi>
         );
       })}
