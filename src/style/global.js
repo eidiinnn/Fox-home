@@ -1,8 +1,6 @@
 import styled from "styled-components";
 import { createGlobalStyle } from "styled-components";
 
-import josefinRegular from "../fonts/JosefinSans-Regular.ttf";
-import josefinBold from "../fonts/JosefinSans-Bold.ttf";
 import robotoCondensed from "../fonts/RobotoCondensed-Bold.ttf";
 import robotoRegular from "../fonts/Roboto-Regular.ttf";
 import soraRegular from "../fonts/Sora-Regular.ttf";
@@ -47,18 +45,6 @@ a:active {
 }
 
 @font-face {
-    font-family: "josefin";
-    src: url(${josefinRegular});
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "josefin";
-    src: url(${josefinBold});
-    font-weight: 700;
-}
-
-@font-face {
     font-family: "sora";
     src: url(${soraRegular});
     font-weight: 400;
@@ -75,8 +61,6 @@ a:active {
     src: url(${soraBold});
     font-weight: 700;
 }
-
-
 `;
 
 export const FullWideContainer = styled.div`
