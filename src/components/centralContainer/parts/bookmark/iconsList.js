@@ -1,4 +1,5 @@
-import { SiNotion, SiGmail } from "react-icons/si";
+import { SiNotion, SiGmail, SiNubank } from "react-icons/si";
+import { RiNetflixFill } from "react-icons/ri";
 import {
   FaDiscord,
   FaGithub,
@@ -33,6 +34,14 @@ import {
   FaPaypal,
   FaDocker,
   FaDribbble,
+  FaTiktok,
+  FaTripadvisor,
+  FaAirbnb,
+  FaPatreon,
+  FaTrello,
+  FaPinterest,
+  FaSoundcloud,
+  FaPalette,
 } from "react-icons/fa";
 
 export const iconsList = [
@@ -62,6 +71,7 @@ export const iconsList = [
   ["flickr.com", FaFlickr],
   ["flipboard.com", FaFlipboard],
   ["steampowered.com", FaSteam],
+  ["store.steampowered.com", FaSteam],
   ["tumblr.com", FaTumblr],
   ["drive.google.com", FaGoogleDrive],
   ["google.com", FaGoogle],
@@ -74,4 +84,14 @@ export const iconsList = [
   ["docker.com", FaDocker],
   ["hub.docker.com", FaDocker],
   ["dribbble.com", FaDribbble],
+  ["tiktok.com", FaTiktok],
+  ["tripadvisor.com", FaTripadvisor],
+  ["netflix.com", RiNetflixFill],
+  ["airbnb.com", FaAirbnb],
+  ["app.nubank.com.br", SiNubank],
+  ["patreon.com", FaPatreon],
+  ["trello.com", FaTrello],
+  ["pinterest.com", FaPinterest],
+  ["soundcloud.com", FaSoundcloud],
+  ["color.adobe.com", FaPalette],
 ];

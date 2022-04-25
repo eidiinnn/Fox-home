@@ -2,8 +2,8 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { iconsList } from "./iconsList.js";
 import {
-  BookmarkUl,
-  BookmarkLi,
+  BookmarkLinkContainer,
+  BookmarkLink,
   IconCreated,
 } from "../../../../style/centralContainer";
 
@@ -30,15 +30,15 @@ export default function BookmarkList() {
   }
 
   return (
-    <BookmarkUl>
+    <BookmarkLinkContainer>
       {bookmarkLinks.map((url) => {
         if (!filterUrl(url)) return null;
         return (
-          <BookmarkLi key={url}>
-            <a href={url} style={{display: "flex"}}>{getAIcon(url)}</a>
-          </BookmarkLi>
+          <BookmarkLink key={url} href={url}>
+            {getAIcon(url)}
+          </BookmarkLink>
         );
       })}
-    </BookmarkUl>
+    </BookmarkLinkContainer>
   );
 }
