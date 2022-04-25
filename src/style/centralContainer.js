@@ -48,7 +48,7 @@ export const ClockContainer = styled.div`
   }
 `;
 
-export const BookmarkUl = styled.ul`
+export const BookmarkLinkContainer = styled.div`
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -59,11 +59,16 @@ export const BookmarkUl = styled.ul`
   margin: 0;
 `;
 
-export const BookmarkLi = styled.li`
+export const BookmarkLink = styled.a`
   font-size: 3.2rem;
-  color: white;
+  color: #ffffff !important;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0.6rem;
   transition: 500ms;
+  box-sizing: border-box;
 
   &:hover {
     transform: scale(1.3);
@@ -74,17 +79,18 @@ export const IconCreated = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
 
-  width: 38px;
-  height: 38px;
+  width: 3.15rem;
+  height: 3.15rem;
 
   font-family: "robotoCondensed";
+  text-align: center;
   color: white;
   font-weight: 700;
   font-size: 2.5rem;
+  text-decoration: none;
 
-  padding: 0.16rem;
-  border-radius: 100px;
-  border: solid;
-  border-width: 4px;
+  border-radius: 50%;
+  border: solid 5px;
 `;
