@@ -11,11 +11,10 @@ const settingReducer = (state = initialState(), action) => {
     }
 
     case "SAVE_SETTINGS": {
-      const stateToLocalStorage = { ...state };
-      stateToLocalStorage.imagesFromDB = null;
+      const stateToLocalStorage = { ...state, imagesFromDB: null };
       localStorage.setItem("settings", JSON.stringify(stateToLocalStorage));
 
-      if (state.imagesFromDB !== null)
+      if (state.imagesFromDB !== null && state.imagesFromDB.blobImage !== null)
         uploadImage(
           state.imagesFromDB.blobImage.image,
           state.imagesFromDB.blobImage.cropImage

@@ -25,7 +25,7 @@ export async function getImageFromDB() {
     value: {
       image: URL.createObjectURL(dbArray[0].image),
       cropImage: URL.createObjectURL(dbArray[0].cropImage),
-      blobImage: { image: dbArray[0].image, cropImage: dbArray[0].cropImage },
+      blobImage: null,
     },
   });
 }
