@@ -6,7 +6,7 @@ db.version(2).stores({
   itens: "primaryKey, image, cropImage",
 });
 
-export async function uploadImage(image, cropImage) {
+export async function uploadImageToDB(image, cropImage) {
   await db.itens.put({
     primaryKey: "using",
     image: image,
@@ -20,11 +20,12 @@ export async function getImageFromDB() {
     return null;
 
   store.dispatch({
-    type: "IMAGE_GET",
-    imagesFromDB: {
+    type: "SET_STATE_ITEM",
+    item: "imagesFromDB",
+    value: {
       image: URL.createObjectURL(dbArray[0].image),
       cropImage: URL.createObjectURL(dbArray[0].cropImage),
-      blobImage: { image: dbArray[0].image, cropImage: dbArray[0].cropImage },
+      blobImage: null,
     },
   });
 }

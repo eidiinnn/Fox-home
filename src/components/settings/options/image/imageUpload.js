@@ -37,11 +37,15 @@ export default function BackgroundImage() {
 
   function saveImage(cropImage) {
     dispatch({
-      type: "IMAGE_CHANGE",
-      image: image,
-      cropImage: cropImage,
+      type: "SET_STATE_ITEM",
+      item: "imagesFromDB",
+      value: {
+        image: URL.createObjectURL(image),
+        cropImage: URL.createObjectURL(cropImage),
+        blobImage: { image: image, cropImage: cropImage },
+      },
     });
-
+    dispatch({ type: "SET_STATE_ITEM", item: "customImage", value: true });
     setImage(null);
     document.getElementById("uploadInput").value = null;
   }

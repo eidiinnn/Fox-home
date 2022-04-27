@@ -12,7 +12,7 @@ export default function Timezone() {
   const dispatch = useDispatch();
 
   function setTimezoneValue(value) {
-    dispatch({ type: "TIMEZONE_CHANGE", timezone: value });
+    dispatch({ type: "SET_STATE_ITEM", item: "timezone", value: value });
   }
 
   return (

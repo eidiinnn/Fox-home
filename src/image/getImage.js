@@ -2,6 +2,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
+import { getImageFromDB } from "./dbFunctions";
 
 export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);
@@ -9,7 +10,10 @@ export default function GetImage(props) {
   const blurLevel = useSelector((state) => state.blurLevel);
   const borderRadius = useSelector((state) => state.borderRadius);
 
-  if (!imageFromDB && useCustomImage === true) return null;
+  if (!imageFromDB && useCustomImage === true) {
+    getImageFromDB();
+    return null;
+  }
 
   function selectImage() {
     return !useCustomImage

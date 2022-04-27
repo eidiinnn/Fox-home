@@ -101,7 +101,7 @@ export const DefaultButton = styled.button`
   }
 `;
 
-export const DefaultRage = styled.input`
+export const DefaultRange = styled.input`
   width: 100%;
   appearance: none;
   background-color: transparent;

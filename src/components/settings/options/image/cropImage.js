@@ -6,7 +6,7 @@ import {
   CropImageContainer,
   DefaultButton,
   CropImageRangeContainer,
-  DefaultRage,
+  DefaultRange,
 } from "../../../../style/settings";
 
 export default function CropImage(props) {
@@ -41,7 +41,7 @@ export default function CropImage(props) {
 
       <CropImageRangeContainer>
         <IoMdRemove />
-        <DefaultRage
+        <DefaultRange
           type="range"
           min="1"
           max="3"

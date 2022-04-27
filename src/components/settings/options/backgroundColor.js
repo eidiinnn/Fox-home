@@ -21,7 +21,11 @@ export default function BackgroundColor() {
 
   function setColor(colorChoice) {
     const colorString = `rgb(${colorChoice.r}, ${colorChoice.g}, ${colorChoice.b}, ${colorChoice.a})`;
-    dispatch({ type: "BACKGROUND_COLOR_CHANGE", color: colorString });
+    dispatch({
+      type: "SET_STATE_ITEM",
+      item: "backgroundColor",
+      value: colorString,
+    });
     setColorObject(colorChoice);
   }
 

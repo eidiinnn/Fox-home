@@ -1,5 +1,4 @@
 import React from "react";
-import Switch from "@mui/material/Switch";
 import { useSelector, useDispatch } from "react-redux";
 import {
   ModalItem,
@@ -15,7 +14,11 @@ export default function AmPmFormat() {
 
   function AmPmSwitchOnChange() {
     const change = formatSetting === true ? false : true;
-    dispatch({ type: "AM_PM_FORMAT_CHANGE", timeFormat: change });
+    dispatch({
+      type: "SET_STATE_ITEM",
+      item: "AmPmTimerFormat",
+      value: change,
+    });
   }
 
   return (

@@ -16,33 +16,33 @@ export default function Bookmark() {
   const dispatch = useDispatch();
   const bookmark = useSelector((state) => state.bookmarkLinks);
 
-  function inputOnChange(event, index) {
-    const change = [...bookmark];
-    change[index] = event.target.value;
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
-    correctUrlIndicator(event);
-  }
-
   function correctUrlIndicator(event) {
     !extractDomain(event.target.value, { tld: true })
       ? (event.target.style.outline = "2px solid #e01f5d")
       : (event.target.style.outline = "2px solid #1FE0A2");
   }
 
+  function inputOnChange(event, index) {
+    const change = [...bookmark];
+    change[index] = event.target.value;
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
+    correctUrlIndicator(event);
+  }
+
   function inputRemove(index) {
     const change = [...bookmark];
     change.splice(index, 1);
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
   function addNewInput() {
     if (bookmark.length >= 6) return null;
-    return <DefaultButton onClick={addNewInputAction}>Add</DefaultButton>;
+    return <DefaultButton onClick={addNewInputOnClick}>Add</DefaultButton>;
   }
 
-  function addNewInputAction() {
+  function addNewInputOnClick() {
     const change = [...bookmark, ""];
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
   return (

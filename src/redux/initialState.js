@@ -1,5 +1,3 @@
-import { getImageFromDB } from "../image/dbFunctions";
-
 export default function initialState() {
   const defaultObject = {
     bookmarkLinks: [
@@ -24,7 +22,6 @@ export default function initialState() {
     localStorage.setItem("settings", JSON.stringify(defaultObject));
     return defaultObject;
   } else {
-    getImageFromDB();
     return localStorageObject;
   }
 }
