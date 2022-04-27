@@ -19,7 +19,7 @@ export default function Bookmark() {
   function inputOnChange(event, index) {
     const change = [...bookmark];
     change[index] = event.target.value;
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
     correctUrlIndicator(event);
   }
 
@@ -32,7 +32,7 @@ export default function Bookmark() {
   function inputRemove(index) {
     const change = [...bookmark];
     change.splice(index, 1);
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
   function addNewInput() {
@@ -42,7 +42,7 @@ export default function Bookmark() {
 
   function addNewInputAction() {
     const change = [...bookmark, ""];
-    dispatch({ type: "BOOKMARK_CHANGE", bookmarkLinks: change });
+    dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
   return (

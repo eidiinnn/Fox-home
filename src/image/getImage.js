@@ -2,6 +2,9 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
+import { getImageFromDB } from "./dbFunctions";
+
+getImageFromDB();
 
 export default function GetImage(props) {
   const useCustomImage = useSelector((state) => state.customImage);

@@ -7,7 +7,7 @@ export default function BorderRadius() {
   const dispatch = useDispatch();
 
   function setBorderRadius(value) {
-    dispatch({ type: "BORDER_RADIUS_CHANGE", borderRadius: value });
+    dispatch({ type: "SET_STATE_ITEM", item: "borderRadius", value: value });
   }
 
   return (

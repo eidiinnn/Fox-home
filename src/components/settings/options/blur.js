@@ -8,7 +8,7 @@ export default function Blur() {
   const dispatch = useDispatch();
 
   function setBlurValue(value) {
-    dispatch({ type: "BLUR_LEVEL_CHANGE", blurLevel: value });
+    dispatch({ type: "SET_STATE_ITEM", item: "blurLevel", value: value });
   }
 
   return (
