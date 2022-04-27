@@ -6,7 +6,7 @@ db.version(2).stores({
   itens: "primaryKey, image, cropImage",
 });
 
-export async function uploadImage(image, cropImage) {
+export async function uploadImageToDB(image, cropImage) {
   await db.itens.put({
     primaryKey: "using",
     image: image,

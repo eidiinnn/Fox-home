@@ -1,6 +1,6 @@
 import { createStore } from "redux";
 import initialState from "./initialState";
-import { uploadImage, getImageFromDB } from "../image/dbFunctions";
+import { uploadImageToDB, getImageFromDB } from "../image/dbFunctions";
 
 const settingReducer = (state = initialState(), action) => {
   switch (action.type) {
@@ -15,7 +15,7 @@ const settingReducer = (state = initialState(), action) => {
       localStorage.setItem("settings", JSON.stringify(stateToLocalStorage));
 
       if (state.imagesFromDB !== null && state.imagesFromDB.blobImage !== null)
-        uploadImage(
+        uploadImageToDB(
           state.imagesFromDB.blobImage.image,
           state.imagesFromDB.blobImage.cropImage
         );
