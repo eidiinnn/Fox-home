@@ -11,7 +11,7 @@ import {
   TwoConfigItemTitle,
 } from "../../../style/settings";
 
-export default function BackgroundColor() {
+export default function Colors() {
   const dispatch = useDispatch();
   const backgroundColorFromState = useSelector(
     (state) => state.backgroundColor
