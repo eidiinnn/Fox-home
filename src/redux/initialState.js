@@ -10,7 +10,7 @@ export default function initialState() {
     ],
     AmPmTimerFormat: false,
     backgroundColor: "rgb(0, 3, 14, .2)",
-    textIconColor: "white",
+    textIconColor: "rgb(255, 255, 255, 1)",
     blurLevel: 2,
     borderRadius: 30,
     customImage: false,
