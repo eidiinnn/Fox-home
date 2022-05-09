@@ -10,6 +10,7 @@ import SupportMe from "./options/supportMe";
 import Blur from "./options/blur";
 import BorderRadius from "./options/borderRadius";
 import Timezone from "./options/timezone";
+import BackdropFilterBlur from "./options/backdropFilterBlur";
 
 import { IoIosCloseCircle, IoMdCog } from "react-icons/io";
 
@@ -46,6 +47,7 @@ export default function SettingsMenu() {
         <ModalContainer borderRadius={borderRadius}>
           <BackgroundImage />
           <Timezone />
+          <BackdropFilterBlur />
           <BorderRadius />
           <Blur />
           <Colors />

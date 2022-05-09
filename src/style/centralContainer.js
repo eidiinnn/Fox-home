@@ -10,7 +10,10 @@ export const MainContainer = styled.div`
 
   color: ${(props) => (!props.textIconColor ? "white" : props.textIconColor)};
   background-color: ${(props) => props.backgroundColor};
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(
+    ${(props) =>
+      !props.backdropFilterBlur ? "10px" : props.backdropFilterBlur + "px"}
+  );
   border-radius: ${(props) => props.borderRadius + "px"};
 
   @media screen and (max-width: 900px) {
