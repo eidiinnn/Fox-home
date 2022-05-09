@@ -77,8 +77,8 @@ export const ModalItem = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.row ? "space-between" : "left")};
   align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.8rem")};
-  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.8rem")};
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.5rem")};
+  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.5rem")};
 `;
 
 export const DefaultButton = styled.button`
