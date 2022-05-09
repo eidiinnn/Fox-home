@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/image/imageUpload";
-import BackgroundColor from "./options/backgroundColor";
+import Colors from "./options/colors";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
 import Blur from "./options/blur";
@@ -24,7 +24,6 @@ import {
 
 export default function SettingsMenu() {
   const dispatch = useDispatch();
-  const backgroundColor = useSelector((state) => state.backgroundColor);
   const borderRadius = useSelector((state) => state.borderRadius);
 
   function buttonSave() {
@@ -44,15 +43,12 @@ export default function SettingsMenu() {
   return (
     <>
       <ModalDisplay show={modalShow}>
-        <ModalContainer
-          backgroundColor={backgroundColor}
-          borderRadius={borderRadius}
-        >
+        <ModalContainer borderRadius={borderRadius}>
           <BackgroundImage />
           <Timezone />
           <BorderRadius />
           <Blur />
-          <BackgroundColor />
+          <Colors />
           <AmPmFormat />
           <Bookmark />
 

@@ -77,7 +77,7 @@ export const ModalItem = styled.div`
   flex-direction: ${(props) => (props.row ? "row" : "column")};
   justify-content: ${(props) => (props.row ? "space-between" : "left")};
   align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.4rem")};
+  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.5rem")};
   margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.5rem")};
 `;
 
@@ -357,4 +357,27 @@ export const CropImageRangeContainer = styled.div`
 
   justify-content: right;
   align-items: center;
+`;
+
+export const TwoConfigContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 100%;
+  height: min-content;
+  margin-top: 0.8rem;
+  justify-items: center;
+`;
+
+export const TwoConfigItem = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const TwoConfigItemTitle = styled.div`
+  width: 100%;
+  text-align: center;
+  font-family: "sora";
+  font-size: 0.8rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
 `;

@@ -8,6 +8,7 @@ export const MainContainer = styled.div`
   justify-content: center;
   align-self: center;
 
+  color: ${(props) => (!props.textIconColor ? "white" : props.textIconColor)};
   background-color: ${(props) => props.backgroundColor};
   backdrop-filter: blur(10px);
   border-radius: ${(props) => props.borderRadius + "px"};
@@ -38,7 +39,6 @@ export const ClockAndBookmarkContainer = styled.div`
 export const ClockContainer = styled.div`
   font-family: "robotoCondensed";
   font-size: ${(props) => (props.AMPM ? "6rem" : "8rem")};
-  color: white;
   font-weight: 700;
   text-align: center;
   padding-top: 2.3rem;
@@ -61,7 +61,6 @@ export const BookmarkLinkContainer = styled.div`
 
 export const BookmarkLink = styled.a`
   font-size: 3.2rem;
-  color: #ffffff !important;
 
   display: flex;
   justify-content: center;
