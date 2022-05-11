@@ -14,7 +14,7 @@ export const OpenSettingsModalIcon = styled.div`
   margin-top: 1.25rem;
   margin-left: 1.25rem;
 
-  color: white;
+  color: ${(props) => props.color};
   font-size: 1.35rem;
 
   transition: 500ms;
