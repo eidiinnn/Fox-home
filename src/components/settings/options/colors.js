@@ -60,7 +60,7 @@ export default function Colors() {
           />
         </TwoConfigItem>
 
-        <twoConfigItem>
+        <TwoConfigItem>
           <TwoConfigItemTitle>Icons and Clock</TwoConfigItemTitle>
           <RgbaColorPicker
             color={iconTextColor}
@@ -68,7 +68,7 @@ export default function Colors() {
               setColor(color, "textIconColor", setIconTextColor)
             }
           />
-        </twoConfigItem>
+        </TwoConfigItem>
       </TwoConfigContainer>
     </ModalItem>
   );
