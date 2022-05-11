@@ -26,6 +26,7 @@ import {
 export default function SettingsMenu() {
   const dispatch = useDispatch();
   const borderRadius = useSelector((state) => state.borderRadius);
+  const textIconColor = useSelector((state) => state.textIconColor);
 
   function buttonSave() {
     dispatch({ type: "SAVE_SETTINGS" });
@@ -68,7 +69,7 @@ export default function SettingsMenu() {
         </ModalContainer>
       </ModalDisplay>
 
-      <OpenSettingsModalIcon>
+      <OpenSettingsModalIcon color={textIconColor}>
         <IoMdCog onClick={modalAction} />
       </OpenSettingsModalIcon>
     </>
