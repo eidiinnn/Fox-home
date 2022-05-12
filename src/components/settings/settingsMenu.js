@@ -12,6 +12,7 @@ import BorderRadius from "./options/borderRadius";
 import Timezone from "./options/timezone";
 import BackdropFilterBlur from "./options/backdropFilterBlur";
 import BackgroundColorOpacity from "./options/backgroundColorOpacity";
+import MiniaturePreview from "./miniaturePreview";
 
 import { IoIosCloseCircle, IoMdCog } from "react-icons/io";
 
@@ -69,6 +70,7 @@ export default function SettingsMenu() {
             </CloseIcon>
           </ModalItem>
         </ModalContainer>
+        <MiniaturePreview />
       </ModalDisplay>
 
       <OpenSettingsModalIcon color={textIconColor}>
