@@ -47,12 +47,14 @@ export default function Colors() {
         <TwoConfigItem>
           <TwoConfigItemTitle>Icons and Clock</TwoConfigItemTitle>
           <HexColorPicker
+            placeholder="Hex Color"
             color={textIconColor}
             onChange={(color) => setColor(color, "textIconColor")}
           />
 
           <HexInputContainer>
             <HexColorInput
+              placeholder="Hex Color"
               color={textIconColor}
               onChange={(color) => setColor(color, "textIconColor")}
             />
