@@ -2,13 +2,16 @@ import React from "react";
 import { useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { RgbaColorPicker } from "react-colorful";
+import { RgbaColorPicker, HexColorInput } from "react-colorful";
+import { colord } from "colord";
+
 import {
   ModalItem,
   ModalTitles,
   TwoConfigContainer,
   TwoConfigItem,
   TwoConfigItemTitle,
+  HexInputContainer,
 } from "../../../style/settings";
 
 export default function Colors() {
@@ -39,6 +42,13 @@ export default function Colors() {
     set(color);
   }
 
+  function inputOnchange(color, item, set) {
+    const colorInRgba = colord(color).toRgbString();
+    const objectColor = convertColorToObject(colorInRgba);
+    objectColor.a = 1;
+    setColor(objectColor, item, set);
+  }
+
   const [backgroundColor, setBackgroundColor] = useState(
     convertColorToObject(backgroundColorFromState)
   );
@@ -58,6 +68,15 @@ export default function Colors() {
               setColor(color, "backgroundColor", setBackgroundColor)
             }
           />
+
+          <HexInputContainer>
+            <HexColorInput
+              placeholder="Hex color"
+              onChange={(color) =>
+                inputOnchange(color, "backgroundColor", setBackgroundColor)
+              }
+            />
+          </HexInputContainer>
         </TwoConfigItem>
 
         <TwoConfigItem>
@@ -68,6 +87,15 @@ export default function Colors() {
               setColor(color, "textIconColor", setIconTextColor)
             }
           />
+
+          <HexInputContainer>
+            <HexColorInput
+              placeholder="Hex color"
+              onChange={(color) =>
+                inputOnchange(color, "textIconColor", setIconTextColor)
+              }
+            />
+          </HexInputContainer>
         </TwoConfigItem>
       </TwoConfigContainer>
     </ModalItem>

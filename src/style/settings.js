@@ -381,3 +381,19 @@ export const TwoConfigItemTitle = styled.div`
   font-weight: 700;
   margin-bottom: 0.5rem;
 `;
+
+export const HexInputContainer = styled.div`
+  margin-top: 0.5rem;
+  input {
+    width: 100%;
+    height: 20px;
+    border: 0;
+    border-radius: 2px;
+    margin-bottom: 0.31rem;
+    font-family: "roboto";
+    font-weight: 400;
+
+    background-color: ${primaryColor};
+    color: ${normalTextColor};
+  }
+`;
