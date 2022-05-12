@@ -1,50 +1,29 @@
 import React from "react";
-import { useState } from "react";
 
 import { useSelector, useDispatch } from "react-redux";
-import { RgbaColorPicker } from "react-colorful";
+import { HexColorInput, HexColorPicker } from "react-colorful";
+
 import {
   ModalItem,
   ModalTitles,
   TwoConfigContainer,
   TwoConfigItem,
   TwoConfigItemTitle,
+  HexInputContainer,
 } from "../../../style/settings";
 
 export default function Colors() {
   const dispatch = useDispatch();
-  const backgroundColorFromState = useSelector(
-    (state) => state.backgroundColor
-  );
-  const textIconColorFromState = useSelector((state) => state.textIconColor);
+  const backgroundColor = useSelector((state) => state.backgroundColor);
+  const textIconColor = useSelector((state) => state.textIconColor);
 
-  function convertColorToObject(color) {
-    if (!color) color = "rgb(255, 255, 255, 1)";
-    const colorArray = color.replace(/[^\d,.%]/g, "").split(",");
-    return {
-      r: colorArray[0],
-      g: colorArray[1],
-      b: colorArray[2],
-      a: colorArray[3],
-    };
-  }
-
-  function setColor(color, item, set) {
-    const colorString = `rgb(${color.r}, ${color.g}, ${color.b}, ${color.a})`;
+  function setColor(color, item) {
     dispatch({
       type: "SET_STATE_ITEM",
       item: item,
-      value: colorString,
+      value: color,
     });
-    set(color);
   }
-
-  const [backgroundColor, setBackgroundColor] = useState(
-    convertColorToObject(backgroundColorFromState)
-  );
-  const [iconTextColor, setIconTextColor] = useState(
-    convertColorToObject(textIconColorFromState)
-  );
 
   return (
     <ModalItem>
@@ -52,22 +31,34 @@ export default function Colors() {
       <TwoConfigContainer>
         <TwoConfigItem>
           <TwoConfigItemTitle>Background</TwoConfigItemTitle>
-          <RgbaColorPicker
+          <HexColorPicker
             color={backgroundColor}
-            onChange={(color) =>
-              setColor(color, "backgroundColor", setBackgroundColor)
-            }
+            onChange={(color) => setColor(color, "backgroundColor")}
           />
+
+          <HexInputContainer>
+            <HexColorInput
+              color={backgroundColor}
+              onChange={(color) => setColor(color, "backgroundColor")}
+            />
+          </HexInputContainer>
         </TwoConfigItem>
 
         <TwoConfigItem>
           <TwoConfigItemTitle>Icons and Clock</TwoConfigItemTitle>
-          <RgbaColorPicker
-            color={iconTextColor}
-            onChange={(color) =>
-              setColor(color, "textIconColor", setIconTextColor)
-            }
+          <HexColorPicker
+            placeholder="Hex Color"
+            color={textIconColor}
+            onChange={(color) => setColor(color, "textIconColor")}
           />
+
+          <HexInputContainer>
+            <HexColorInput
+              placeholder="Hex Color"
+              color={textIconColor}
+              onChange={(color) => setColor(color, "textIconColor")}
+            />
+          </HexInputContainer>
         </TwoConfigItem>
       </TwoConfigContainer>
     </ModalItem>

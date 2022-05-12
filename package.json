@@ -10,6 +10,7 @@
     "@testing-library/jest-dom": "^5.16.2",
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
+    "colord": "^2.9.2",
     "dexie": "^3.2.1",
     "dexie-react-hooks": "^1.1.1",
     "extract-domain": "^2.4.1",

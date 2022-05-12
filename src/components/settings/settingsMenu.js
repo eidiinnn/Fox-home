@@ -11,6 +11,7 @@ import Blur from "./options/blur";
 import BorderRadius from "./options/borderRadius";
 import Timezone from "./options/timezone";
 import BackdropFilterBlur from "./options/backdropFilterBlur";
+import BackgroundColorOpacity from "./options/backgroundColorOpacity";
 
 import { IoIosCloseCircle, IoMdCog } from "react-icons/io";
 
@@ -48,6 +49,7 @@ export default function SettingsMenu() {
         <ModalContainer borderRadius={borderRadius}>
           <BackgroundImage />
           <Timezone />
+          <BackgroundColorOpacity />
           <BackdropFilterBlur />
           <BorderRadius />
           <Blur />
