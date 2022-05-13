@@ -467,6 +467,7 @@ export const HexInputContainer = styled.div`
     margin-bottom: 0.31rem;
     font-family: "roboto";
     font-weight: 400;
+    text-align: center;
 
     background-color: ${primaryColor};
     color: ${normalTextColor};
