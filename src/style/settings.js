@@ -48,16 +48,27 @@ export const ModalDisplay = styled.div`
 export const MiniaturePreviewContainer = styled.div`
   width: 1200px;
   height: 700px;
-  display: flex;
   margin: 4rem;
+
+  display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(${(props) => props.backgroundImage});
-  background-position: center;
+  background-position: center center;
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
   zoom: 0.8;
+
+  &:after {
+    display: block;
+    position: absolute;
+    width: 1200px;
+    height: 700px;
+    content: "";
+    align-self: center;
+    backdrop-filter: blur(${(props) => props.blurLevel + "px"});
+  }
 
   @media screen and (max-width: 1750px) {
     zoom: 0.6;

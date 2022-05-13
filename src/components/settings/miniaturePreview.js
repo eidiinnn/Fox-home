@@ -21,7 +21,7 @@ export default function MiniaturePreview() {
       backgroundImage={getTheImage}
       blurLevel={blurLevel}
     >
-      <CentralContainer />
+      <CentralContainer zIndex={4} />
     </MiniaturePreviewContainer>
   );
 }
