@@ -84,8 +84,8 @@ export const PreviewContainer = styled.div`
 `;
 
 export const ModalContainer = styled.div`
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: 1fr 55px;
   overflow: scroll;
   overflow-x: hidden;
   overflow-y: auto;
@@ -94,10 +94,21 @@ export const ModalContainer = styled.div`
   background-color: ${backgroundColor};
   color: white;
 
-  width: 500px;
+  width: max-content;
   max-height: 92%;
-  padding: 1.25rem;
   border-radius: 2px;
+`;
+
+export const OptionsContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+
+  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+
+  padding: 1.25rem;
 
   &::-webkit-scrollbar {
     width: 9px;
@@ -109,8 +120,20 @@ export const ModalContainer = styled.div`
 
   &::-webkit-scrollbar-thumb {
     background-color: ${secondaryColor};
-    border-radius: 10px;
+    border-radius: 0;
   }
+`;
+
+export const SaveDiscardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  padding: 1.25rem;
+  border-top: 2px solid ${DarkerColor};
 `;
 
 export const ModalTitles = styled.h1`
