@@ -113,7 +113,7 @@ export const OptionsContainer = styled.div`
 
   overflow: auto;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 9px;
