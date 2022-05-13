@@ -362,7 +362,7 @@ export const BookmarkInputsContainer = styled.div`
 `;
 
 export const BookmarkInputs = styled.input`
-  width: 300px;
+  width: 100%;
   height: 20px;
   border: 0;
   border-radius: 2px;
