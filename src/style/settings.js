@@ -26,14 +26,61 @@ export const OpenSettingsModalIcon = styled.div`
 
 export const ModalDisplay = styled.div`
   display: ${(props) => (props.show ? "flex" : "none")};
+  flex-direction: row;
+  background-color: #1010106b;
+  backdrop-filter: blur(15px);
   justify-content: center;
   align-items: center;
-  background-color: #1010106b;
+  padding: 10rem;
 
-  position: absolute;
+  position: fixed;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   z-index: 3;
+
+  @media screen and (max-width: 1144px) {
+    flex-direction: column-reverse;
+    padding: 2rem;
+    box-sizing: border-box;
+  }
+`;
+
+export const PreviewContainer = styled.div`
+  width: 1200px;
+  height: 700px;
+  margin: 4rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url(${(props) => props.backgroundImage});
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  zoom: 0.8;
+
+  &:after {
+    display: block;
+    position: absolute;
+    width: 1200px;
+    height: 700px;
+    content: "";
+    align-self: center;
+    backdrop-filter: blur(${(props) => props.blurLevel + "px"});
+  }
+
+  @media screen and (max-width: 1750px) {
+    zoom: 0.6;
+  }
+  @media screen and (max-width: 1403px) {
+    zoom: 0.4;
+  }
+  @media screen and (max-width: 1144px) {
+    zoom: 0.45;
+    margin: 0;
+    margin-bottom: 2rem;
+  }
 `;
 
 export const ModalContainer = styled.div`
