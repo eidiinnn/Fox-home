@@ -95,7 +95,7 @@ export const ModalContainer = styled.div`
   color: white;
 
   width: 500px;
-  max-height: 90%;
+  max-height: 92%;
   padding: 1.25rem;
   border-radius: 2px;
 
@@ -114,7 +114,7 @@ export const ModalContainer = styled.div`
 `;
 
 export const ModalTitles = styled.h1`
-  font-size: 0.83rem;
+  font-size: ${(props) => (props.small ? "0.75rem" : "0.83rem")};
   font-weight: 700;
   color: ${whiteColor};
 `;
@@ -149,7 +149,7 @@ export const DefaultButton = styled.button`
 `;
 
 export const DefaultRange = styled.input`
-  width: 100%;
+  width: 360px;
   appearance: none;
   background-color: transparent;
 

@@ -11,8 +11,8 @@ export default function BorderRadius() {
   }
 
   return (
-    <ModalItem>
-      <ModalTitles>Round Corners</ModalTitles>
+    <ModalItem row noTopMargin noBottomMargin>
+      <ModalTitles small>Container Corners</ModalTitles>
       <DefaultRange
         type="range"
         step="0.2"
