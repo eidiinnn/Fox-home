@@ -15,8 +15,8 @@ export default function BackdropFilterBlur() {
   }
 
   return (
-    <ModalItem>
-      <ModalTitles>Clock and Icon Container Blur</ModalTitles>
+    <ModalItem row noTopMargin noBottomMargin>
+      <ModalTitles small>Container Blur</ModalTitles>
       <DefaultRange
         type="range"
         step="0.2"

@@ -12,8 +12,8 @@ export default function Blur() {
   }
 
   return (
-    <ModalItem>
-      <ModalTitles>Background Blur</ModalTitles>
+    <ModalItem row noTopMargin noBottomMargin>
+      <ModalTitles small>Background Blur</ModalTitles>
       <DefaultRange
         type="range"
         min="0"

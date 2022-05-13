@@ -15,8 +15,8 @@ export default function BackgroundColorOpacity() {
   }
 
   return (
-    <ModalItem>
-      <ModalTitles>Clock and Icon Container Opacity</ModalTitles>
+    <ModalItem row noBottomMargin>
+      <ModalTitles small>Container Opacity</ModalTitles>
       <DefaultRange
         type="range"
         step="0.1"
