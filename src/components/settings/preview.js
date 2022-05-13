@@ -2,11 +2,11 @@ import React from "react";
 
 import CentralContainer from "../centralContainer";
 
-import { MiniaturePreviewContainer } from "../../style/settings";
+import { PreviewContainer } from "../../style/settings";
 import { useSelector } from "react-redux";
 import defaultImage from "../../image/defaultImage.jpg";
 
-export default function MiniaturePreview() {
+export default function Preview() {
   const useCustomImage = useSelector((state) => state.customImage);
   const imageFromDB = useSelector((state) => state.imagesFromDB);
   const blurLevel = useSelector((state) => state.blurLevel);
@@ -17,11 +17,8 @@ export default function MiniaturePreview() {
   }
 
   return (
-    <MiniaturePreviewContainer
-      backgroundImage={getTheImage}
-      blurLevel={blurLevel}
-    >
+    <PreviewContainer backgroundImage={getTheImage} blurLevel={blurLevel}>
       <CentralContainer zIndex={4} />
-    </MiniaturePreviewContainer>
+    </PreviewContainer>
   );
 }

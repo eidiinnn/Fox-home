@@ -45,7 +45,7 @@ export const ModalDisplay = styled.div`
   }
 `;
 
-export const MiniaturePreviewContainer = styled.div`
+export const PreviewContainer = styled.div`
   width: 1200px;
   height: 700px;
   margin: 4rem;
