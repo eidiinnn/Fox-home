@@ -23,6 +23,8 @@ import {
   OpenSettingsModalIcon,
   CloseIcon,
   DefaultButton,
+  OptionsContainer,
+  SaveDiscardContainer,
 } from "../../style/settings";
 
 export default function SettingsMenu() {
@@ -48,17 +50,19 @@ export default function SettingsMenu() {
     <>
       <ModalDisplay show={modalShow}>
         <ModalContainer borderRadius={borderRadius}>
-          <BackgroundImage />
-          <Timezone />
-          <BackgroundColorOpacity />
-          <BackdropFilterBlur />
-          <BorderRadius />
-          <Blur />
-          <Colors />
-          <AmPmFormat />
-          <Bookmark />
+          <OptionsContainer>
+            <BackgroundImage />
+            <Timezone />
+            <BackgroundColorOpacity />
+            <BackdropFilterBlur />
+            <BorderRadius />
+            <Blur />
+            <Colors />
+            <AmPmFormat />
+            <Bookmark />
+          </OptionsContainer>
 
-          <ModalItem row noBottomMargin>
+          <SaveDiscardContainer>
             <ModalItem row noBottomMargin noTopMargin>
               <DefaultButton value="Save" onClick={buttonSave}>
                 Save
@@ -68,7 +72,7 @@ export default function SettingsMenu() {
             <CloseIcon>
               <IoIosCloseCircle onClick={buttonNotSave} />
             </CloseIcon>
-          </ModalItem>
+          </SaveDiscardContainer>
         </ModalContainer>
         <Preview />
       </ModalDisplay>
