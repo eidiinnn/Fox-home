@@ -7,7 +7,6 @@ export const MainContainer = styled.div`
   width: 800px;
   justify-content: center;
   align-self: center;
-  z-index: ${(props) => props.zIndex};
 
   color: ${(props) => (!props.textIconColor ? "white" : props.textIconColor)};
   background-color: ${(props) => props.backgroundColor};
@@ -15,7 +14,8 @@ export const MainContainer = styled.div`
     ${(props) =>
       !props.backdropFilterBlur ? "10px" : props.backdropFilterBlur + "px"}
   );
-  border-radius: ${(props) => props.borderRadius + "px"};
+  border-radius: ${(props) =>
+    `200px calc(${props.borderRadius}px + 10px) calc(${props.borderRadius}px + 10px)  200px`};
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
@@ -24,6 +24,8 @@ export const MainContainer = styled.div`
     max-width: 80%;
     height: max-content;
     padding-bottom: 1.5rem;
+    border-radius: ${(props) =>
+      `calc(${props.borderRadius}px + 10px) calc(${props.borderRadius}px + 10px) ${props.borderRadius}px ${props.borderRadius}px`};
   }
 `;
 

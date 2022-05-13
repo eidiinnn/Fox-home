@@ -46,40 +46,55 @@ export const ModalDisplay = styled.div`
 `;
 
 export const PreviewContainer = styled.div`
+  position: relative;
   width: 1200px;
   height: 700px;
   margin: 4rem;
+  padding: 0.2rem;
 
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(${(props) => props.backgroundImage});
   background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: 1200px 700px;
+  background-attachment: local;
   background-repeat: no-repeat;
   zoom: 0.8;
-
-  &:after {
-    display: block;
-    position: absolute;
-    width: 1200px;
-    height: 700px;
-    content: "";
-    align-self: center;
-    backdrop-filter: blur(${(props) => props.blurLevel + "px"});
-  }
 
   @media screen and (max-width: 1750px) {
     zoom: 0.6;
   }
   @media screen and (max-width: 1403px) {
-    zoom: 0.4;
+    zoom: 0.443;
   }
-  @media screen and (max-width: 1144px) {
-    zoom: 0.45;
-    margin: 0;
-    margin-bottom: 2rem;
+`;
+
+export const BackgroundImagePreview = styled.div`
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  &:after,
+  &:before {
+    background: url(${(props) => props.backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    filter: blur(${(props) => props.blurLevel + "px"});
+  }
+  &:before {
+    box-sizing: border-box;
+    margin: -10px;
+    border: 2px solid ${primaryColor};
   }
 `;
 
@@ -94,21 +109,22 @@ export const ModalContainer = styled.div`
   background-color: ${backgroundColor};
   color: white;
 
-  width: max-content;
+  width: 544px;
   max-height: 92%;
   border-radius: 2px;
+  box-sizing: border-box;
 `;
 
 export const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 
   overflow: auto;
   overflow-x: hidden;
-  overflow-y: scroll;
-
-  padding: 1.25rem;
+  overflow-y: auto;
 
   &::-webkit-scrollbar {
     width: 9px;
@@ -462,6 +478,7 @@ export const HexInputContainer = styled.div`
     margin-bottom: 0.31rem;
     font-family: "roboto";
     font-weight: 400;
+    text-align: center;
 
     background-color: ${primaryColor};
     color: ${normalTextColor};
