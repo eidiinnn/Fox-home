@@ -46,9 +46,11 @@ export const ModalDisplay = styled.div`
 `;
 
 export const PreviewContainer = styled.div`
+  position: relative;
   width: 1200px;
   height: 700px;
   margin: 4rem;
+  padding: 0.2rem;
 
   display: flex;
   justify-content: center;
@@ -64,17 +66,36 @@ export const PreviewContainer = styled.div`
     zoom: 0.6;
   }
   @media screen and (max-width: 1403px) {
-    zoom: 0.45;
+    zoom: 0.443;
   }
 `;
 
-export const PreviewContainerBlur = styled.div`
+export const BackgroundImagePreview = styled.div`
+  position: absolute;
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  backdrop-filter: blur(${(props) => props.blurLevel + "px"});
+
+  &:after,
+  &:before {
+    background: url(${(props) => props.backgroundImage});
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+
+  &:after {
+    filter: blur(${(props) => props.blurLevel + "px"});
+  }
+  &:before {
+    box-sizing: border-box;
+    margin: -10px;
+    border: 2px solid ${primaryColor};
+  }
 `;
 
 export const ModalContainer = styled.div`
