@@ -55,16 +55,18 @@ export const PreviewContainer = styled.div`
   align-items: center;
   background-image: url(${(props) => props.backgroundImage});
   background-position: center center;
-  background-size: cover;
-  background-attachment: fixed;
+  background-size: 1200px 700px;
+  background-attachment: local;
   background-repeat: no-repeat;
   zoom: 0.8;
 
   &:after {
     display: block;
     position: absolute;
+    width: 700px;
+    margin: 5rem;
     width: 1200px;
-    height: 700px;
+    height: max-content;
     content: "";
     align-self: center;
     backdrop-filter: blur(${(props) => props.blurLevel + "px"});
@@ -78,8 +80,10 @@ export const PreviewContainer = styled.div`
   }
   @media screen and (max-width: 1144px) {
     zoom: 0.45;
-    margin: 0;
+    margin: 5rem;
     margin-bottom: 2rem;
+    height: 700px;
+    width: 1200px;
   }
 `;
 
