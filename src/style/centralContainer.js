@@ -15,7 +15,8 @@ export const MainContainer = styled.div`
     ${(props) =>
       !props.backdropFilterBlur ? "10px" : props.backdropFilterBlur + "px"}
   );
-  border-radius: ${(props) => props.borderRadius + "px"};
+  border-radius: ${(props) =>
+    `200px ${props.borderRadius}px ${props.borderRadius}px 200px`};
 
   @media screen and (max-width: 900px) {
     flex-direction: column;
