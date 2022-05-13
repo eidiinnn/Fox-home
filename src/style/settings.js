@@ -98,21 +98,22 @@ export const ModalContainer = styled.div`
   background-color: ${backgroundColor};
   color: white;
 
-  width: max-content;
+  width: 544px;
   max-height: 92%;
   border-radius: 2px;
+  box-sizing: border-box;
 `;
 
 export const OptionsContainer = styled.div`
   display: flex;
   flex-direction: column;
-  width: fit-content;
+  width: 100%;
+  padding: 1rem;
+  box-sizing: border-box;
 
   overflow: auto;
   overflow-x: hidden;
   overflow-y: scroll;
-
-  padding: 1.25rem;
 
   &::-webkit-scrollbar {
     width: 9px;
