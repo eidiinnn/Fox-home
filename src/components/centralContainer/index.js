@@ -10,7 +10,7 @@ import {
   ClockAndBookmarkContainer,
 } from "../../style/centralContainer.js";
 
-export default function CentralContainer(props) {
+export default function CentralContainer() {
   const backgroundColor = useSelector((state) => state.backgroundColor);
   const backgroundColorOpacity = useSelector(
     (state) => state.backgroundColorOpacity
@@ -34,7 +34,6 @@ export default function CentralContainer(props) {
       borderRadius={borderRadius}
       textIconColor={textIconColor}
       backdropFilterBlur={backdropFilterBlur}
-      zIndex={props.zIndex}
     >
       <GetImage type="centralDivImage" />
       <ClockAndBookmarkContainer>

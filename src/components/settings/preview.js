@@ -2,7 +2,7 @@ import React from "react";
 
 import CentralContainer from "../centralContainer";
 
-import { PreviewContainer } from "../../style/settings";
+import { PreviewContainer, PreviewContainerBlur } from "../../style/settings";
 import { useSelector } from "react-redux";
 import defaultImage from "../../image/defaultImage.jpg";
 
@@ -17,8 +17,10 @@ export default function Preview() {
   }
 
   return (
-    <PreviewContainer backgroundImage={getTheImage} blurLevel={blurLevel}>
-      <CentralContainer zIndex={4} />
+    <PreviewContainer backgroundImage={getTheImage}>
+      <PreviewContainerBlur blurLevel={blurLevel}>
+        <CentralContainer />
+      </PreviewContainerBlur>
     </PreviewContainer>
   );
 }

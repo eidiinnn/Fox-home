@@ -60,31 +60,21 @@ export const PreviewContainer = styled.div`
   background-repeat: no-repeat;
   zoom: 0.8;
 
-  &:after {
-    display: block;
-    position: absolute;
-    width: 700px;
-    margin: 5rem;
-    width: 1200px;
-    height: max-content;
-    content: "";
-    align-self: center;
-    backdrop-filter: blur(${(props) => props.blurLevel + "px"});
-  }
-
   @media screen and (max-width: 1750px) {
     zoom: 0.6;
   }
   @media screen and (max-width: 1403px) {
-    zoom: 0.4;
-  }
-  @media screen and (max-width: 1144px) {
     zoom: 0.45;
-    margin: 5rem;
-    margin-bottom: 2rem;
-    height: 700px;
-    width: 1200px;
   }
+`;
+
+export const PreviewContainerBlur = styled.div`
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backdrop-filter: blur(${(props) => props.blurLevel + "px"});
 `;
 
 export const ModalContainer = styled.div`

@@ -7,7 +7,6 @@ export const MainContainer = styled.div`
   width: 800px;
   justify-content: center;
   align-self: center;
-  z-index: ${(props) => props.zIndex};
 
   color: ${(props) => (!props.textIconColor ? "white" : props.textIconColor)};
   background-color: ${(props) => props.backgroundColor};
