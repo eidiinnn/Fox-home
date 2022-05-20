@@ -1,3 +1,5 @@
+import { getExtpayUser } from "../premium/extpay";
+
 export default function initialState() {
   const defaultObject = {
     bookmarkLinks: [
@@ -23,8 +25,10 @@ export default function initialState() {
 
   if (!localStorageObject) {
     localStorage.setItem("settings", JSON.stringify(defaultObject));
+    getExtpayUser();
     return defaultObject;
   } else {
+    getExtpayUser();
     return localStorageObject;
   }
 }

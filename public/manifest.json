@@ -4,14 +4,20 @@
   "description": "A start page for browsers with some costume options.",
   "author": "Eduardo da Silva",
   "manifest_version": 3,
-  "version": "0.1.16",
+  "version": "0.1.17",
   "icons": {
     "16": "icons/fox-16x16.png",
     "48": "icons/fox-48x48.png",
     "128": "icons/fox-128x128.png"
   },
 
+  "permissions": ["storage"],
+
   "chrome_url_overrides": {
     "newtab": "index.html"
+  },
+
+  "background": {
+    "service_worker": "background.js"
   }
 }
