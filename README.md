@@ -8,17 +8,13 @@ A start page for browsers with some costume options.
 ## Links :link:
 [Download on Chrome or Brave](https://chrome.google.com/webstore/detail/fox-home/kbalcggddakepkjgcpijccappaeppfmh?hl=en-GB&authuser=0)
 
-[Download the compiled files](https://github.com/eidiinnn/Home-page/releases)
-
-[Link to see the project on GitHub pages](https://eidiinnn.github.io/Home-page/)
-
 ## How to customize 	:paintbrush:
 Click on the :gear: to see the settings options.
 
 ## Screenshots :camera:
 
-<img src="https://i.imgur.com/GycmP1I.png" style="max-width: 100%;" >
-<img src="https://i.imgur.com/grmJrlh.png" style="max-width: 100%;" >
+<img src="https://i.imgur.com/m7Eg0wR.jpg" style="max-width: 100%;" >
+<img src="https://i.imgur.com/V0PXdg3.jpg" style="max-width: 100%;" > 
 
 
 ## React Commands :computer:
