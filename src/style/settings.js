@@ -179,8 +179,12 @@ export const DefaultButton = styled.button`
   border-radius: 2px;
   border: 0;
 
-  width: 80px;
+  width: ${(props) => (props.noWidthLimit ? "max-content" : "80px")};
   transition: 500ms;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
   &:hover {
     background-color: ${secondaryColor};
