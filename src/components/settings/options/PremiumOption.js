@@ -8,8 +8,6 @@ export default function PremiumOption() {
 
   if (!userInfo) return null;
 
-  console.log(userInfo);
-
   function getContent() {
     return !userInfo.paid ? FreeUser() : PremiumUser();
   }
