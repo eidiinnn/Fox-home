@@ -33,12 +33,8 @@ export default function SettingsMenu() {
   const borderRadius = useSelector((state) => state.borderRadius);
   const textIconColor = useSelector((state) => state.textIconColor);
 
-  function buttonSave() {
-    dispatch({ type: "SAVE_SETTINGS" });
-    modalAction();
-  }
-  function buttonNotSave() {
-    dispatch({ type: "DISCARD_SETTINGS" });
+  function buttonSaveAndDiscard(type) {
+    dispatch({ type: type });
     modalAction();
   }
 
@@ -66,13 +62,18 @@ export default function SettingsMenu() {
 
           <SaveDiscardContainer>
             <ModalItem row noBottomMargin noTopMargin>
-              <DefaultButton value="Save" onClick={buttonSave}>
+              <DefaultButton
+                value="Save"
+                onClick={() => buttonSaveAndDiscard("SAVE_SETTINGS")}
+              >
                 Save
               </DefaultButton>
               <SupportMe />
             </ModalItem>
             <CloseIcon>
-              <IoIosCloseCircle onClick={buttonNotSave} />
+              <IoIosCloseCircle
+                onClick={() => buttonSaveAndDiscard("DISCARD_SETTINGS")}
+              />
             </CloseIcon>
           </SaveDiscardContainer>
         </ModalContainer>
