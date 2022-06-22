@@ -2,7 +2,6 @@ import React from "react";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 
-import Premium from "./options/PremiumOption";
 import AmPmFormat from "./options/ampmformat";
 import BackgroundImage from "./options/image/imageUpload";
 import Colors from "./options/colors";
@@ -52,7 +51,6 @@ export default function SettingsMenu() {
       <ModalDisplay show={modalShow}>
         <ModalContainer borderRadius={borderRadius}>
           <OptionsContainer>
-            <Premium />
             <BackgroundImage />
             <Timezone />
             <BackgroundColorOpacity />
