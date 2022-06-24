@@ -7,11 +7,9 @@ import BackgroundImage from "./options/image/imageUpload";
 import Colors from "./options/colors";
 import Bookmark from "./options/bookmark";
 import SupportMe from "./options/supportMe";
-import Blur from "./options/blur";
-import BorderRadius from "./options/borderRadius";
 import Timezone from "./options/timezone";
-import BackdropFilterBlur from "./options/backdropFilterBlur";
-import BackgroundColorOpacity from "./options/backgroundColorOpacity";
+import RangeOptions from "./options/rangeOptions";
+
 import Preview from "./preview";
 
 import { IoIosCloseCircle, IoMdCog } from "react-icons/io";
@@ -53,10 +51,7 @@ export default function SettingsMenu() {
           <OptionsContainer>
             <BackgroundImage />
             <Timezone />
-            <BackgroundColorOpacity />
-            <BackdropFilterBlur />
-            <BorderRadius />
-            <Blur />
+            <RangeOptions />
             <Colors />
             <AmPmFormat />
             <Bookmark />
