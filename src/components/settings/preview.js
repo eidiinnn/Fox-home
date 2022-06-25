@@ -7,13 +7,15 @@ import { useSelector } from "react-redux";
 import defaultImage from "../../image/defaultImage.jpg";
 
 export default function Preview() {
-  const useCustomImage = useSelector((state) => state.customImage);
   const imageFromDB = useSelector((state) => state.imagesFromDB);
   const blurLevel = useSelector((state) => state.blurLevel);
 
   function getTheImage() {
-    if (!imageFromDB && useCustomImage === true) return null;
-    return !useCustomImage ? defaultImage : imageFromDB.image;
+    if(imageFromDB && imageFromDB.image && imageFromDB.cropImage){
+      return URL.createObjectURL(imageFromDB.image);
+    } else {
+      return defaultImage 
+    }
   }
 
   return (
@@ -22,7 +24,6 @@ export default function Preview() {
         blurLevel={blurLevel}
         backgroundImage={getTheImage}
       />
-
       <CentralContainer />
     </PreviewContainer>
   );

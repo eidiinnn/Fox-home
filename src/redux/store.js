@@ -1,6 +1,9 @@
 import { createStore } from "redux";
 import initialState from "./initialState";
-import { uploadImageToDB, getImageFromDB } from "../image/dbFunctions";
+import {
+  saveOnDatabase,
+  getDataFromDatabase,
+} from "../indexDB/indexDbFunctions";
 
 const settingReducer = (state = initialState(), action) => {
   switch (action.type) {
@@ -11,21 +14,33 @@ const settingReducer = (state = initialState(), action) => {
     }
 
     case "SAVE_SETTINGS": {
-      const stateToLocalStorage = { ...state, imagesFromDB: null };
+      const stateToLocalStorage = {
+        ...state,
+        imagesFromDB: null,
+        customIcons: null,
+      };
       localStorage.setItem("settings", JSON.stringify(stateToLocalStorage));
 
-      if (state.imagesFromDB !== null && state.imagesFromDB.blobImage !== null)
-        uploadImageToDB(
-          state.imagesFromDB.blobImage.image,
-          state.imagesFromDB.blobImage.cropImage
-        );
+      let ImageDocument = null;
+      if (
+        state.imagesFromDB &&
+        state.imagesFromDB &&
+        state.imagesFromDB.image &&
+        state.imagesFromDB.cropImage
+      ) {
+        ImageDocument = {
+          full: state.imagesFromDB.image,
+          crop: state.imagesFromDB.cropImage,
+        };
+      }
+      saveOnDatabase(ImageDocument, state.customIcons);
 
       return state;
     }
 
     case "DISCARD_SETTINGS": {
       const newState = JSON.parse(localStorage.getItem("settings"));
-      getImageFromDB();
+      getDataFromDatabase();
       return newState;
     }
 

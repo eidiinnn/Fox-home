@@ -50,7 +50,7 @@ export default function Bookmark() {
       <ModalTitles>Bookmark</ModalTitles>
       {bookmark.map((url, index) => {
         return (
-          <BookmarkInputsContainer>
+          <BookmarkInputsContainer key={index}>
             <BookmarkInputs
               type="url"
               value={url}

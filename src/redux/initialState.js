@@ -1,3 +1,5 @@
+import { getDataFromDatabase} from "../indexDB/indexDbFunctions";
+
 export default function initialState() {
   const defaultObject = {
     bookmarkLinks: [
@@ -15,12 +17,12 @@ export default function initialState() {
     backdropFilterBlur: 25,
     blurLevel: 2,
     borderRadius: 50,
-    customImage: false,
     imagesFromDB: null,
     timezone: "",
   };
   const localStorageObject = JSON.parse(localStorage.getItem("settings"));
 
+  getDataFromDatabase();  
   if (!localStorageObject) {
     localStorage.setItem("settings", JSON.stringify(defaultObject));
     return defaultObject;
