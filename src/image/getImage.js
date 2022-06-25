@@ -2,29 +2,24 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { CentralContainerImage, BackgroundImage } from "../style/image";
 import defaultImage from "./defaultImage.jpg";
-import { getImageFromDB } from "./dbFunctions";
 
 export default function GetImage(props) {
-  const useCustomImage = useSelector((state) => state.customImage);
   const imageFromDB = useSelector((state) => state.imagesFromDB);
   const blurLevel = useSelector((state) => state.blurLevel);
   const borderRadius = useSelector((state) => state.borderRadius);
 
-  if (!imageFromDB && useCustomImage === true) {
-    getImageFromDB();
-    return null;
-  }
-
   function selectImage() {
-    return !useCustomImage
-      ? {
-          background: defaultImage,
-          CentralContainerImage: defaultImage,
-        }
-      : {
-          background: imageFromDB.image,
-          CentralContainerImage: imageFromDB.cropImage,
-        };
+    if (imageFromDB && imageFromDB.image && imageFromDB.cropImage) {
+      return {
+        background: URL.createObjectURL(imageFromDB.image),
+        CentralContainerImage: URL.createObjectURL(imageFromDB.cropImage),
+      };
+    } else {
+      return {
+        background: defaultImage,
+        CentralContainerImage: defaultImage,
+      };
+    }
   }
 
   function showImage(type) {

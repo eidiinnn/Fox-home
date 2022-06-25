@@ -48,7 +48,7 @@ export default function BorderRadius() {
     <>
       {options.map((option) => {
         return (
-          <ModalItem row noTopMargin noBottomMargin>
+          <ModalItem key={option.title} row noTopMargin noBottomMargin>
             <ModalTitles small>{option.title}</ModalTitles>
             <DefaultRange
               type="range"

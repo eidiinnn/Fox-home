@@ -40,9 +40,8 @@ export default function BackgroundImage() {
       type: "SET_STATE_ITEM",
       item: "imagesFromDB",
       value: {
-        image: URL.createObjectURL(image),
-        cropImage: URL.createObjectURL(cropImage),
-        blobImage: { image: image, cropImage: cropImage },
+        image: image,
+        cropImage: cropImage,
       },
     });
     dispatch({ type: "SET_STATE_ITEM", item: "customImage", value: true });
