@@ -19,7 +19,8 @@ export async function saveOnDatabase(image, icon) {
   if (icon) {
     icon.map(async (item) => {
       if (item && item.domain && item.icon) {
-        await db.icons.put(item);
+        if(item.icon === "noIcon") return await db.icons.delete(item.domain);
+        else await db.icons.put(item, [item.domain]);
       }
     });
   }
@@ -27,14 +28,16 @@ export async function saveOnDatabase(image, icon) {
 
 export async function getDataFromDatabase() {
   const dbArrayImage = await db.image.toArray();
-  store.dispatch({
-    type: "SET_STATE_ITEM",
-    item: "imagesFromDB",
-    value: {
-      image: dbArrayImage[0].image,
-      cropImage: dbArrayImage[0].cropImage,
-    },
-  });
+  if(dbArrayImage[0] && dbArrayImage[0].image && dbArrayImage[0].cropImage){
+    store.dispatch({
+      type: "SET_STATE_ITEM",
+      item: "imagesFromDB",
+      value: {
+        image: dbArrayImage[0].image,
+        cropImage: dbArrayImage[0].cropImage,
+      },
+    });
+  }
 
   const dbArrayIcons = await db.icons.toArray();
   store.dispatch({
