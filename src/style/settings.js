@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { FaFileImport } from "react-icons/fa";
 
 const primaryColor = "#464649";
 const secondaryColor = "#a87062";
@@ -289,6 +290,7 @@ export const Upload = styled.input`
   font-family: "sora";
   font-size: 0.7rem;
   font-weight: 500;
+  width: 211px;
 
   &::-webkit-file-upload-button {
     font-family: "sora";
@@ -398,6 +400,18 @@ export const BookmarkInputsContainer = styled.div`
   flex-direction: row;
   align-items: center;
   width: 100%;
+  margin-bottom: 0.31rem;
+
+  ${props => {
+    if(props.customIconContainer){
+      return `
+        border-radius: 0;
+        color: ${normalTextColor};
+        padding: 10px;
+        margin-bottom: 0;
+      `
+    } else return '';
+  }}
 `;
 
 export const BookmarkInputs = styled.input`
@@ -405,7 +419,6 @@ export const BookmarkInputs = styled.input`
   height: 20px;
   border: 0;
   border-radius: 2px;
-  margin-bottom: 0.31rem;
   font-family: "roboto";
   font-weight: 400;
 
@@ -414,14 +427,22 @@ export const BookmarkInputs = styled.input`
 `;
 
 export const BookmarkInputRemove = styled.div`
-  font-size: 1.3rem;
-  margin-left: 0.35rem;
+  font-size: 0.85em;
   color: ${primaryColor};
+
+  display: flex;
+  align-items: center;
+  cursor: pointer;
 
   transition: 500ms;
 
   &:hover {
     color: ${secondaryColor};
+  }
+
+  > svg {
+    margin-left: 0.1rem;
+    font-size: 1.3rem;
   }
 `;
 
@@ -483,4 +504,21 @@ export const HexInputContainer = styled.div`
     background-color: ${primaryColor};
     color: ${normalTextColor};
   }
+`;
+
+export const CustomIconPopoverContainer = styled.div`
+  width: 100%;
+  height: 100%;
+
+  background-color: ${backgroundColor};
+`
+
+
+export const CustomIconPopoverTitles = styled.h1`
+  font-family: "roboto";
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: ${whiteColor};
+  margin: 0;
+  padding: 10px 13px;
 `;

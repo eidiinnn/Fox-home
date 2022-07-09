@@ -1,6 +1,8 @@
 import React from "react";
 import { useSelector, useDispatch } from "react-redux";
 import extractDomain from "extract-domain";
+import Popover from '@mui/material/Popover';
+import Button from '@mui/material/Button';
 
 import { IoIosCloseCircle } from "react-icons/io";
 import {
@@ -10,6 +12,9 @@ import {
   BookmarkInputsContainer,
   BookmarkInputRemove,
   DefaultButton,
+  Upload,
+  CustomIconPopoverContainer,
+  CustomIconPopoverTitles,
 } from "../../../style/settings";
 
 export default function Bookmark() {
@@ -65,7 +70,8 @@ export default function Bookmark() {
     dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
-  function addCustomIconToAUrl(event, url) {
+  function addCustomIconToAUrl(event) {
+    if(!urlToCustom) return null
     const file = event.target.files[0];
     if(file.type !== 'image/png' && file.type !== 'image/jpeg'){
       return alert('You can use only png and jpg image formats.');
@@ -76,22 +82,23 @@ export default function Bookmark() {
     if (Array.isArray(customIcons)) customIconsToDispatch = [...customIcons];
     else customIconsToDispatch = [];
 
-    const domainIndex = customIconsToDispatch.map((v) => v.domain).indexOf(url);
+    const domainIndex = customIconsToDispatch.map((v) => v.domain).indexOf(urlToCustom);
     if (domainIndex >= 0) customIconsToDispatch[domainIndex].icon = blobImage;
-    else customIconsToDispatch.push({ domain: url, icon: blobImage });
+    else customIconsToDispatch.push({ domain: urlToCustom, icon: blobImage });
 
     dispatch({
       type: "SET_STATE_ITEM",
       item: "customIcons",
       value: customIconsToDispatch,
     });
+    handleClose();
   }
 
-  function iconRemove(url) {
-    if (!customIcons || !Array.isArray(customIcons)) return null;
+  function iconRemove() {
+    if (!customIcons || !Array.isArray(customIcons) || !urlToCustom) return null;
 
     const customIconsToDispatch = [...customIcons];
-    const domainIndex = customIconsToDispatch.map((v) => v.domain).indexOf(url);
+    const domainIndex = customIconsToDispatch.map((v) => v.domain).indexOf(urlToCustom);
 
     if (domainIndex < 0) return null;
 
@@ -101,7 +108,24 @@ export default function Bookmark() {
       item: "customIcons",
       value: customIconsToDispatch,
     });
+    handleClose();
   }
+
+
+  const [anchorEl, setAnchorEl] = React.useState(null);
+  const [urlToCustom, seturlToCustom] = React.useState(null)
+
+  const handleClick = (event) => {
+    seturlToCustom((event.currentTarget.dataset.url || null))
+    setAnchorEl(event.currentTarget);
+  };
+
+  const handleClose = () => {
+    seturlToCustom(null);
+    setAnchorEl(null);
+  };
+
+  const open = Boolean(anchorEl);
 
   return (
     <ModalItem>
@@ -110,18 +134,30 @@ export default function Bookmark() {
         return (
           <BookmarkInputsContainer key={index}>
             <BookmarkInputs
-              type="url"
+              type='url'
               value={url}
               onChange={(event) => inputOnChange(event, index)}
             />
-            <input
-              type="file"
-              accept=".png, .jpg"
-              onChange={(e) => addCustomIconToAUrl(e, url)}
-            />
-            <BookmarkInputRemove onClick={() => iconRemove(url)}>
-              <IoIosCloseCircle />
-            </BookmarkInputRemove>
+            <Button
+              aria-describedby='propoover'
+              data-url={url}
+              variant='contained'
+              onClick={handleClick}
+              style={{
+                width: '160px',
+                height: '22px',
+                borderRadius: '2px',
+                backgroundColor: '#464649',
+                fontFamily: 'roboto',
+                fontSize: '13.3px',
+                fontWeight: '400',
+                padding: '0 10px',
+                margin: '0 3px',
+                textTransform: 'none',
+              }}
+            >
+              Custom Icon
+            </Button>
             <BookmarkInputRemove onClick={() => inputRemove(index)}>
               <IoIosCloseCircle />
             </BookmarkInputRemove>
@@ -129,6 +165,36 @@ export default function Bookmark() {
         );
       })}
       {addNewInput()}
+
+      <Popover
+        id='propoover'
+        open={open}
+        anchorEl={anchorEl}
+        onClose={handleClose}
+        anchorOrigin={{
+          vertical: 'center',
+          horizontal: 'center',
+        }}
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right',
+        }}
+      >
+        <CustomIconPopoverContainer>
+          <CustomIconPopoverTitles>Custom icon</CustomIconPopoverTitles>
+          <BookmarkInputsContainer customIconContainer>
+            <Upload
+              type='file'
+              accept='.png, .jpg'
+              onChange={addCustomIconToAUrl}
+            />
+            <BookmarkInputRemove onClick={iconRemove}>
+              Remove the custom icon
+              <IoIosCloseCircle />
+            </BookmarkInputRemove>
+          </BookmarkInputsContainer>
+        </CustomIconPopoverContainer>
+      </Popover>
     </ModalItem>
   );
 }
