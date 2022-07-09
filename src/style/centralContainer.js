@@ -85,6 +85,9 @@ export const IconCreated = styled.div`
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
+  background-image: url(${props => props.image? props.image : ''});
+  background-repeat: no-repeat;
+  background-size: cover;
 
   width: 3.15rem;
   height: 3.15rem;
@@ -97,5 +100,5 @@ export const IconCreated = styled.div`
   text-decoration: none;
 
   border-radius: 50%;
-  border: solid 5px;
+  border: ${props => props.image? '' : 'solid 5px'};
 `;

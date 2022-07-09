@@ -9,6 +9,7 @@ import {
 
 export default function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
+  const customIcons = useSelector((state) => state.customIcons)
 
   function filterUrl(url) {
     if (url === "") return null;
@@ -24,6 +25,13 @@ export default function BookmarkList() {
   }
 
   function getAIcon(url) {
+    if(customIcons && Array.isArray(customIcons)){
+      const existCustomIcon = customIcons.find(v => v.domain === url);
+      if(existCustomIcon && existCustomIcon.icon !== "noIcon" && existCustomIcon.domain){
+        const iconUrl = URL.createObjectURL(existCustomIcon.icon);
+        return <IconCreated image={iconUrl} />
+      }
+    }
     const Icon = getAListedIcon(url);
     const firstLetter = filterUrl(url).slice(0, 1).toUpperCase();
     return !Icon ? <IconCreated>{firstLetter}</IconCreated> : <Icon />;
@@ -31,10 +39,10 @@ export default function BookmarkList() {
 
   return (
     <BookmarkLinkContainer>
-      {bookmarkLinks.map((url) => {
+      {bookmarkLinks.map((url, index) => {
         if (!filterUrl(url)) return null;
         return (
-          <BookmarkLink key={url} href={url}>
+          <BookmarkLink key={index} href={url}>
             {getAIcon(url)}
           </BookmarkLink>
         );
