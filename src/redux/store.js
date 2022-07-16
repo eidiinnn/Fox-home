@@ -25,12 +25,13 @@ const settingReducer = (state = initialState(), action) => {
       if (
         state.imagesFromDB &&
         state.imagesFromDB &&
-        state.imagesFromDB.image &&
-        state.imagesFromDB.cropImage
+        state.imagesFromDB.blob &&
+        state.imagesFromDB.blob.image &&
+        state.imagesFromDB.blob.cropImage
       ) {
         ImageDocument = {
-          full: state.imagesFromDB.image,
-          crop: state.imagesFromDB.cropImage,
+          full: state.imagesFromDB.blob.image,
+          crop: state.imagesFromDB.blob.cropImage,
         };
       }
       saveOnDatabase(ImageDocument, state.customIcons);

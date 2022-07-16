@@ -33,8 +33,8 @@ export async function getDataFromDatabase() {
       type: "SET_STATE_ITEM",
       item: "imagesFromDB",
       value: {
-        image: dbArrayImage[0].image,
-        cropImage: dbArrayImage[0].cropImage,
+        image: URL.createObjectURL(dbArrayImage[0].image),
+        cropImage: URL.createObjectURL(dbArrayImage[0].cropImage),
       },
     });
   }
