@@ -78,6 +78,15 @@ export const BookmarkLink = styled.a`
   &:hover {
     transform: scale(1.3);
   }
+
+  ${props => {
+    return `
+      &>svg,
+      &>div {
+        color: ${(props.iconColor || '#fff')}
+      }
+    `
+  }}
 `;
 
 export const IconCreated = styled.div`
