@@ -7,7 +7,7 @@ import {
   IconCreated,
 } from "../../../../style/centralContainer";
 
-export default function BookmarkList() {
+const BookmarkList = React.memo(function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
   const customIcons = useSelector((state) => state.customIcons)
 
@@ -49,4 +49,6 @@ export default function BookmarkList() {
       })}
     </BookmarkLinkContainer>
   );
-}
+});
+
+export default BookmarkList;
