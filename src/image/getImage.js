@@ -11,8 +11,8 @@ export default function GetImage(props) {
   function selectImage() {
     if (imageFromDB && imageFromDB.image && imageFromDB.cropImage) {
       return {
-        background: URL.createObjectURL(imageFromDB.image),
-        CentralContainerImage: URL.createObjectURL(imageFromDB.cropImage),
+        background: imageFromDB.image,
+        CentralContainerImage: imageFromDB.cropImage,
       };
     } else {
       return {

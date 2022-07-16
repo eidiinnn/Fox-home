@@ -12,7 +12,7 @@ export default function Preview() {
 
   function getTheImage() {
     if(imageFromDB && imageFromDB.image && imageFromDB.cropImage){
-      return URL.createObjectURL(imageFromDB.image);
+      return imageFromDB.image;
     } else {
       return defaultImage 
     }

@@ -7,9 +7,10 @@ import {
   IconCreated,
 } from "../../../../style/centralContainer";
 
-export default function BookmarkList() {
+const BookmarkList = React.memo(function BookmarkList() {
   const bookmarkLinks = useSelector((state) => state.bookmarkLinks);
-  const customIcons = useSelector((state) => state.customIcons)
+  const customIcons = useSelector((state) => state.customIcons);
+  const textIconColor = useSelector((state) => state.textIconColor);
 
   function filterUrl(url) {
     if (url === "") return null;
@@ -42,11 +43,13 @@ export default function BookmarkList() {
       {bookmarkLinks.map((url, index) => {
         if (!filterUrl(url)) return null;
         return (
-          <BookmarkLink key={index} href={url}>
+          <BookmarkLink key={index} href={url} iconColor={textIconColor}>
             {getAIcon(url)}
           </BookmarkLink>
         );
       })}
     </BookmarkLinkContainer>
   );
-}
+});
+
+export default BookmarkList;
