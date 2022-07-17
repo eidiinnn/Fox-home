@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { FaFileImport } from "react-icons/fa";
 
 const primaryColor = "#464649";
 const secondaryColor = "#a87062";
