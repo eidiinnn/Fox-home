@@ -18,6 +18,7 @@
     "react-avatar-editor": "^12.0.0",
     "react-colorful": "^5.5.1",
     "react-dom": "^17.0.2",
+    "react-file-base64": "^1.0.3",
     "react-icons": "^4.3.1",
     "react-image-file-resizer": "^0.4.7",
     "react-live-clock": "^5.6.1",
