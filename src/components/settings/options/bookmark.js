@@ -1,4 +1,5 @@
 import React from "react";
+import FileBase64 from 'react-file-base64';
 import { useSelector, useDispatch } from "react-redux";
 import extractDomain from "extract-domain";
 import Popover from '@mui/material/Popover';
@@ -12,7 +13,6 @@ import {
   BookmarkInputsContainer,
   BookmarkInputRemove,
   DefaultButton,
-  Upload,
   CustomIconPopoverContainer,
   CustomIconPopoverTitles,
 } from "../../../style/settings";
@@ -70,21 +70,19 @@ export default function Bookmark() {
     dispatch({ type: "SET_STATE_ITEM", item: "bookmarkLinks", value: change });
   }
 
-  function addCustomIconToAUrl(event) {
+  function addCustomIconToAUrl(image) {
     if(!urlToCustom) return null
-    const file = event.target.files[0];
-    if(file.type !== 'image/png' && file.type !== 'image/jpeg'){
+    if (image.file.type !== 'image/png' && image.file.type !== 'image/jpeg' && image.file.type !== 'image/svg+xml') {
       return alert('You can use only png and jpg image formats.');
-    } 
-    const blobImage = new Blob([file]);
+    }
 
     let customIconsToDispatch;
     if (Array.isArray(customIcons)) customIconsToDispatch = [...customIcons];
     else customIconsToDispatch = [];
 
     const domainIndex = customIconsToDispatch.map((v) => v.domain).indexOf(urlToCustom);
-    if (domainIndex >= 0) customIconsToDispatch[domainIndex].icon = blobImage;
-    else customIconsToDispatch.push({ domain: urlToCustom, icon: blobImage });
+    if (domainIndex >= 0) customIconsToDispatch[domainIndex].icon = image.base64;
+    else customIconsToDispatch.push({ domain: urlToCustom, icon: image.base64 });
 
     dispatch({
       type: "SET_STATE_ITEM",
@@ -183,10 +181,10 @@ export default function Bookmark() {
         <CustomIconPopoverContainer>
           <CustomIconPopoverTitles>Custom icon</CustomIconPopoverTitles>
           <BookmarkInputsContainer customIconContainer>
-            <Upload
+            <FileBase64
               type='file'
               accept='.png, .jpg'
-              onChange={addCustomIconToAUrl}
+              onDone={addCustomIconToAUrl}
             />
             <BookmarkInputRemove onClick={iconRemove}>
               Remove the custom icon

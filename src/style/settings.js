@@ -1,11 +1,11 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const primaryColor = "#464649";
-const secondaryColor = "#a87062";
-const normalTextColor = "#bcbcbd";
-const whiteColor = "#ffffff";
-const DarkerColor = "#0c0c10";
-const backgroundColor = "#151519";
+const primaryColor = '#464649';
+const secondaryColor = '#a87062';
+const normalTextColor = '#bcbcbd';
+const whiteColor = '#ffffff';
+const DarkerColor = '#0c0c10';
+const backgroundColor = '#151519';
 
 export const OpenSettingsModalIcon = styled.div`
   position: absolute;
@@ -25,7 +25,7 @@ export const OpenSettingsModalIcon = styled.div`
 `;
 
 export const ModalDisplay = styled.div`
-  display: ${(props) => (props.show ? "flex" : "none")};
+  display: ${(props) => (props.show ? 'flex' : 'none')};
   flex-direction: row;
   background-color: #1010106b;
   backdrop-filter: blur(15px);
@@ -80,7 +80,7 @@ export const BackgroundImagePreview = styled.div`
     background: url(${(props) => props.backgroundImage});
     background-size: cover;
     background-repeat: no-repeat;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -89,7 +89,7 @@ export const BackgroundImagePreview = styled.div`
   }
 
   &:after {
-    filter: blur(${(props) => props.blurLevel + "px"});
+    filter: blur(${(props) => props.blurLevel + 'px'});
   }
   &:before {
     box-sizing: border-box;
@@ -105,7 +105,7 @@ export const ModalContainer = styled.div`
   overflow-x: hidden;
   overflow-y: auto;
 
-  font-family: "sora";
+  font-family: 'sora';
   background-color: ${backgroundColor};
   color: white;
 
@@ -153,22 +153,22 @@ export const SaveDiscardContainer = styled.div`
 `;
 
 export const ModalTitles = styled.h1`
-  font-size: ${(props) => (props.small ? "0.75rem" : "0.83rem")};
+  font-size: ${(props) => (props.small ? '0.75rem' : '0.83rem')};
   font-weight: 700;
   color: ${whiteColor};
 `;
 
 export const ModalItem = styled.div`
   display: flex;
-  flex-direction: ${(props) => (props.row ? "row" : "column")};
-  justify-content: ${(props) => (props.row ? "space-between" : "left")};
-  align-items: ${(props) => (props.row ? "center" : "left")};
-  margin-bottom: ${(props) => (props.noBottomMargin ? "0" : "0.5rem")};
-  margin-top: ${(props) => (props.noTopMargin ? "0" : " 0.5rem")};
+  flex-direction: ${(props) => (props.row ? 'row' : 'column')};
+  justify-content: ${(props) => (props.row ? 'space-between' : 'left')};
+  align-items: ${(props) => (props.row ? 'center' : 'left')};
+  margin-bottom: ${(props) => (props.noBottomMargin ? '0' : '0.5rem')};
+  margin-top: ${(props) => (props.noTopMargin ? '0' : ' 0.5rem')};
 `;
 
 export const DefaultButton = styled.button`
-  font-family: "sora";
+  font-family: 'sora';
   font-weight: 700;
   font-size: 0.75rem;
   background-color: ${primaryColor};
@@ -273,7 +273,7 @@ export const DefaultSwitchSpan = styled.span`
 
   &:before {
     position: absolute;
-    content: "";
+    content: '';
     height: 16px;
     width: 26px;
     left: 4px;
@@ -286,13 +286,13 @@ export const DefaultSwitchSpan = styled.span`
 `;
 
 export const Upload = styled.input`
-  font-family: "sora";
+  font-family: 'sora';
   font-size: 0.7rem;
   font-weight: 500;
   width: 211px;
 
   &::-webkit-file-upload-button {
-    font-family: "sora";
+    font-family: 'sora';
     font-weight: 700;
     font-size: 0.75rem;
     background-color: ${primaryColor};
@@ -311,7 +311,7 @@ export const Upload = styled.input`
   }
 
   &::file-selector-button {
-    font-family: "sora";
+    font-family: 'sora';
     font-weight: 700;
     font-size: 0.75rem;
     background-color: ${primaryColor};
@@ -331,7 +331,7 @@ export const Upload = styled.input`
 `;
 
 export const TimezoneSelect = styled.select`
-  font-family: "sora";
+  font-family: 'sora';
   font-weight: 700;
   font-size: 0.75rem;
   background-color: ${primaryColor};
@@ -401,14 +401,14 @@ export const BookmarkInputsContainer = styled.div`
   width: 100%;
   margin-bottom: 0.31rem;
 
-  ${props => {
-    if(props.customIconContainer){
+  ${(props) => {
+    if (props.customIconContainer) {
       return `
         border-radius: 0;
         color: ${normalTextColor};
         padding: 10px;
         margin-bottom: 0;
-      `
+      `;
     } else return '';
   }}
 `;
@@ -418,7 +418,7 @@ export const BookmarkInputs = styled.input`
   height: 20px;
   border: 0;
   border-radius: 2px;
-  font-family: "roboto";
+  font-family: 'roboto';
   font-weight: 400;
 
   background-color: ${primaryColor};
@@ -482,7 +482,7 @@ export const TwoConfigItem = styled.div`
 export const TwoConfigItemTitle = styled.div`
   width: 100%;
   text-align: center;
-  font-family: "sora";
+  font-family: 'sora';
   font-size: 0.8rem;
   font-weight: 700;
   margin-bottom: 0.5rem;
@@ -496,7 +496,7 @@ export const HexInputContainer = styled.div`
     border: 0;
     border-radius: 2px;
     margin-bottom: 0.31rem;
-    font-family: "roboto";
+    font-family: 'roboto';
     font-weight: 400;
     text-align: center;
 
@@ -510,11 +510,55 @@ export const CustomIconPopoverContainer = styled.div`
   height: 100%;
 
   background-color: ${backgroundColor};
-`
 
+  & > div > input {
+    font-family: 'sora';
+    font-size: 0.7rem;
+    font-weight: 500;
+    width: 211px;
+
+    &::-webkit-file-upload-button {
+      font-family: 'sora';
+      font-weight: 700;
+      font-size: 0.75rem;
+      background-color: ${primaryColor};
+      color: ${normalTextColor};
+
+      padding: 0.21rem 1rem 0.21rem 1rem;
+      margin-right: 0.5rem;
+      border-radius: 2px;
+      border: 0;
+
+      transition: 500ms;
+
+      &:hover {
+        background-color: ${secondaryColor};
+      }
+    }
+
+    &::file-selector-button {
+      font-family: 'sora';
+      font-weight: 700;
+      font-size: 0.75rem;
+      background-color: ${primaryColor};
+      color: ${normalTextColor};
+
+      padding: 0.21rem 1rem 0.21rem 1rem;
+      margin-right: 0.5rem;
+      border-radius: 2px;
+      border: 0;
+
+      transition: 500ms;
+
+      &:hover {
+        background-color: ${secondaryColor};
+      }
+    }
+  }
+`;
 
 export const CustomIconPopoverTitles = styled.h1`
-  font-family: "roboto";
+  font-family: 'roboto';
   font-size: 0.9rem;
   font-weight: 700;
   color: ${whiteColor};

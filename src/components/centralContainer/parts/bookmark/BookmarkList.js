@@ -29,8 +29,7 @@ const BookmarkList = React.memo(function BookmarkList() {
     if(customIcons && Array.isArray(customIcons)){
       const existCustomIcon = customIcons.find(v => v.domain === url);
       if(existCustomIcon && existCustomIcon.icon !== "noIcon" && existCustomIcon.domain){
-        const iconUrl = URL.createObjectURL(existCustomIcon.icon);
-        return <IconCreated image={iconUrl} />
+        return <IconCreated image={existCustomIcon.icon} />
       }
     }
     const Icon = getAListedIcon(url);
