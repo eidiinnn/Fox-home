@@ -35,7 +35,7 @@ export const ModalDisplay = styled.div`
 
   position: fixed;
   width: 100%;
-  height: 100vh;
+  height: 20vh;
   z-index: 3;
 
   @media screen and (max-width: 1144px) {

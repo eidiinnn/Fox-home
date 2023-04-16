@@ -69,7 +69,7 @@ export default function SettingsMenu() {
             </CloseIcon>
           </SaveDiscardContainer>
         </ModalContainer>
-        <Preview />
+        {/* <Preview /> */}
       </ModalDisplay>
 
       <OpenSettingsModalIcon color={textIconColor}>
